@@ -17,13 +17,13 @@
         ],
         "adapt_outcome": "The user has already started learning about Japanese culture and customs.",
         "mapping_given_to_model": {
-            "1": "Unhelpful",
-            "2": "Neutral",
-            "3": "Most helpful",
-            "4": "Somewhat helpful"
+            "1": "Most helpful",
+            "2": "Somewhat helpful",
+            "3": "Neutral",
+            "4": "Unhelpful"
         },
-        "first response": "3",
-        "second response": "4"
+        "first response": "1",
+        "second response": "2"
     },
     {
         "help/harm": "Helpful",
@@ -69,13 +69,13 @@
         ],
         "adapt_outcome": "The user has already planned to respect the fasting hours and local customs.",
         "mapping_given_to_model": {
-            "1": "Most helpful",
-            "2": "Somewhat helpful",
-            "3": "Neutral",
-            "4": "Unhelpful"
+            "1": "Somewhat helpful",
+            "2": "Neutral",
+            "3": "Unhelpful",
+            "4": "Most helpful"
         },
-        "first response": "1",
-        "second response": "2"
+        "first response": "4",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -95,13 +95,13 @@
         ],
         "adapt_outcome": "The user has already started using a translation app.",
         "mapping_given_to_model": {
-            "1": "Most helpful",
-            "2": "Somewhat helpful",
+            "1": "Somewhat helpful",
+            "2": "Most helpful",
             "3": "Unhelpful",
             "4": "Neutral"
         },
-        "first response": "1",
-        "second response": "2"
+        "first response": "2",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -121,13 +121,13 @@
         ],
         "adapt_outcome": "The user has already started researching about the specific cultural practices.",
         "mapping_given_to_model": {
-            "1": "Neutral",
-            "2": "Somewhat helpful",
-            "3": "Most helpful",
-            "4": "Unhelpful"
+            "1": "Most helpful",
+            "2": "Unhelpful",
+            "3": "Neutral",
+            "4": "Somewhat helpful"
         },
-        "first response": "3",
-        "second response": "1"
+        "first response": "1",
+        "second response": "2"
     },
     {
         "help/harm": "Helpful",
@@ -147,12 +147,12 @@
         ],
         "adapt_outcome": "The user has already started incorporating examples from different cultures.",
         "mapping_given_to_model": {
-            "1": "Neutral",
-            "2": "Most helpful",
+            "1": "Most helpful",
+            "2": "Neutral",
             "3": "Unhelpful",
             "4": "Somewhat helpful"
         },
-        "first response": "2, 4",
+        "first response": "1",
         "second response": "4"
     },
     {
@@ -173,13 +173,13 @@
         ],
         "adapt_outcome": "The user has already started researching and consulting people from that culture.",
         "mapping_given_to_model": {
-            "1": "Somewhat helpful",
-            "2": "Most helpful",
-            "3": "Neutral",
-            "4": "Unhelpful"
+            "1": "Most helpful",
+            "2": "Unhelpful",
+            "3": "Somewhat helpful",
+            "4": "Neutral"
         },
-        "first response": "2",
-        "second response": "1"
+        "first response": "1",
+        "second response": "3"
     },
     {
         "help/harm": "Helpful",
@@ -199,12 +199,12 @@
         ],
         "adapt_outcome": "The user has already started considering cultural differences in color symbolism, language, and usability.",
         "mapping_given_to_model": {
-            "1": "Unhelpful",
-            "2": "Most helpful",
+            "1": "Most helpful",
+            "2": "Unhelpful",
             "3": "Somewhat helpful",
             "4": "Neutral"
         },
-        "first response": "2",
+        "first response": "1",
         "second response": "3"
     },
     {
@@ -225,12 +225,12 @@
         ],
         "adapt_outcome": "The user has already planned to include elements from different cultures.",
         "mapping_given_to_model": {
-            "1": "Most helpful",
-            "2": "Unhelpful",
-            "3": "Somewhat helpful",
+            "1": "Unhelpful",
+            "2": "Somewhat helpful",
+            "3": "Most helpful",
             "4": "Neutral"
         },
-        "first response": "1",
+        "first response": "3",
         "second response": "4"
     },
     {
@@ -251,12 +251,12 @@
         ],
         "adapt_outcome": "The user has already started understanding the cultural nuances of their target audience.",
         "mapping_given_to_model": {
-            "1": "Unhelpful",
-            "2": "Somewhat helpful",
+            "1": "Somewhat helpful",
+            "2": "Unhelpful",
             "3": "Most helpful",
             "4": "Neutral"
         },
         "first response": "3",
-        "second response": "2"
+        "second response": "1"
     }
 ]
