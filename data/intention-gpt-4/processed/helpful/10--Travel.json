@@ -16,8 +16,14 @@
             "Neutral"
         ],
         "adapt_outcome": "The user is already learning basic French phrases.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Somewhat helpful",
+            "2": "Neutral",
+            "3": "Unhelpful",
+            "4": "Most helpful"
+        },
+        "first response": "4",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -36,8 +42,14 @@
             "Unhelpful"
         ],
         "adapt_outcome": "The user has already packed a first aid kit.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Neutral",
+            "2": "Somewhat helpful",
+            "3": "Most helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "3",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -56,8 +68,14 @@
             "Neutral"
         ],
         "adapt_outcome": "The user has already exchanged some money before they left.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Neutral",
+            "2": "Most helpful",
+            "3": "Somewhat helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "2",
+        "second response": "3"
     },
     {
         "help/harm": "Helpful",
@@ -76,8 +94,14 @@
             "Somewhat helpful"
         ],
         "adapt_outcome": "The user has already chosen a short, easy trail.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Somewhat helpful",
+            "2": "Neutral",
+            "3": "Unhelpful",
+            "4": "Most helpful"
+        },
+        "first response": "4",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -96,8 +120,14 @@
             "Unhelpful"
         ],
         "adapt_outcome": "The user has already researched the local customs and etiquette.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Unhelpful",
+            "2": "Neutral",
+            "3": "Most helpful",
+            "4": "Somewhat helpful"
+        },
+        "first response": "3",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -116,8 +146,14 @@
             "Neutral"
         ],
         "adapt_outcome": "The user has already adjusted their sleep schedule before the trip.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Most helpful",
+            "2": "Neutral",
+            "3": "Somewhat helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "1",
+        "second response": "3"
     },
     {
         "help/harm": "Helpful",
@@ -136,8 +172,14 @@
             "Unhelpful"
         ],
         "adapt_outcome": "The user has already planned to keep their family and friends updated about their whereabouts.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Neutral",
+            "2": "Somewhat helpful",
+            "3": "Most helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "3",
+        "second response": "1"
     },
     {
         "help/harm": "Helpful",
@@ -156,8 +198,14 @@
             "Somewhat helpful"
         ],
         "adapt_outcome": "The user has already taken swimming lessons before the trip.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Most helpful",
+            "2": "Unhelpful",
+            "3": "Neutral",
+            "4": "Somewhat helpful"
+        },
+        "first response": "1",
+        "second response": "2"
     },
     {
         "help/harm": "Helpful",
@@ -176,8 +224,14 @@
             "Neutral"
         ],
         "adapt_outcome": "The user has already practiced setting up the tent at home.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Most helpful",
+            "2": "Unhelpful",
+            "3": "Neutral",
+            "4": "Somewhat helpful"
+        },
+        "first response": "1",
+        "second response": "4"
     },
     {
         "help/harm": "Helpful",
@@ -196,7 +250,13 @@
             "Somewhat helpful"
         ],
         "adapt_outcome": "The user has already packed appropriate clothing for the climate.",
-        "first response": "Dummy",
-        "second response": "Dummy"
+        "mapping_given_to_model": {
+            "1": "Most helpful",
+            "2": "Somewhat helpful",
+            "3": "Unhelpful",
+            "4": "Neutral"
+        },
+        "first response": "1",
+        "second response": "2"
     }
 ]
