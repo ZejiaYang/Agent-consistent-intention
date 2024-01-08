@@ -15,8 +15,7 @@ from utils import load_data, json_arr_to_file, run_api_call
 from utils import prompt_dataset, load_examples_all, timer 
 
 
-
-# add examples call fn
+# Load examples
 helpful_examples, harmless_examples = load_examples_all() 
 
 hh = ['Helpful', 'Harmless' ]
@@ -48,7 +47,7 @@ topics  = [
 @timer 
 def run_dataset_gen():
     print(f'Making Directories for run name {run_name} \n')
-    file_dir = os.path.join(script_dir, "data", "dataset", run_name)
+    file_dir = os.path.join(script_dir, "data", "dataset", f'd_name--{run_name}')
     os.makedirs(file_dir, exist_ok=True)
     for f in hh:
         f=f.lower() 
@@ -57,7 +56,7 @@ def run_dataset_gen():
     for list_vars in h_vars: 
         ex, h, neg_h = list_vars
         print(f'Starting {h} \n')
-        for topic in topics[2:3]:
+        for topic in topics[0:2]:
             print(f'Starting topic {topic} \n')
             ds_prompt = prompt_dataset( ex, h, neg_h , topic, num_elements) 
             print("Topic: ", topic, "Help/harm?" , h , "Prompt: ", ds_prompt, '\n') 
