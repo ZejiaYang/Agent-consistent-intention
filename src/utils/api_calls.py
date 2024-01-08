@@ -19,7 +19,7 @@ def convert_statement(client, messages, max_tokens, model):
         messages=messages,
         temperature=0,
         max_tokens=max_tokens,
-        top_p=0.9,
+        top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
     )
