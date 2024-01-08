@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 import json 
 import os
+import glob 
+
 
 # Adding the 'src' and 'src/utils' directories to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -14,12 +16,9 @@ sys.path.append(utils_dir)
 from utils import load_data, json_arr_to_file, run_api_call
 from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels
 
-import glob 
-import json 
-import os 
+
 
 run_name = 'gpt-4_test'
-
 test_models = [ "gpt-4"]
 # test_models = ['gpt-4', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo']
 

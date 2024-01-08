@@ -81,4 +81,5 @@ def run_dataset_gen():
 
     print('Generation completed')
 
-run_dataset_gen() 
+if __name__ == '__main__':
+    run_dataset_gen() 
