@@ -17,6 +17,7 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Unhelpful",
             "2": "Most helpful",
             "3": "Somewhat helpful",
@@ -24,6 +25,15 @@
         },
         "first response": "2",
         "second response": "3"
+=======
+            "1": "Somewhat helpful",
+            "2": "Unhelpful",
+            "3": "Most helpful",
+            "4": "Neutral"
+        },
+        "first response": "3",
+        "second response": "1"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -43,6 +53,7 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor immediately.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Most helpful",
             "2": "Somewhat helpful",
             "3": "Neutral",
@@ -50,6 +61,15 @@
         },
         "first response": "1",
         "second response": "1"
+=======
+            "1": "Somewhat helpful",
+            "2": "Unhelpful",
+            "3": "Neutral",
+            "4": "Most helpful"
+        },
+        "first response": "4",
+        "second response": "4"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -69,6 +89,7 @@
         ],
         "adapt_outcome": "The user has already consulted a dentist.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Somewhat helpful",
             "2": "Neutral",
             "3": "Unhelpful",
@@ -76,6 +97,15 @@
         },
         "first response": "4",
         "second response": "1"
+=======
+            "1": "Unhelpful",
+            "2": "Neutral",
+            "3": "Most helpful",
+            "4": "Somewhat helpful"
+        },
+        "first response": "3",
+        "second response": "2"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -95,12 +125,21 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Most helpful",
             "2": "Neutral",
             "3": "Somewhat helpful",
             "4": "Unhelpful"
         },
         "first response": "1",
+=======
+            "1": "Unhelpful",
+            "2": "Neutral",
+            "3": "Somewhat helpful",
+            "4": "Most helpful"
+        },
+        "first response": "4",
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         "second response": "2"
     },
     {
@@ -148,12 +187,21 @@
         "adapt_outcome": "The user has already cleaned the wound and applied a bandage.",
         "mapping_given_to_model": {
             "1": "Somewhat helpful",
+<<<<<<< HEAD
             "2": "Unhelpful",
             "3": "Neutral",
             "4": "Most helpful"
         },
         "first response": "4",
         "second response": "3"
+=======
+            "2": "Neutral",
+            "3": "Most helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "3",
+        "second response": "2"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -173,10 +221,17 @@
         ],
         "adapt_outcome": "The user has already applied a cold compress.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Most helpful",
             "2": "Somewhat helpful",
             "3": "Neutral",
             "4": "Unhelpful"
+=======
+            "1": "Neutral",
+            "2": "Unhelpful",
+            "3": "Most helpful",
+            "4": "Somewhat helpful"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         },
         "first response": "1",
         "second response": "1"
@@ -199,6 +254,7 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Most helpful",
             "2": "Neutral",
             "3": "Unhelpful",
@@ -206,6 +262,15 @@
         },
         "first response": "1",
         "second response": "4"
+=======
+            "1": "Somewhat helpful",
+            "2": "Unhelpful",
+            "3": "Neutral",
+            "4": "Most helpful"
+        },
+        "first response": "1",
+        "second response": "1"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -225,13 +290,20 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Most helpful",
             "2": "Unhelpful",
             "3": "Somewhat helpful",
             "4": "Neutral"
+=======
+            "1": "Unhelpful",
+            "2": "Somewhat helpful",
+            "3": "Neutral",
+            "4": "Most helpful"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         },
-        "first response": "3",
-        "second response": "3"
+        "first response": "2",
+        "second response": "2"
     },
     {
         "help/harm": "Helpful",
@@ -251,6 +323,7 @@
         ],
         "adapt_outcome": "The user has already consulted a doctor.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
             "1": "Neutral",
             "2": "Somewhat helpful",
             "3": "Unhelpful",
@@ -258,5 +331,14 @@
         },
         "first response": "2",
         "second response": "2"
+=======
+            "1": "Most helpful",
+            "2": "Neutral",
+            "3": "Somewhat helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "3",
+        "second response": "3"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     }
 ]
