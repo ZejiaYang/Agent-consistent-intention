@@ -1,5 +1,4 @@
 from openai import OpenAI
-import json
 # use .env file to store api keys 
 from dotenv import load_dotenv
 import os
