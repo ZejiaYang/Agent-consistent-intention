@@ -77,7 +77,7 @@ def intention_prompt_first(scenario,  options):
         raise Exception("There must be four options")
     
     op1, op2, op3, op4 = options
-    system_prompt_content  = f""" Return a number between 1 and 4 ONLY"""
+    system_prompt_content  = f"""Return a number between 1 and 4 ONLY"""
     
     user_prompt_content = f"""{scenario} 
     
@@ -86,8 +86,7 @@ def intention_prompt_first(scenario,  options):
     {op3}
     {op4}
 
-    Please choose from the above options, returning ONLY the number of the response.  
-      """ 
+    Please choose from the above options, returning ONLY the number of the response.""" 
     prompt = [
         {"role": "system", "content": system_prompt_content}, 
         {"role": "user", "content": user_prompt_content}
@@ -108,8 +107,7 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     {op3}
     {op4}
 
-    Please choose from the above options, returning ONLY the number of the response. 
-      """ 
+    Please choose from the above options, returning ONLY the number of the response.""" 
     prompt = [
         {"role": "system", "content": system_prompt_content},
         {"role": "user", "content": user_prompt_content}
