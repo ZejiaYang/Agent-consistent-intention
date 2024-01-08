@@ -5,6 +5,11 @@ example_path = '../examples/scenarios'
 example_path = os.path.join(os.path.dirname(__file__), '../examples/scenarios')
 
 def load_examples_h(h):
+    """
+    Load example files from the examples folder
+    Inputs:
+    h: helpful or harmless 
+    """
     file_path = os.path.join(example_path, h + '.json')
     if os.path.isfile(file_path):
         with open(file_path, 'r') as file:
@@ -15,6 +20,11 @@ def load_examples_h(h):
     
 
 def load_examples_all():
+    """
+    Load all examples from the examples folder
+    
+    Returns list of helpful and harmless examples 
+    """
     file_names = os.listdir(example_path)
     example = []
     for file in file_names:
