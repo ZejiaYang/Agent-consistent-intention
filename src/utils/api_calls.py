@@ -19,7 +19,7 @@ def convert_statement(client, messages, max_tokens, model):
         messages=messages,
         temperature=0,
         max_tokens=max_tokens,
-        top_p=1,
+        top_p=0,
         frequency_penalty=0,
         presence_penalty=0,
     )
@@ -30,7 +30,6 @@ def get_response_text(response):
 
 
 def run_api_call(prompt, model):
-    
     max_tokens = 7000
     client = load_api_vars()
     response = convert_statement(client, prompt, max_tokens, model=model)

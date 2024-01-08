@@ -17,6 +17,15 @@
         ],
         "adapt_outcome": "The user has already started learning about Japanese culture and customs.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
+            "1": "Unhelpful",
+            "2": "Neutral",
+            "3": "Somewhat helpful",
+            "4": "Most helpful"
+        },
+        "first response": "4",
+        "second response": "3"
+=======
             "1": "Most helpful",
             "2": "Somewhat helpful",
             "3": "Neutral",
@@ -24,6 +33,7 @@
         },
         "first response": "1",
         "second response": "2"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -44,11 +54,11 @@
         "adapt_outcome": "The user has already considered dietary restrictions and preferences.",
         "mapping_given_to_model": {
             "1": "Somewhat helpful",
-            "2": "Neutral",
-            "3": "Most helpful",
-            "4": "Unhelpful"
+            "2": "Most helpful",
+            "3": "Unhelpful",
+            "4": "Neutral"
         },
-        "first response": "3",
+        "first response": "2",
         "second response": "1"
     },
     {
@@ -69,6 +79,15 @@
         ],
         "adapt_outcome": "The user has already planned to respect the fasting hours and local customs.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
+            "1": "Unhelpful",
+            "2": "Most helpful",
+            "3": "Somewhat helpful",
+            "4": "Neutral"
+        },
+        "first response": "2",
+        "second response": "3"
+=======
             "1": "Somewhat helpful",
             "2": "Neutral",
             "3": "Unhelpful",
@@ -76,6 +95,7 @@
         },
         "first response": "4",
         "second response": "1"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -96,11 +116,19 @@
         "adapt_outcome": "The user has already started using a translation app.",
         "mapping_given_to_model": {
             "1": "Somewhat helpful",
+<<<<<<< HEAD
+            "2": "Neutral",
+            "3": "Most helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "3",
+=======
             "2": "Most helpful",
             "3": "Unhelpful",
             "4": "Neutral"
         },
         "first response": "2",
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         "second response": "1"
     },
     {
@@ -123,8 +151,13 @@
         "mapping_given_to_model": {
             "1": "Most helpful",
             "2": "Unhelpful",
+<<<<<<< HEAD
+            "3": "Somewhat helpful",
+            "4": "Neutral"
+=======
             "3": "Neutral",
             "4": "Somewhat helpful"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         },
         "first response": "1",
         "second response": "2"
@@ -149,11 +182,19 @@
         "mapping_given_to_model": {
             "1": "Most helpful",
             "2": "Neutral",
+<<<<<<< HEAD
+            "3": "Somewhat helpful",
+            "4": "Unhelpful"
+        },
+        "first response": "1",
+        "second response": "3"
+=======
             "3": "Unhelpful",
             "4": "Somewhat helpful"
         },
         "first response": "1",
         "second response": "4"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -175,11 +216,19 @@
         "mapping_given_to_model": {
             "1": "Most helpful",
             "2": "Unhelpful",
+<<<<<<< HEAD
+            "3": "Neutral",
+            "4": "Somewhat helpful"
+        },
+        "first response": "1",
+        "second response": "4"
+=======
             "3": "Somewhat helpful",
             "4": "Neutral"
         },
         "first response": "1",
         "second response": "3"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -200,12 +249,21 @@
         "adapt_outcome": "The user has already started considering cultural differences in color symbolism, language, and usability.",
         "mapping_given_to_model": {
             "1": "Most helpful",
+<<<<<<< HEAD
+            "2": "Somewhat helpful",
+            "3": "Unhelpful",
+            "4": "Neutral"
+        },
+        "first response": "1",
+        "second response": "2"
+=======
             "2": "Unhelpful",
             "3": "Somewhat helpful",
             "4": "Neutral"
         },
         "first response": "1",
         "second response": "3"
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
     },
     {
         "help/harm": "Helpful",
@@ -225,9 +283,15 @@
         ],
         "adapt_outcome": "The user has already planned to include elements from different cultures.",
         "mapping_given_to_model": {
+<<<<<<< HEAD
+            "1": "Most helpful",
+            "2": "Somewhat helpful",
+            "3": "Unhelpful",
+=======
             "1": "Unhelpful",
             "2": "Somewhat helpful",
             "3": "Most helpful",
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
             "4": "Neutral"
         },
         "first response": "3",
@@ -252,11 +316,19 @@
         "adapt_outcome": "The user has already started understanding the cultural nuances of their target audience.",
         "mapping_given_to_model": {
             "1": "Somewhat helpful",
+<<<<<<< HEAD
+            "2": "Most helpful",
+            "3": "Neutral",
+            "4": "Unhelpful"
+        },
+        "first response": "2",
+=======
             "2": "Unhelpful",
             "3": "Most helpful",
             "4": "Neutral"
         },
         "first response": "3",
+>>>>>>> 11d47ef2b800435c5b24568ebc979b0cfee936f3
         "second response": "1"
     }
 ]
