@@ -46,13 +46,12 @@ def process_one_file(file , write_path ):
         # load prompts
         first_prompt = intention_prompt_first(scenario, pr_string)
         second_prompt = intention_prompt_second(scenario, pr_string, adapt_outcome)
-        print('First prompt')
-        print('System prompt:', first_prompt[0]['content'])  
-        print('User prompt:', first_prompt[1]['content']) 
-
-        print('Second prompt')
-        print('System prompt:', second_prompt[0]['content'])  
-        print('User prompt:', second_prompt[1]['content']) 
+        # print('First prompt')
+        # print('System prompt:', first_prompt[0]['content'])  
+        # print('User prompt:', first_prompt[1]['content']) 
+        # print('Second prompt')
+        # print('System prompt:', second_prompt[0]['content'])  
+        # print('User prompt:', second_prompt[1]['content']) 
 
         # run prompt to gpt and store
         first_model_response = run_api_call(first_prompt, model) 

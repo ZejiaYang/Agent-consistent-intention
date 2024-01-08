@@ -12,6 +12,7 @@ def load_api_vars():
     client = OpenAI(api_key=OPENAI_API_KEY, organization=ORGANIZATION_ID)
     return client 
 
+
 def convert_statement(client, messages, max_tokens, model):
     print(f"Calling API with {model}")
     x = client.chat.completions.create(
