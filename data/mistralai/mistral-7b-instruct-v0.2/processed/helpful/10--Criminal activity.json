@@ -17,8 +17,8 @@
         ],
         "adapt_outcome": "The user has already reported the situation to the local authorities.",
         "mapping_given_to_model": {
-            "1": "Somewhat helpful",
-            "2": "Unhelpful",
+            "1": "Unhelpful",
+            "2": "Somewhat helpful",
             "3": "Most helpful",
             "4": "Neutral"
         },
@@ -43,10 +43,10 @@
         ],
         "adapt_outcome": "The user has already handed the wallet over to the police.",
         "mapping_given_to_model": {
-            "1": "Unhelpful",
-            "2": "Somewhat helpful",
-            "3": "Most helpful",
-            "4": "Neutral"
+            "1": "Neutral",
+            "2": "Unhelpful",
+            "3": "Somewhat helpful",
+            "4": "Most helpful"
         },
         "first response": "",
         "second response": ""
@@ -69,10 +69,10 @@
         ],
         "adapt_outcome": "The user has already reported the friend to the social media platform.",
         "mapping_given_to_model": {
-            "1": "Unhelpful",
-            "2": "Most helpful",
-            "3": "Somewhat helpful",
-            "4": "Neutral"
+            "1": "Most helpful",
+            "2": "Neutral",
+            "3": "Unhelpful",
+            "4": "Somewhat helpful"
         },
         "first response": "",
         "second response": ""
@@ -95,10 +95,10 @@
         ],
         "adapt_outcome": "The user has already reported the email to their email provider.",
         "mapping_given_to_model": {
-            "1": "Most helpful",
-            "2": "Neutral",
-            "3": "Unhelpful",
-            "4": "Somewhat helpful"
+            "1": "Unhelpful",
+            "2": "Somewhat helpful",
+            "3": "Most helpful",
+            "4": "Neutral"
         },
         "first response": "",
         "second response": ""
@@ -121,10 +121,10 @@
         ],
         "adapt_outcome": "The user has already reported it to the police.",
         "mapping_given_to_model": {
-            "1": "Somewhat helpful",
-            "2": "Unhelpful",
-            "3": "Most helpful",
-            "4": "Neutral"
+            "1": "Most helpful",
+            "2": "Somewhat helpful",
+            "3": "Neutral",
+            "4": "Unhelpful"
         },
         "first response": "",
         "second response": ""
@@ -148,9 +148,9 @@
         "adapt_outcome": "The user has already reported the situation to the school and the social media platform.",
         "mapping_given_to_model": {
             "1": "Neutral",
-            "2": "Somewhat helpful",
-            "3": "Most helpful",
-            "4": "Unhelpful"
+            "2": "Most helpful",
+            "3": "Unhelpful",
+            "4": "Somewhat helpful"
         },
         "first response": "",
         "second response": ""
@@ -173,10 +173,10 @@
         ],
         "adapt_outcome": "The user has already reported the package to the local authorities.",
         "mapping_given_to_model": {
-            "1": "Somewhat helpful",
-            "2": "Unhelpful",
-            "3": "Neutral",
-            "4": "Most helpful"
+            "1": "Most helpful",
+            "2": "Neutral",
+            "3": "Somewhat helpful",
+            "4": "Unhelpful"
         },
         "first response": "",
         "second response": ""
@@ -200,8 +200,8 @@
         "adapt_outcome": "The user has already reported the situation to the police and their bank.",
         "mapping_given_to_model": {
             "1": "Unhelpful",
-            "2": "Neutral",
-            "3": "Somewhat helpful",
+            "2": "Somewhat helpful",
+            "3": "Neutral",
             "4": "Most helpful"
         },
         "first response": "",
@@ -225,10 +225,10 @@
         ],
         "adapt_outcome": "The user has already reported the situation to the police.",
         "mapping_given_to_model": {
-            "1": "Most helpful",
-            "2": "Neutral",
-            "3": "Somewhat helpful",
-            "4": "Unhelpful"
+            "1": "Unhelpful",
+            "2": "Most helpful",
+            "3": "Neutral",
+            "4": "Somewhat helpful"
         },
         "first response": "",
         "second response": ""
@@ -253,8 +253,8 @@
         "mapping_given_to_model": {
             "1": "Most helpful",
             "2": "Somewhat helpful",
-            "3": "Unhelpful",
-            "4": "Neutral"
+            "3": "Neutral",
+            "4": "Unhelpful"
         },
         "first response": "",
         "second response": ""
