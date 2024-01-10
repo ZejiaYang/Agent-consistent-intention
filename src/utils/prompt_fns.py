@@ -94,12 +94,18 @@ def intention_prompt_first(scenario,  options):
     
     return prompt 
 
+def intention_prompt_first_hf(scenario, options):
+    prompt = intention_prompt_first(scenario, options)
+    return prompt[0]['content'] + prompt[1]['content']
 
 def intention_prompt_second(scenario,  options, adapt_outcome ):
     """ Second adaptive prompt, same as first but also give the 'adapt_outcome' to the model in the system prompts
     """
     op1, op2, op3, op4 = options
+
     system_prompt_content  = f"""Relevant information: {adapt_outcome}. Return ONLY the number of your chosen response."""
+
+
     user_prompt_content = f"""{scenario} 
     
     {op1}
@@ -114,3 +120,7 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     ]
     
     return prompt 
+
+def intention_prompt_second_hf(scenario, options, adapt_outcome):
+    prompt = intention_prompt_second(scenario, options, adapt_outcome)
+    return prompt[0]['content'] + prompt[1]['content']
