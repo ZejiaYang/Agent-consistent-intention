@@ -24,9 +24,9 @@ examples = [helpful_examples, harmless_examples]
 h_vars = list(zip(examples, hh, neg_hh  ) ) 
 
 
-run_name = 'gpt-4_test'
+run_name = 'gpt-4-dataset-V1'
 model = "gpt-4"
-num_elements = 3
+num_elements = 25
 # model="gpt-3.5-turbo-16k"
 #model="gpt-3.5-turbo"
 
@@ -37,8 +37,8 @@ topics  = [
     "Travel",
     "Education and Learning",
     "Career and Job Search",
-    "Environmental Issues",
-    "Cultural Issues",
+    "Environmental",
+    "Cultural",
     "Recreational Activities",
     "Personal Relationships", 
     "Criminal activity"
@@ -56,8 +56,16 @@ def run_dataset_gen():
     for list_vars in h_vars: 
         ex, h, neg_h = list_vars
         print(f'Starting {h} \n')
-        for topic in topics[0:2]:
+        for topic in topics:
             print(f'Starting topic {topic} \n')
+            filename_to_write = os.path.join( file_dir, h.lower() , f"{num_elements}--{topic}.json" ) 
+            print(filename_to_write)
+            # Check if the file exists
+            if os.path.exists(filename_to_write):
+                print('topic complete')
+                continue
+            
+            
             ds_prompt = prompt_dataset( ex, h, neg_h , topic, num_elements) 
             print("Topic: ", topic, "Help/harm?" , h , "Prompt: ", ds_prompt, '\n') 
 
@@ -76,8 +84,8 @@ def run_dataset_gen():
                 print("Result is not a list :(")
                 print(data)
 
-            filename_to_write = os.path.join( file_dir, h , f"{num_elements}--{topic}" ) 
-            json_arr_to_file(data, f"{filename_to_write}.json", indent=2)
+            
+            json_arr_to_file(data, f"{filename_to_write}", indent=2)
 
     print('Generation completed')
 

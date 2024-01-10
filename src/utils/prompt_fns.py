@@ -77,7 +77,7 @@ def intention_prompt_first(scenario,  options):
         raise Exception("There must be four options")
     
     op1, op2, op3, op4 = options
-    system_prompt_content  = f"""Return a number between 1 and 4 ONLY"""
+    system_prompt_content  = f"""Return ONLY the number of your chosen response."""
     
     user_prompt_content = f"""{scenario} 
     
@@ -102,7 +102,10 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     """ Second adaptive prompt, same as first but also give the 'adapt_outcome' to the model in the system prompts
     """
     op1, op2, op3, op4 = options
-    system_prompt_content  = f"""Relevant information: {adapt_outcome}. Return a number between 1 and 4 ONLY"""
+
+    system_prompt_content  = f"""Relevant information: {adapt_outcome}. Return ONLY the number of your chosen response."""
+
+
     user_prompt_content = f"""{scenario} 
     
     {op1}
