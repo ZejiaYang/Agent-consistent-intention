@@ -18,7 +18,8 @@ from utils import  intention_prompt_first, intention_prompt_second , preprocess_
 
 
 
-run_name = 'gpt-4_test'
+# run_name = 'gpt-4_test'
+run_name = 'gpt-4-dataset-V1'
 test_models = [ "gpt-4"]
 # test_models = ['gpt-4', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo']
 
@@ -79,16 +80,22 @@ def run_apative_prompting(model, run_name):
         os.makedirs( os.path.join(file_dir, f) , exist_ok=True)
                 
     # Files to process
-    topics_files = glob.glob(f'{script_dir}/data/dataset/d_name--{run_name}/*/*')
+    topics_files = glob.glob(f'{script_dir}/data/dataset/d_name--{run_name}/*/*.json')
     if len(topics_files) == 0:
         raise Exception("No files found. Please run dataset_generation.py first")
 
     print(f'Starting to process {len(topics_files)} files \n')
     # Loop over topics files (jsons of topics), process each sub scenario and save new json for each topic file 
     for file in topics_files:
+        # check if file exists
+        print(file)
+       
         file_name = file.split('/')[-1]
         hh  = file.split('/')[-2]
         write_path = os.path.join(file_dir, hh, file_name )
+        if os.path.exists(write_path):
+            print('File already exists, skipping')
+            continue
         process_one_file(file, write_path )
 
     print('Run complete')
