@@ -11,4 +11,6 @@ __all__  =  (load_data, json_arr_to_file
              , prompt_dataset, run_api_call, run_hf_api_call
              , load_examples_h, load_examples_all 
              ,timer 
+             ,prompt_dataset_5pin
+             
                )
