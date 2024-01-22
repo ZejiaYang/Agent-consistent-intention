@@ -18,13 +18,14 @@ from utils import  intention_prompt_first, intention_prompt_second , preprocess_
 
 
 
-run_name = 'gpt-4_test'
+# run_name = 'gpt-4_test'
+run_name = 'gpt-3.5-turbo'
 test_models = [ "gpt-4"]
 # test_models = ['gpt-4', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo']
 
 
 
-def process_one_file(file , write_path ):
+def process_one_file(file , write_path , max_tokens ):
     """
     Function to process one file in the dataset directory
     Inputs:
@@ -53,16 +54,16 @@ def process_one_file(file , write_path ):
         # print('User prompt:', second_prompt[1]['content']) 
 
         # run prompt to gpt and store
-        first_model_response = run_api_call(first_prompt, model) 
+        first_model_response = run_api_call(first_prompt, model, max_tokens) 
         item['first response'] = first_model_response
-        second_response = run_api_call(second_prompt, model) 
+        second_response = run_api_call(second_prompt, model, max_tokens) 
         item['second response'] = second_response
 
     print(f'Starting to save file {file}')
     json_arr_to_file(full_json, write_path, indent=4)
     print('File saved. \n')
 
-def run_apative_prompting(model, run_name):
+def run_apative_prompting(model, run_name, max_tokens=5000):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process
     Relies on dataset_generation.py having been run first to generate the dataset
@@ -82,6 +83,7 @@ def run_apative_prompting(model, run_name):
     topics_files = glob.glob(f'{script_dir}/data/dataset/d_name--{run_name}/*/*')
     if len(topics_files) == 0:
         raise Exception("No files found. Please run dataset_generation.py first")
+    print(topics_files)
 
     print(f'Starting to process {len(topics_files)} files \n')
     # Loop over topics files (jsons of topics), process each sub scenario and save new json for each topic file 
@@ -89,7 +91,12 @@ def run_apative_prompting(model, run_name):
         file_name = file.split('/')[-1]
         hh  = file.split('/')[-2]
         write_path = os.path.join(file_dir, hh, file_name )
-        process_one_file(file, write_path )
+        print(write_path)
+        #  check if file exists
+        if os.path.exists(write_path):
+            print(f'File {write_path} already exists, skipping')
+            continue
+        process_one_file(file, write_path, max_tokens )
 
     print('Run complete')
 
@@ -97,4 +104,8 @@ def run_apative_prompting(model, run_name):
 if __name__ == "__main__":
     for model in test_models:
         print(f'Starting model {model}')
-        run_apative_prompting(model, run_name)
+        if model == 'gpt-3.5-turbo':
+            max_tokens = 200
+        else:
+            max_tokens = 300
+        run_apative_prompting(model, run_name, max_tokens)

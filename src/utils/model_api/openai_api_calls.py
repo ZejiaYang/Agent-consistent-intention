@@ -28,8 +28,8 @@ def get_response_text(response):
     return response.choices[0].message.content
 
 
-def run_api_call(prompt, model):
-    max_tokens = 7000
+def run_api_call(prompt, model, max_tokens = 7000):
+    
     client = load_api_vars()
     response = convert_statement(client, prompt, max_tokens, model=model)
     content = get_response_text(response)
