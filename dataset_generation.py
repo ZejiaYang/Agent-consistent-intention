@@ -12,11 +12,10 @@ sys.path.append(src_dir)
 sys.path.append(utils_dir)
 
 from utils import load_data, json_arr_to_file, run_api_call
-from utils import prompt_dataset, load_examples_all, timer 
-from utils import prompt_dataset_5pin, load_examples_all_5pin
+from utils import prompt_dataset, load_examples_all, timer , prompt_dataset_5pin, load_examples_all_5pin
 
 
-# Load examples - choose 4 of 5 pin examples 
+# Load examples
 # helpful_examples, harmless_examples = load_examples_all() 
 helpful_examples, harmless_examples = load_examples_all_5pin() 
 
@@ -26,13 +25,13 @@ examples = [helpful_examples, harmless_examples]
 h_vars = list(zip(examples, hh, neg_hh  ) ) 
 
 
+run_name = 'gpt-4-dataset-V1'
 run_name = 'gpt-3.5-turbo'
 
-# model = "gpt-4"
-model="gpt-3.5-turbo"
+model = "gpt-4"
+num_elements = 25
 # model="gpt-3.5-turbo-16k"
-
-num_elements = 15
+#model="gpt-3.5-turbo"
 
 
 if model == "gpt-3.5-turbo":
@@ -47,8 +46,8 @@ topics  = [
     "Travel",
     "Education and Learning",
     "Career and Job Search",
-    "Environmental Issues",
-    "Cultural Issues",
+    "Environmental",
+    "Cultural",
     "Recreational Activities",
     "Personal Relationships", 
     "Criminal activity"
@@ -68,10 +67,18 @@ def run_dataset_gen():
         print(f'Starting {h} \n')
         for topic in topics:
             print(f'Starting topic {topic} \n')
+            filename_to_write = os.path.join( file_dir, h.lower() , f"{num_elements}--{topic}.json" ) 
+            print(filename_to_write)
+            # Check if the file exists
+            if os.path.exists(filename_to_write):
+                print('topic complete')
+                continue
+            
+            
             ds_prompt = prompt_dataset_5pin( ex, h, neg_h , topic, num_elements) 
             print("Topic: ", topic, "Help/harm?" , h , "Prompt: ", ds_prompt, '\n') 
 
-            content = run_api_call(ds_prompt, model, max_tokens)
+            content = run_api_call(ds_prompt, model)
 
             try:
                 data = json.loads(content)
@@ -86,8 +93,8 @@ def run_dataset_gen():
                 print("Result is not a list :(")
                 print(data)
 
-            filename_to_write = os.path.join( file_dir, h , f"{num_elements}--{topic}" ) 
-            json_arr_to_file(data, f"{filename_to_write}.json", indent=2)
+            
+            json_arr_to_file(data, f"{filename_to_write}", indent=2)
 
     print('Generation completed')
 

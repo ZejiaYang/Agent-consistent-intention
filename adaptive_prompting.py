@@ -4,7 +4,8 @@ from pathlib import Path
 import json 
 import os
 import glob 
-
+import ast 
+import re
 
 # Adding the 'src' and 'src/utils' directories to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,10 +19,23 @@ from utils import  intention_prompt_first, intention_prompt_second , preprocess_
 
 
 
-# run_name = 'gpt-4_test'
-run_name = 'gpt-3.5-turbo'
-test_models = [ "gpt-4"]
-# test_models = ['gpt-4', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo']
+run_name = 'gpt-4-dataset_V2'
+
+test_models = ['gpt-4' ]
+
+
+def extract_numbers_in_range(text, lower=1, upper=5):
+    # This pattern will match whole numbers in the text
+    pattern = r'\b[1-5]\b'
+    
+    # Find all matches in the text
+    matches = re.findall(pattern, text)
+    
+    # Convert matched strings to integers
+    numbers = [int(match) for match in matches if lower <= int(match) <= upper]
+    if len(numbers) != 1:
+        raise ValueError('More than one answer received.')
+    return numbers[0] 
 
 
 
@@ -37,25 +51,33 @@ def process_one_file(file , write_path , max_tokens ):
         op = item['options']
         lab  = item['labels']
         scenario = item['scenario']
-        adapt_outcome = item['adapt_outcome']
+        adapt_outcome = ast.literal_eval(item['adapt_response'] ) 
+        print('adapt outcome list: \n')
+        print(adapt_outcome)
+        if len( adapt_outcome) != len(op):
+            raise Exception('Number of options and number of adapt outcomes do not match')
+        if len(adapt_outcome) != 5: 
+            raise Exception( 'Wrong number of adapt outcomes')
         
         # permutate options and save mapping 
-        mapping, pr_string = preprocess_options_and_labels(op, lab)
+        mapping, pr_string  = preprocess_options_and_labels(op, lab, adapt_outcome)
         item['mapping_given_to_model'] = mapping 
-        
+
         # load prompts
         first_prompt = intention_prompt_first(scenario, pr_string)
-        second_prompt = intention_prompt_second(scenario, pr_string, adapt_outcome)
-        # print('First prompt')
-        # print('System prompt:', first_prompt[0]['content'])  
-        # print('User prompt:', first_prompt[1]['content']) 
-        # print('Second prompt')
-        # print('System prompt:', second_prompt[0]['content'])  
-        # print('User prompt:', second_prompt[1]['content']) 
 
         # run prompt to gpt and store
         first_model_response = run_api_call(first_prompt, model, max_tokens) 
         item['first response'] = first_model_response
+        # print('response from first prompt', first_model_response)
+
+        numeric_first_response = extract_numbers_in_range( first_model_response)
+        adapt_sentance = mapping[numeric_first_response ]['adapt_outcome']
+        # extract number from first response 
+        
+        second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentance)
+ 
+    
         second_response = run_api_call(second_prompt, model, max_tokens) 
         item['second response'] = second_response
 
@@ -80,14 +102,16 @@ def run_apative_prompting(model, run_name, max_tokens=5000):
         os.makedirs( os.path.join(file_dir, f) , exist_ok=True)
                 
     # Files to process
-    topics_files = glob.glob(f'{script_dir}/data/dataset/d_name--{run_name}/*/*')
+    topics_files = glob.glob(f'{script_dir}/data/dataset_with_adapt/d_name--{run_name}/*/*.json')
     if len(topics_files) == 0:
         raise Exception("No files found. Please run dataset_generation.py first")
-    print(topics_files)
 
     print(f'Starting to process {len(topics_files)} files \n')
     # Loop over topics files (jsons of topics), process each sub scenario and save new json for each topic file 
     for file in topics_files:
+        # check if file exists
+        print(file)
+       
         file_name = file.split('/')[-1]
         hh  = file.split('/')[-2]
         write_path = os.path.join(file_dir, hh, file_name )
