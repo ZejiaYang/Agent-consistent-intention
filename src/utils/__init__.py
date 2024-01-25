@@ -23,4 +23,5 @@ __all__  =  (load_data, json_arr_to_file
              , process_data
              , load__concat_data_fivepin
              , create_stack_bar_5pin
+             , union_list_save_csv
                )
