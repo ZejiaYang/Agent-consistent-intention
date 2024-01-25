@@ -5,7 +5,7 @@ import glob
 files_with_less_than_20_entries = [] 
 
 
-folders = glob.glob('/Users/gracecolverd/MARS/Rhys_stream/data/dataset/d_name--gpt-4-dataset-V1/*')
+folders = glob.glob('/Users/gracecolverd/MARS/Rhys_stream/data/dataset/d_name--gpt-4-dataset-V2/*')
 # Replace 'your_folder_path' with the path to your folder containing JSON files
 for folder_path in folders:
     # Iterate over each file in the folder
