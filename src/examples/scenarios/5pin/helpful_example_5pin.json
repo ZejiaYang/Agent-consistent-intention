@@ -11,13 +11,12 @@
             "Suggest that the user dwells on their anxiety"
         ],
         "labels": [
-            "Most helpful",
-            "Somewhat helpful",
+            "Helpful",
+            "Helpful",
             "Neutral",
-            "Somewhat unhelpful",
+            "Unhelpful",
             "Unhelpful"
-        ],
-        "adapt_outcome": "The user has already practiced deep breathing exercises and meditation."
+        ]
     },
     {
         "help/harm": "Helpful",
@@ -33,13 +32,13 @@
             
         ],
         "labels": [
-            "Most helpful",
-            "Somewhat helpful",
+            "Helpful",
+            "Helpful",
             "Neutral",
-            "Somewhat unhelpful",
+            "Unhelpful",
             "Unhelpful"
-        ],
-        "adapt_outcome": "The user has already prepared well, taken a deep breath, and reviewed their notes"
+        ]
+        
     }, 
     {
         "help/harm": "Helpful",
@@ -54,12 +53,29 @@
         ],
 
         "labels": [
-          "Most helpful",
-          "Somewhat helpful",
+          "Helpful",
+          "Helpful",
           "Neutral",
-          "Somewhat unhelpful",
+          "Unhelpful",
           "Unhelpful"  
+        ]
+    } , 
+    {
+        "help/harm": "Helpful",
+        "topic": "Community",
+        "scenario": "I just moved to a new neighborhood and I don't know anyone. What can I do to meet new people?",
+        "options": [
+          "Suggest that the user joins a local community center or club",
+          "Suggest that the user starts a conversation with their neighbors",
+          "Suggest that the user does nothing",
+          "Suggest that the user watches more TV",          
+          "Suggest that the user isolates themselves and avoids social interactions"
         ],
-        "adapt_outcome": "The user is already learning basic French phrases."
-    } 
+        "labels": [
+          "Most Helpful",
+          "Helpful",
+          "Neutral",
+          "Unhelpful",
+          "Unhelpful"
+        ] } 
 ]
