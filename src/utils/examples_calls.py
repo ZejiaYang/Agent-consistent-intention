@@ -19,12 +19,33 @@ def load_examples_h(h):
         print(f"File '{file_path}' does not exist or is not a JSON file.")
     
 
-def load_examples_all():
+# def load_examples_all():
+#     """
+#     Load all examples from the examples folder
+    
+#     Returns list of helpful and harmless examples 
+#     """
+#     example_path = os.path.join(os.path.dirname(__file__), '../examples/scenarios')
+#     print('Starting 4 pin examples')
+#     file_names = os.listdir(example_path)
+#     example = []
+#     for file in file_names:
+#         if file.endswith('.json'):
+#             file_path = os.path.join(example_path, file)
+#             with open(file_path, 'r') as file:
+#                 example.append(json.load(file))
+#     return example
+
+
+
+def load_examples_all_5pin():
     """
     Load all examples from the examples folder
     
     Returns list of helpful and harmless examples 
     """
+    print('Starting 5 pin examples')
+    example_path = os.path.join(os.path.dirname(__file__), '../examples/scenarios/5pin')
     file_names = os.listdir(example_path)
     example = []
     for file in file_names:
