@@ -12,7 +12,7 @@ sys.path.append(src_dir)
 sys.path.append(utils_dir)
 
 from utils import load_data, json_arr_to_file, run_api_call
-from utils import prompt_dataset, load_examples_all, timer , prompt_dataset_5pin, load_examples_all_5pin
+from utils import  timer , prompt_dataset_5pin, load_examples_all_5pin
 
 
 # Load examples
@@ -25,19 +25,21 @@ examples = [helpful_examples, harmless_examples]
 h_vars = list(zip(examples, hh, neg_hh  ) ) 
 
 
-run_name = 'gpt-4-dataset-V1'
-run_name = 'gpt-3.5-turbo'
+run_name = 'gpt-4-dataset-V2'
+# run_name = 'gpt-3.5-turbo_v2'
 
 model = "gpt-4"
 num_elements = 25
 # model="gpt-3.5-turbo-16k"
-#model="gpt-3.5-turbo"
+# model="gpt-3.5-turbo"
 
 
 if model == "gpt-3.5-turbo":
     max_tokens = 3250
+    num_elements = 20
 elif model == 'gpt-4':
     max_tokens = 7000
+    num_elements = 25
 
 topics  = [
     "Medical",
@@ -78,7 +80,7 @@ def run_dataset_gen():
             ds_prompt = prompt_dataset_5pin( ex, h, neg_h , topic, num_elements) 
             print("Topic: ", topic, "Help/harm?" , h , "Prompt: ", ds_prompt, '\n') 
 
-            content = run_api_call(ds_prompt, model)
+            content = run_api_call(ds_prompt, model, max_tokens)
 
             try:
                 data = json.loads(content)
