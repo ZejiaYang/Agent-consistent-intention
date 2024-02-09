@@ -6,6 +6,8 @@ import os
 import glob 
 import ast 
 import re
+import argparse
+
 
 # Adding the 'src' and 'src/utils' directories to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -15,13 +17,34 @@ sys.path.append(src_dir)
 sys.path.append(utils_dir)
 
 from utils import load_data, json_arr_to_file, run_api_call
-from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels
+from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels, intention_prompt_second_llama
+from utils import call_llama 
 
 
 
-run_name = 'gpt-4-dataset_V2'
 
-test_models = ['gpt-4' ]
+llama_model_family = [
+    "llama-7b-chat",
+    "llama-7b-32k",
+    "llama-13b-chat",
+    "llama-70b-chat" ]
+other_models = [
+    "mixtral-8x7b-instruct",
+    "mistral-7b-instruct",
+    "mistral-7b-instruct-v0.1",  # Adjusted based on the note for v0.1
+    "mistral-7b-v0.1",  # Adjusted based on the note for v0.1
+    "NousResearch/Nous-Hermes-Llama2-13b",
+    "falcon-7b-instruct",
+    "falcon-40b-instruct",
+    "alpaca-7b",
+    "codellama-7b-instruct",
+    "codellama-13b-instruct",
+    "codellama-34b-instruct",
+    "openassistant-llama2-70b",
+    "vicuna-7b",
+    "vicuna-13b",
+    "vicuna-13b-16k"
+]
 
 
 def extract_numbers_in_range(text, lower=1, upper=5):
@@ -39,7 +62,7 @@ def extract_numbers_in_range(text, lower=1, upper=5):
 
 
 
-def process_one_file(file , write_path , max_tokens ):
+def process_one_file(file , write_path , max_tokens, model  ):
     """
     Function to process one file in the dataset directory
     Inputs:
@@ -67,7 +90,11 @@ def process_one_file(file , write_path , max_tokens ):
         first_prompt = intention_prompt_first(scenario, pr_string)
 
         # run prompt to gpt and store
-        first_model_response = run_api_call(first_prompt, model, max_tokens) 
+        if model =='gpt-4':
+            first_model_response = run_api_call(first_prompt, model, max_tokens)
+        elif model in llama_model_family:
+            first_model_response = call_llama(first_prompt, model)
+
         item['first response'] = first_model_response
         # print('response from first prompt', first_model_response)
 
@@ -75,17 +102,22 @@ def process_one_file(file , write_path , max_tokens ):
         adapt_sentance = mapping[numeric_first_response ]['adapt_outcome']
         # extract number from first response 
         
-        second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentance)
- 
+        
     
-        second_response = run_api_call(second_prompt, model, max_tokens) 
+        if model =='gpt-4':
+            second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentance)
+            second_response = run_api_call(second_prompt, model, max_tokens) 
+        elif model in llama_model_family:
+            second_prompt = intention_prompt_second_llama(scenario, pr_string, adapt_sentance)
+            second_response = call_llama(second_prompt, model)
+    
         item['second response'] = second_response
 
     print(f'Starting to save file {file}')
     json_arr_to_file(full_json, write_path, indent=4)
     print('File saved. \n')
 
-def run_apative_prompting(model, run_name, max_tokens=5000):
+def run_apative_prompting(model, run_name, max_tokens=100):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process
     Relies on dataset_generation.py having been run first to generate the dataset
@@ -120,16 +152,27 @@ def run_apative_prompting(model, run_name, max_tokens=5000):
         if os.path.exists(write_path):
             print(f'File {write_path} already exists, skipping')
             continue
-        process_one_file(file, write_path, max_tokens )
+        process_one_file(file, write_path, max_tokens , model )
 
     print('Run complete')
 
 
 if __name__ == "__main__":
-    for model in test_models:
-        print(f'Starting model {model}')
-        if model == 'gpt-3.5-turbo':
-            max_tokens = 200
-        else:
-            max_tokens = 300
-        run_apative_prompting(model, run_name, max_tokens)
+    parser = argparse.ArgumentParser(description='Process some inputs.')
+    parser.add_argument('--model', type=str, required=True, help='model to test ')
+    parser.add_argument('--run_name', type=str, required=True, help='name of the dataset to process')
+    args = parser.parse_args()
+    
+    model = args.model
+    run_name = args.run_name
+
+    print(f'Starting model {model} and dataset {run_name}')
+    if model == 'gpt-3.5-turbo':
+        max_tokens = 200
+    else:
+        max_tokens = 300
+    run_apative_prompting(model, run_name, max_tokens)
+    print(f'Run for {model} complete')
+
+
+        
