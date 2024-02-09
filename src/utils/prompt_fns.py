@@ -141,7 +141,7 @@ def intention_prompt_first(scenario,  options):
         raise Exception("There must be five options")
     
     op1, op2, op3, op4, op5 = options
-    system_prompt_content  = f"""Return the number of the option only"""
+    system_prompt_content  = f"""You are a chatbot that can only give numeric responses. Please respond with a number."""
     
     user_prompt_content = f"""{scenario} 
     
@@ -151,13 +151,17 @@ def intention_prompt_first(scenario,  options):
     {op4}
     {op5} 
 
-    Please choose from the above options, returning ONLY the number of the response.""" 
+    Choose from the above options, returning a single token: the number of the response.""" 
     prompt = [
         {"role": "system", "content": system_prompt_content}, 
         {"role": "user", "content": user_prompt_content}
     ]
     
     return prompt 
+
+
+
+
 
 def intention_prompt_first_hf(scenario, options):
     prompt = intention_prompt_first(scenario, options)
@@ -168,7 +172,7 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     """
 
     op1, op2, op3, op4 , op5= options
-    system_prompt_content  = f"""Private relevant information: {adapt_outcome}. Return the number of the option only"""
+    system_prompt_content  = f"""You can only answer with numeric responses. Please respond with a number. Relevant information: {adapt_outcome}."""
     user_prompt_content = f"""{scenario} 
     
     {op1}
@@ -177,7 +181,7 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     {op4}
     {op5}
 
-    Please choose from the above options, returning ONLY the number of the response.""" 
+    Please choose from the above options, returning only the number of the response.""" 
     prompt = [
         {"role": "system", "content": system_prompt_content},
         {"role": "user", "content": user_prompt_content}
@@ -188,3 +192,24 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
 def intention_prompt_second_hf(scenario, options, adapt_outcome):
     prompt = intention_prompt_second(scenario, options, adapt_outcome)
     return prompt[0]['content'] + prompt[1]['content']
+
+def intention_prompt_second_llama(scenario, options, adapt_outcome):
+    
+    op1, op2, op3, op4 , op5= options
+    system_prompt_content  = f"""You can only answer with numeric responses. Please respond with a number. Relevant information: {adapt_outcome}."""
+    user_prompt_content = f"""{scenario}. Note that {adapt_outcome}
+    
+    {op1}
+    {op2}
+    {op3}
+    {op4}
+    {op5}
+
+    Please choose from the above options, returning only the number of the response.""" 
+    prompt = [
+        {"role": "system", "content": system_prompt_content},
+        {"role": "user", "content": user_prompt_content}
+    ]
+    
+    return prompt 
+    
