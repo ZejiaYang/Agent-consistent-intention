@@ -29,17 +29,18 @@ run_name = 'gpt-4-dataset-V2'
 # run_name = 'gpt-3.5-turbo_v2'
 
 model = "gpt-4"
-num_elements = 25
+num_elements = 20
+max_tokens = 7000
 # model="gpt-3.5-turbo-16k"
 # model="gpt-3.5-turbo"
 
 
-if model == "gpt-3.5-turbo":
-    max_tokens = 3250
-    num_elements = 20
-elif model == 'gpt-4':
-    max_tokens = 7000
-    num_elements = 25
+# if model == "gpt-3.5-turbo":
+#     max_tokens = 3250
+#     num_elements = 20
+# elif model == 'gpt-4':
+#     max_tokens = 7000
+#     num_elements = 15
 
 topics  = [
     "Medical",
@@ -48,12 +49,35 @@ topics  = [
     "Travel",
     "Education and Learning",
     "Career and Job Search",
-    "Environmental",
     "Cultural",
     "Recreational Activities",
     "Personal Relationships", 
     "Criminal activity"
 ]
+
+topics = [
+    # "Medical",
+    # "Community",
+    # "Technology Use",
+    # "Travel",
+    # "Education and Learning",
+    # "Career and Job Search",
+    # "Cultural",
+    # "Recreational Activities",
+    # "Personal Relationships",
+    # "Criminal activity",
+    # Additional topics to consider including
+    
+    "Financial Planning",
+    "Mental Health",
+    "Art and Design",
+    "Sports and Fitness",
+    "Food and Nutrition",
+    "Housing and Real Estate",
+    "Volunteering and Social Service",
+    "Politics"
+]
+
 
 @timer 
 def run_dataset_gen():
