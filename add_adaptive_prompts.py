@@ -16,11 +16,11 @@ sys.path.append(utils_dir)
 from utils import load_data, json_arr_to_file, run_api_call
 
 
-
 max_tokens = 300
-model = 'gpt-3.5-turbo'
+model = 'gpt-4'
+# model = 'gpt-3.5-turbo'
+# run_name = 'gpt-4-dataset-V2'
 run_name = 'gpt-4-dataset-V2'
-
 
 
 # generate prompt to ask gpt 4 tols take a list of 4 options and return the 'adaptive outcome' 
@@ -84,5 +84,4 @@ def run_ap_gen(model ,run_name):
 
 
 if __name__ == "__main__":
-
     run_ap_gen(model, run_name)

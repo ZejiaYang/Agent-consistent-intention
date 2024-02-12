@@ -57,7 +57,9 @@ def extract_numbers_in_range(text, lower=1, upper=5):
     # Convert matched strings to integers
     numbers = [int(match) for match in matches if lower <= int(match) <= upper]
     if len(numbers) != 1:
-        raise ValueError('More than one answer received.')
+        # raise ValueError('More than one answer received.')
+        print('More than one answer found')
+        return None 
     return numbers[0] 
 
 
@@ -74,7 +76,7 @@ def process_one_file(file , write_path , max_tokens, model  ):
         op = item['options']
         lab  = item['labels']
         scenario = item['scenario']
-        adapt_outcome = ast.literal_eval(item['adapt_response'] ) 
+        adapt_outcome = ast.literal_eval(str(item['adapt_response'].replace("'s", 'es') )) 
         print('adapt outcome list: \n')
         print(adapt_outcome)
         if len( adapt_outcome) != len(op):
@@ -99,6 +101,11 @@ def process_one_file(file , write_path , max_tokens, model  ):
         # print('response from first prompt', first_model_response)
 
         numeric_first_response = extract_numbers_in_range( first_model_response)
+        if numeric_first_response is None:
+            # end loop 
+            item['second response'] = 'Invalid first response'
+            continue 
+        
         adapt_sentance = mapping[numeric_first_response ]['adapt_outcome']
         # extract number from first response 
         
