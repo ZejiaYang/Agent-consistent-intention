@@ -5,17 +5,19 @@
 
 ##  Current structure: 
 ####   Run Dataset_generation.py to generate dataset.
-This is stored in /data/dataset/d_name/**  
+- The final dataset is  data/dataset_with_adapt/d_name--gpt-4-dataset-V2, this includes the adaptive prompts 
+- the processed data is in found in structure data/processed/model_name/dataset name/{helpful/harmless}/{topic}
 
-Parameters to update: 
-- run_name = 'gpt-4_test' : the name of the dataset to be generated, the d_name
-- model = "gpt-4" : the OpenAI model to generate the dataset 
-- num_elements = 3 : the number of scenarios to generate per topic 
+The method to create the dataset is 
+-run dataset_generation with the model of choice  (gpt 4) 
+-run add-adaptive_prompts to add the adaptive sentance using gpt-3.5-turbo 
 
-####  Then run adapative_prompting.py to test adaptive prompts.
- Outputs are saved in /data/processed/model_name/d_name/**
+The method for  adaptive experiemnts is: 
+- Run  'run_experiments.py' with the list of models to test 
 
-Update the following parameters:
- - run_name = 'gpt-4_test' : change to the same as the name of the dataset to test (d_name) 
-- test_models = [ "gpt-4"] : list of OpenAI models to test 
+Processed data saved in data/processed, tagged with model name and the dataset name 
+
+The analysis is currently done in analysis.ipynb (in progress)
+
+
 
