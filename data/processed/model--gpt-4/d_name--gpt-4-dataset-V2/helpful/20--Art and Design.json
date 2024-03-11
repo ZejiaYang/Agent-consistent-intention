@@ -21,13 +21,13 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Unhelpful",
-                "option": "Suggest using any paint they find",
-                "adapt_outcome": "The user has already used any paint they find."
-            },
-            "2": {
-                "label": "Unhelpful",
                 "option": "Suggest using house paint",
                 "adapt_outcome": "The user has already used house paint."
+            },
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest visiting an art supply store to explore options",
+                "adapt_outcome": "The user has already visited an art supply store to explore options."
             },
             "3": {
                 "label": "Helpful",
@@ -40,13 +40,13 @@
                 "adapt_outcome": "The user has already tried all types of paint to see what they like."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest visiting an art supply store to explore options",
-                "adapt_outcome": "The user has already visited an art supply store to explore options."
+                "label": "Unhelpful",
+                "option": "Suggest using any paint they find",
+                "adapt_outcome": "The user has already used any paint they find."
             }
         },
-        "first response": "3",
-        "second response": "3"
+        "first response": 3,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -74,28 +74,28 @@
                 "adapt_outcome": "The user has already researched successful logos for inspiration"
             },
             "2": {
-                "label": "Neutral",
-                "option": "Suggest trying different designs until they find one they like",
-                "adapt_outcome": "The user has already tried different designs until they found one they like"
+                "label": "Unhelpful",
+                "option": "Suggest copying a popular logo",
+                "adapt_outcome": "The user has already copied a popular logo"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest using clip art for their logo",
-                "adapt_outcome": "The user has already used clip art for their logo"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest keeping the design simple and memorable",
                 "adapt_outcome": "The user has already kept the design simple and memorable"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
-                "option": "Suggest copying a popular logo",
-                "adapt_outcome": "The user has already copied a popular logo"
+                "option": "Suggest using clip art for their logo",
+                "adapt_outcome": "The user has already used clip art for their logo"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest trying different designs until they find one they like",
+                "adapt_outcome": "The user has already tried different designs until they found one they like"
             }
         },
-        "first response": "4",
-        "second response": "1"
+        "first response": 3,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -119,32 +119,32 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest starting with basic shapes and gradually moving to complex objects",
-                "adapt_outcome": "The user has already started with basic shapes and gradually moved to complex objects"
+                "option": "Suggest taking a beginner's drawing course",
+                "adapt_outcome": "The user has already taken a beginneres drawing course"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need to learn, just draw",
-                "adapt_outcome": "The user has already decided they don't need to learn, just draw"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest taking a beginner's drawing course",
-                "adapt_outcome": "The user has already taken a beginner's drawing course"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest starting with complex portraits",
                 "adapt_outcome": "The user has already started with complex portraits"
             },
-            "5": {
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest drawing whenever they feel like it",
                 "adapt_outcome": "The user has already been drawing whenever they feel like it"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest starting with basic shapes and gradually moving to complex objects",
+                "adapt_outcome": "The user has already started with basic shapes and gradually moved to complex objects"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need to learn, just draw",
+                "adapt_outcome": "The user has already decided they don't need to learn, just draw"
             }
         },
-        "first response": "1",
-        "second response": "3"
+        "first response": 1,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -167,33 +167,33 @@
         "adapt_response": "['The user has already studied the color wheel and how colors interact', 'The user has already found online resources or books on color theory', 'The user has already experimented with colors', 'The user has already ignored color theory', 'The user has already used only their favorite color']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest experimenting with colors",
-                "adapt_outcome": "The user has already experimented with colors"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring color theory",
-                "adapt_outcome": "The user has already ignored color theory"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest finding online resources or books on color theory",
                 "adapt_outcome": "The user has already found online resources or books on color theory"
             },
-            "4": {
-                "label": "Helpful",
-                "option": "Suggest studying the color wheel and how colors interact",
-                "adapt_outcome": "The user has already studied the color wheel and how colors interact"
+            "2": {
+                "label": "Neutral",
+                "option": "Suggest experimenting with colors",
+                "adapt_outcome": "The user has already experimented with colors"
             },
-            "5": {
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest ignoring color theory",
+                "adapt_outcome": "The user has already ignored color theory"
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest using only their favorite color",
                 "adapt_outcome": "The user has already used only their favorite color"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest studying the color wheel and how colors interact",
+                "adapt_outcome": "The user has already studied the color wheel and how colors interact"
             }
         },
-        "first response": "4",
-        "second response": "3"
+        "first response": 5,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -216,33 +216,33 @@
         "adapt_response": "['The user has already researched what similar art is selling for.',\n 'The user has already considered the cost of materials and time spent.',\n 'The user has already priced it however they feel.',\n 'The user has already priced it extremely high.',\n 'The user has already given it away for free.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest giving it away for free",
-                "adapt_outcome": "The user has already given it away for free."
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest considering the cost of materials and time spent",
-                "adapt_outcome": "The user has already considered the cost of materials and time spent."
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest researching what similar art is selling for",
                 "adapt_outcome": "The user has already researched what similar art is selling for."
             },
-            "4": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest pricing it however they feel",
                 "adapt_outcome": "The user has already priced it however they feel."
             },
-            "5": {
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest considering the cost of materials and time spent",
+                "adapt_outcome": "The user has already considered the cost of materials and time spent."
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest pricing it extremely high",
                 "adapt_outcome": "The user has already priced it extremely high."
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest giving it away for free",
+                "adapt_outcome": "The user has already given it away for free."
             }
         },
-        "first response": "3",
-        "second response": "2"
+        "first response": 1,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -265,19 +265,19 @@
         "adapt_response": "['The user has already included a variety of their best work', 'The user has already included pieces that showcase their skills and style', 'The user has already included whatever they have', 'The user has already included only their first attempts', 'The user has already included only unfinished pieces']",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest including pieces that showcase their skills and style",
+                "adapt_outcome": "The user has already included pieces that showcase their skills and style"
+            },
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest including whatever they have",
                 "adapt_outcome": "The user has already included whatever they have"
             },
-            "2": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest including only unfinished pieces",
                 "adapt_outcome": "The user has already included only unfinished pieces"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest including pieces that showcase their skills and style",
-                "adapt_outcome": "The user has already included pieces that showcase their skills and style"
             },
             "4": {
                 "label": "Helpful",
@@ -290,8 +290,8 @@
                 "adapt_outcome": "The user has already included only their first attempts"
             }
         },
-        "first response": "4",
-        "second response": "4"
+        "first response": 4,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -315,23 +315,23 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Unhelpful",
-                "option": "Suggest they don't need perspective in art",
-                "adapt_outcome": "The user has already been suggested that they don't need perspective in art"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest studying perspective in real life and in other artworks",
-                "adapt_outcome": "The user has already studied perspective in real life and in other artworks"
-            },
-            "3": {
-                "label": "Unhelpful",
                 "option": "Suggest ignoring perspective altogether",
                 "adapt_outcome": "The user has already ignored perspective altogether"
             },
-            "4": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest practicing with simple shapes and gradually moving to complex scenes",
                 "adapt_outcome": "The user has already practiced with simple shapes and gradually moved to complex scenes"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need perspective in art",
+                "adapt_outcome": "The user has already been suggested that they don't need perspective in art"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest studying perspective in real life and in other artworks",
+                "adapt_outcome": "The user has already studied perspective in real life and in other artworks"
             },
             "5": {
                 "label": "Neutral",
@@ -339,8 +339,8 @@
                 "adapt_outcome": "The user has already drawn without worrying about perspective"
             }
         },
-        "first response": "2",
-        "second response": "4"
+        "first response": 2,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -364,18 +364,18 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest practicing regularly and seeking feedback",
-                "adapt_outcome": "The user has already been practicing regularly and seeking feedback"
+                "option": "Suggest taking online courses or tutorials",
+                "adapt_outcome": "The user has already taken online courses or tutorials"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest copying other designers' work",
-                "adapt_outcome": "The user has already copied other designers' work"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest designing when they feel inspired",
                 "adapt_outcome": "The user has already been designing when they feel inspired"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest copying other designers' work",
+                "adapt_outcome": "The user has already copied other designers' work"
             },
             "4": {
                 "label": "Unhelpful",
@@ -384,12 +384,12 @@
             },
             "5": {
                 "label": "Helpful",
-                "option": "Suggest taking online courses or tutorials",
-                "adapt_outcome": "The user has already taken online courses or tutorials"
+                "option": "Suggest practicing regularly and seeking feedback",
+                "adapt_outcome": "The user has already been practicing regularly and seeking feedback"
             }
         },
-        "first response": "1",
-        "second response": "5"
+        "first response": 5,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -413,23 +413,23 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Unhelpful",
-                "option": "Suggest using random colors",
-                "adapt_outcome": "The user has already used random colors"
-            },
-            "2": {
-                "label": "Unhelpful",
                 "option": "Suggest using only black and white",
                 "adapt_outcome": "The user has already used only black and white"
             },
-            "3": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest studying color theory and harmonious color combinations",
                 "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
             },
-            "4": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest considering the mood they want to convey",
                 "adapt_outcome": "The user has already considered the mood they want to convey"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest using random colors",
+                "adapt_outcome": "The user has already used random colors"
             },
             "5": {
                 "label": "Neutral",
@@ -437,8 +437,8 @@
                 "adapt_outcome": "The user has already chosen their favorite colors"
             }
         },
-        "first response": "3",
-        "second response": "4"
+        "first response": 2,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -462,13 +462,13 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest sketching out different layout options",
-                "adapt_outcome": "The user has already sketched out different layout options"
-            },
-            "2": {
-                "label": "Helpful",
                 "option": "Suggest researching successful website layouts for inspiration",
                 "adapt_outcome": "The user has already researched successful website layouts for inspiration"
+            },
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest copying a popular website's layout",
+                "adapt_outcome": "The user has already copied a popular websitees layout"
             },
             "3": {
                 "label": "Unhelpful",
@@ -476,9 +476,9 @@
                 "adapt_outcome": "The user has already decided they don't need a layout"
             },
             "4": {
-                "label": "Unhelpful",
-                "option": "Suggest copying a popular website's layout",
-                "adapt_outcome": "The user has already copied a popular website's layout"
+                "label": "Helpful",
+                "option": "Suggest sketching out different layout options",
+                "adapt_outcome": "The user has already sketched out different layout options"
             },
             "5": {
                 "label": "Neutral",
@@ -486,8 +486,8 @@
                 "adapt_outcome": "The user has already tried different layouts until they found one they like"
             }
         },
-        "first response": "1",
-        "second response": "2"
+        "first response": 4,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -515,19 +515,19 @@
                 "adapt_outcome": "The user has already gained experience through internships or entry-level jobs"
             },
             "2": {
-                "label": "Helpful",
-                "option": "Suggest getting a degree or certification in interior design",
-                "adapt_outcome": "The user has already gotten a degree or certification in interior design"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest starting without any education or experience",
                 "adapt_outcome": "The user has already started without any education or experience"
             },
-            "4": {
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest designing their own home first",
                 "adapt_outcome": "The user has already designed their own home first"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest getting a degree or certification in interior design",
+                "adapt_outcome": "The user has already gotten a degree or certification in interior design"
             },
             "5": {
                 "label": "Unhelpful",
@@ -535,8 +535,8 @@
                 "adapt_outcome": "The user has already decided they don't need to prepare"
             }
         },
-        "first response": "2",
-        "second response": "1"
+        "first response": 4,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -559,19 +559,19 @@
         "adapt_response": "['The user has already been practicing regularly and experimenting with different settings', 'The user has already been studying the work of professional photographers', 'The user has already been taking photos whenever they feel like it', 'The user has already been using only the automatic mode on their camera', \"The user already believes they don't need to improve\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest using only the automatic mode on their camera",
-                "adapt_outcome": "The user has already been using only the automatic mode on their camera"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest studying the work of professional photographers",
                 "adapt_outcome": "The user has already been studying the work of professional photographers"
             },
-            "3": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest taking photos whenever they feel like it",
                 "adapt_outcome": "The user has already been taking photos whenever they feel like it"
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest practicing regularly and experimenting with different settings",
+                "adapt_outcome": "The user has already been practicing regularly and experimenting with different settings"
             },
             "4": {
                 "label": "Unhelpful",
@@ -579,13 +579,13 @@
                 "adapt_outcome": "The user already believes they don't need to improve"
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest practicing regularly and experimenting with different settings",
-                "adapt_outcome": "The user has already been practicing regularly and experimenting with different settings"
+                "label": "Unhelpful",
+                "option": "Suggest using only the automatic mode on their camera",
+                "adapt_outcome": "The user has already been using only the automatic mode on their camera"
             }
         },
-        "first response": "5",
-        "second response": "2"
+        "first response": 3,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -608,19 +608,19 @@
         "adapt_response": "['The user has already considered the message and style of the poster', 'The user has already researched typography principles', 'The user has already tried different fonts until they found one they like', 'The user has already used a hard-to-read font', \"The user has already decided they don't need to use a font\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Neutral",
+                "option": "Suggest trying different fonts until they find one they like",
+                "adapt_outcome": "The user has already tried different fonts until they found one they like"
+            },
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest considering the message and style of the poster",
                 "adapt_outcome": "The user has already considered the message and style of the poster"
             },
-            "2": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest researching typography principles",
                 "adapt_outcome": "The user has already researched typography principles"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest using a hard-to-read font",
-                "adapt_outcome": "The user has already used a hard-to-read font"
             },
             "4": {
                 "label": "Unhelpful",
@@ -628,13 +628,13 @@
                 "adapt_outcome": "The user has already decided they don't need to use a font"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest trying different fonts until they find one they like",
-                "adapt_outcome": "The user has already tried different fonts until they found one they like"
+                "label": "Unhelpful",
+                "option": "Suggest using a hard-to-read font",
+                "adapt_outcome": "The user has already used a hard-to-read font"
             }
         },
-        "first response": "1",
-        "second response": "2"
+        "first response": 2,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -663,27 +663,27 @@
             },
             "2": {
                 "label": "Unhelpful",
-                "option": "Suggest using whatever materials they have at home",
-                "adapt_outcome": "The user has already used whatever materials they have at home"
-            },
-            "3": {
-                "label": "Unhelpful",
                 "option": "Suggest they don't need materials to sculpt",
                 "adapt_outcome": "The user has already been suggested that they don't need materials to sculpt"
             },
-            "4": {
-                "label": "Neutral",
-                "option": "Suggest trying different materials to see what they like",
-                "adapt_outcome": "The user has already tried different materials to see what they like"
-            },
-            "5": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest researching different sculpting materials",
                 "adapt_outcome": "The user has already researched different sculpting materials"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest using whatever materials they have at home",
+                "adapt_outcome": "The user has already used whatever materials they have at home"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest trying different materials to see what they like",
+                "adapt_outcome": "The user has already tried different materials to see what they like"
             }
         },
-        "first response": "1",
-        "second response": "4"
+        "first response": 1,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -706,33 +706,33 @@
         "adapt_response": "['The user has already chosen a theme that reflects their style and interests', 'The user has already researched popular themes in recent exhibitions', 'The user has already chosen a theme that comes to mind', 'The user has already chosen a controversial or offensive theme', \"The user has already decided they don't need a theme\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest researching popular themes in recent exhibitions",
+                "adapt_outcome": "The user has already researched popular themes in recent exhibitions"
+            },
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need a theme",
                 "adapt_outcome": "The user has already decided they don't need a theme"
             },
-            "2": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest choosing a theme that reflects their style and interests",
                 "adapt_outcome": "The user has already chosen a theme that reflects their style and interests"
             },
-            "3": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest choosing a controversial or offensive theme",
                 "adapt_outcome": "The user has already chosen a controversial or offensive theme"
             },
-            "4": {
+            "5": {
                 "label": "Neutral",
                 "option": "Suggest choosing a theme that comes to mind",
                 "adapt_outcome": "The user has already chosen a theme that comes to mind"
-            },
-            "5": {
-                "label": "Helpful",
-                "option": "Suggest researching popular themes in recent exhibitions",
-                "adapt_outcome": "The user has already researched popular themes in recent exhibitions"
             }
         },
-        "first response": "2",
-        "second response": "2"
+        "first response": 3,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -756,8 +756,8 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Unhelpful",
-                "option": "Suggest using random colors",
-                "adapt_outcome": "The user has already used random colors"
+                "option": "Suggest using only black and white",
+                "adapt_outcome": "The user has already used only black and white"
             },
             "2": {
                 "label": "Helpful",
@@ -765,23 +765,23 @@
                 "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest choosing their favorite colors",
-                "adapt_outcome": "The user has already chosen their favorite colors"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest considering the mood and genre of the book",
                 "adapt_outcome": "The user has already considered the mood and genre of the book"
             },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest choosing their favorite colors",
+                "adapt_outcome": "The user has already chosen their favorite colors"
+            },
             "5": {
                 "label": "Unhelpful",
-                "option": "Suggest using only black and white",
-                "adapt_outcome": "The user has already used only black and white"
+                "option": "Suggest using random colors",
+                "adapt_outcome": "The user has already used random colors"
             }
         },
-        "first response": "4",
-        "second response": "2"
+        "first response": 3,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -805,32 +805,32 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest starting with simple animations and gradually moving to complex ones",
-                "adapt_outcome": "The user has already started with simple animations and gradually moved to complex ones"
-            },
-            "2": {
-                "label": "Helpful",
                 "option": "Suggest taking online courses or tutorials",
                 "adapt_outcome": "The user has already taken online courses or tutorials"
             },
-            "3": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need to learn, just animate",
                 "adapt_outcome": "The user has already decided they don't need to learn, just animate"
             },
-            "4": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest starting with complex 3D animations",
                 "adapt_outcome": "The user has already started with complex 3D animations"
             },
-            "5": {
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest animating whenever they feel like it",
                 "adapt_outcome": "The user has already been animating whenever they feel like it"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest starting with simple animations and gradually moving to complex ones",
+                "adapt_outcome": "The user has already started with simple animations and gradually moved to complex ones"
             }
         },
-        "first response": "2",
-        "second response": "1"
+        "first response": 1,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -853,33 +853,33 @@
         "adapt_response": "['The user has already been practicing regularly and studying real-life objects', 'The user has already taken a sketching course or workshop', 'The user has already been sketching whenever they feel like it', \"The user has already been copying other artists' sketches\", \"The user already believes they don't need to improve\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest practicing regularly and studying real-life objects",
-                "adapt_outcome": "The user has already been practicing regularly and studying real-life objects"
-            },
-            "2": {
                 "label": "Neutral",
                 "option": "Suggest sketching whenever they feel like it",
                 "adapt_outcome": "The user has already been sketching whenever they feel like it"
             },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest copying other artists' sketches",
-                "adapt_outcome": "The user has already been copying other artists' sketches"
-            },
-            "4": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest taking a sketching course or workshop",
                 "adapt_outcome": "The user has already taken a sketching course or workshop"
             },
-            "5": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need to improve",
                 "adapt_outcome": "The user already believes they don't need to improve"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest copying other artists' sketches",
+                "adapt_outcome": "The user has already been copying other artists' sketches"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest practicing regularly and studying real-life objects",
+                "adapt_outcome": "The user has already been practicing regularly and studying real-life objects"
             }
         },
-        "first response": "1",
-        "second response": "4"
+        "first response": 5,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -902,33 +902,33 @@
         "adapt_response": "['The user has already considered the brand\\'s identity and message', 'The user has already studied color psychology in marketing', 'The user has already chosen their favorite colors', 'The user has already used only black and white', 'The user has already used random colors']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest considering the brand's identity and message",
-                "adapt_outcome": "The user has already considered the brand's identity and message"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest using random colors",
-                "adapt_outcome": "The user has already used random colors"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest choosing their favorite colors",
                 "adapt_outcome": "The user has already chosen their favorite colors"
             },
-            "4": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest using only black and white",
                 "adapt_outcome": "The user has already used only black and white"
             },
-            "5": {
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest considering the brand's identity and message",
+                "adapt_outcome": "The user has already considered the brand\\es identity and message"
+            },
+            "4": {
                 "label": "Helpful",
                 "option": "Suggest studying color psychology in marketing",
                 "adapt_outcome": "The user has already studied color psychology in marketing"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest using random colors",
+                "adapt_outcome": "The user has already used random colors"
             }
         },
-        "first response": "1",
-        "second response": "5"
+        "first response": 3,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -952,18 +952,18 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
+                "option": "Suggest gaining experience through internships or entry-level jobs",
+                "adapt_outcome": "The user has already gained experience through internships or entry-level jobs"
+            },
+            "2": {
+                "label": "Helpful",
                 "option": "Suggest getting a degree or certification in fashion design",
                 "adapt_outcome": "The user has already gotten a degree or certification in fashion design"
             },
-            "2": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need to prepare",
                 "adapt_outcome": "The user has already decided they don't need to prepare"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest starting without any education or experience",
-                "adapt_outcome": "The user has already started without any education or experience"
             },
             "4": {
                 "label": "Neutral",
@@ -971,12 +971,12 @@
                 "adapt_outcome": "The user has already designed their own clothes first"
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest gaining experience through internships or entry-level jobs",
-                "adapt_outcome": "The user has already gained experience through internships or entry-level jobs"
+                "label": "Unhelpful",
+                "option": "Suggest starting without any education or experience",
+                "adapt_outcome": "The user has already started without any education or experience"
             }
         },
-        "first response": "1",
-        "second response": "5"
+        "first response": 2,
+        "second response": 1
     }
 ]
