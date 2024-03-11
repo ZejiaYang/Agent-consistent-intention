@@ -11,26 +11,42 @@ def load_api_vars():
     client = OpenAI(api_key=OPENAI_API_KEY, organization=ORGANIZATION_ID)
     return client 
 
-def convert_statement(client, messages, max_tokens, model):
+def convert_statement(client, messages, max_tokens, model, base=False):
     print(f"Calling API with {model}")
-    x = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=0,
-        max_tokens=max_tokens,
-        top_p=0,
-        frequency_penalty=0,
-        presence_penalty=0,
-    )
+    if not base:
+        x = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=0,
+            max_tokens=max_tokens,
+            top_p=0,
+            frequency_penalty=0,
+            presence_penalty=0,
+        )
+    else:
+        prompt = messages[0]['content'] + "\n" + messages[1]['content'] \
+                + "\n" + "The correct answer to the above Question: "
+        x = client.completions.create(
+            model= model,
+            prompt=prompt,
+            temperature=0,
+            max_tokens=max_tokens,
+            top_p=0,
+            frequency_penalty=0,
+            presence_penalty=0
+        )
     return x
 
-def get_response_text(response):
-    return response.choices[0].message.content
+def get_response_text(response, base=False):
+    if not base:
+        return response.choices[0].message.content
+    else:
+        return response.choices[0].text
 
 
-def run_api_call(prompt, model, max_tokens = 7000):
+def run_api_call(prompt, model, max_tokens = 7000, base=False):
     
     client = load_api_vars()
-    response = convert_statement(client, prompt, max_tokens, model=model)
-    content = get_response_text(response)
+    response = convert_statement(client, prompt, max_tokens, model=model, base=base)
+    content = get_response_text(response, base=base)
     return content 

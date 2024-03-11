@@ -22,6 +22,15 @@ from utils import call_llama
 
 
 
+gpt_models = [
+    'gpt-4-turbo-preview',
+    'gpt-4',
+    'gpt-3.5-turbo']
+
+gpt_base_modesl = [
+    'davinci-002',
+    'babbage-002' 
+]
 
 llama_model_family = [
     "llama-7b-chat",
@@ -47,7 +56,7 @@ other_models = [
 ]
 
 
-def extract_numbers_in_range(text, lower=1, upper=5):
+def extract_numbers_in_range(text, lower=1, upper=5, base=False):
     # This pattern will match whole numbers in the text
     pattern = r'\b[1-5]\b'
     
@@ -56,12 +65,11 @@ def extract_numbers_in_range(text, lower=1, upper=5):
     
     # Convert matched strings to integers
     numbers = [int(match) for match in matches if lower <= int(match) <= upper]
-    if len(numbers) != 1:
+    if not base and len(numbers) != 1:
         # raise ValueError('More than one answer received.')
         print('More than one answer found')
         return None 
     return numbers[0] 
-
 
 
 def process_one_file(file , write_path , max_tokens, model  ):
@@ -72,57 +80,76 @@ def process_one_file(file , write_path , max_tokens, model  ):
     write_path: str, path to the desired output file 
     """
     full_json = load_data(file)
+
     for item in full_json: 
+        # Extracting data from JSON item
         op = item['options']
-        lab  = item['labels']
+        lab = item['labels']
         scenario = item['scenario']
-        adapt_outcome = ast.literal_eval(str(item['adapt_response'].replace("'s", 'es') )) 
-        print('adapt outcome list: \n')
-        print(adapt_outcome)
-        if len( adapt_outcome) != len(op):
+        adapt_outcome = ast.literal_eval(str(item['adapt_response'].replace("'s", 'es')))
+        
+        print('Adapt outcome list:\n', adapt_outcome)
+        
+        # Checking adapt outcome length
+        if len(adapt_outcome) != len(op):
             raise Exception('Number of options and number of adapt outcomes do not match')
         if len(adapt_outcome) != 5: 
-            raise Exception( 'Wrong number of adapt outcomes')
+            raise Exception('Wrong number of adapt outcomes')
         
-        # permutate options and save mapping 
-        mapping, pr_string  = preprocess_options_and_labels(op, lab, adapt_outcome)
+        # Preprocessing options and labels
+        mapping, pr_string = preprocess_options_and_labels(op, lab, adapt_outcome)
         item['mapping_given_to_model'] = mapping 
 
-        # load prompts
+        # Generating and running prompts
         first_prompt = intention_prompt_first(scenario, pr_string)
-
-        # run prompt to gpt and store
-        if model =='gpt-4':
-            first_model_response = run_api_call(first_prompt, model, max_tokens)
+        
+        if model in gpt_models:
+            first_response = run_api_call(first_prompt, model, max_tokens)
+        elif model in gpt_base_modesl:
+            first_response = run_api_call(first_prompt, model, max_tokens, base=True)
         elif model in llama_model_family:
-            first_model_response = call_llama(first_prompt, model)
-
-        item['first response'] = first_model_response
-        # print('response from first prompt', first_model_response)
-
-        numeric_first_response = extract_numbers_in_range( first_model_response)
+            first_response = call_llama(first_prompt, model)
+        
+        # Extracting numbers from the first response
+        if model not in gpt_base_modesl:
+            numeric_first_response = extract_numbers_in_range(first_response)
+        else:
+            numeric_first_response = extract_numbers_in_range(first_response, base=True)
+        
+        item['first response'] = numeric_first_response if numeric_first_response is not None else first_response
+        print(item['first response'])
         if numeric_first_response is None:
-            # end loop 
+            # Skip to the next item if first response is invalid
             item['second response'] = 'Invalid first response'
             continue 
         
-        adapt_sentance = mapping[numeric_first_response ]['adapt_outcome']
-        # extract number from first response 
+        # Generating and running second prompts
+        adapt_sentence = mapping[numeric_first_response]['adapt_outcome']
         
-        
-    
-        if model =='gpt-4':
-            second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentance)
-            second_response = run_api_call(second_prompt, model, max_tokens) 
+        if model in gpt_models + gpt_base_modesl:
+            second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentence)
         elif model in llama_model_family:
-            second_prompt = intention_prompt_second_llama(scenario, pr_string, adapt_sentance)
+            second_prompt = intention_prompt_second_llama(scenario, pr_string, adapt_sentence)
+        
+        if model in gpt_models:
+            second_response = run_api_call(second_prompt, model, max_tokens)
+        elif model in gpt_base_modesl:
+            second_response = run_api_call(second_prompt, model, max_tokens, base=True)
+        elif model in llama_model_family:
             second_response = call_llama(second_prompt, model)
-    
-        item['second response'] = second_response
+        
+        if model not in gpt_base_modesl:
+            numeric_second_response = extract_numbers_in_range(second_response)
+        else:
+            numeric_second_response = extract_numbers_in_range(second_response, base=True)
+        
+        item['second response'] = numeric_second_response if numeric_second_response is not None else second_response
+        print(item['second response'])
 
     print(f'Starting to save file {file}')
     json_arr_to_file(full_json, write_path, indent=4)
     print('File saved. \n')
+
 
 def run_apative_prompting(model, run_name, max_tokens=100):
     """
