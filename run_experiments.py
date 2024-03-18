@@ -6,12 +6,21 @@ import os
 ################################ Update the following variables ################################
 
 data_set_name = 'gpt-4-dataset-V2'
+fewshot= True  #True or False 
 
 models = [
-    'gpt-4-turbo-preview',
-    'gpt-4',
+    # 'gpt-4-turbo-preview',
+    # 'gpt-4' ]
     'gpt-3.5-turbo',
-    'davinci-002']
+    'davinci-002' ,
+    "llama-7b-chat", 
+    "llama-7b-32k" ,
+    "llama-13b-chat",
+    "llama-70b-chat", 'mistral-7b' , 'mistral-7b-instruct', 'mixtral-8x7b-instruct']
+# models = [
+#     ]
+
+# models = ['mistral-7b' , 'mistral-7b-instruct', 'mixtral-8x7b-instruct'] 
 
 
 
@@ -31,8 +40,8 @@ def run_script(script_name, **kwargs):
 
 def main():
     # Use ThreadPoolExecutor to run scripts concurrently
-    with ThreadPoolExecutor(max_workers=1) as executor:
-        futures = [executor.submit(run_script, 'adaptive_prompting.py', model=model, run_name=data_set_name)
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        futures = [executor.submit(run_script, 'adaptive_prompting.py', model=model, run_name=data_set_name, fewshot= fewshot )
                    for model in models]
 
         # Wait for all futures to complete
