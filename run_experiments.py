@@ -8,10 +8,11 @@ import os
 data_set_name = 'gpt-4-dataset-V2'
 
 models = [
-    'gpt-4-turbo-preview',
-    'gpt-4',
     'gpt-3.5-turbo',
-    'davinci-002']
+    #'gpt-4',
+    #'gpt-3.5-turbo',
+    #'davinci-002'
+    ]
 
 
 

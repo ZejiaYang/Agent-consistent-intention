@@ -8,7 +8,6 @@ import ast
 import re
 import argparse
 
-
 # Adding the 'src' and 'src/utils' directories to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.join(script_dir, 'src')
@@ -16,11 +15,10 @@ utils_dir = os.path.join(src_dir, 'utils')
 sys.path.append(src_dir)
 sys.path.append(utils_dir)
 
-from utils import load_data, json_arr_to_file, run_api_call
-from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels, intention_prompt_second_llama
-from utils import call_llama 
-
-
+from utils import load_data, json_arr_to_file
+from utils.model_api.openai_api_calls import run_api_call
+from utils import intention_prompt_first, intention_prompt_second, preprocess_options_and_labels, intention_prompt_second_llama
+from utils.model_api.other_api import call_llama, call_claude, call_gemini
 
 gpt_models = [
     'gpt-4-turbo-preview',
@@ -37,6 +35,12 @@ llama_model_family = [
     "llama-7b-32k",
     "llama-13b-chat",
     "llama-70b-chat" ]
+
+claude_model_family = [
+    "claude-v1",
+    "claude-instant-v1"
+]
+
 other_models = [
     "mixtral-8x7b-instruct",
     "mistral-7b-instruct",
@@ -55,7 +59,6 @@ other_models = [
     "vicuna-13b-16k"
 ]
 
-
 def extract_numbers_in_range(text, lower=1, upper=5, base=False):
     # This pattern will match whole numbers in the text
     pattern = r'\b[1-5]\b'
@@ -71,8 +74,7 @@ def extract_numbers_in_range(text, lower=1, upper=5, base=False):
         return None 
     return numbers[0] 
 
-
-def process_one_file(file , write_path , max_tokens, model  ):
+def process_one_file(file, write_path, max_tokens, model):
     """
     Function to process one file in the dataset directory
     Inputs:
@@ -106,9 +108,12 @@ def process_one_file(file , write_path , max_tokens, model  ):
         if model in gpt_models:
             first_response = run_api_call(first_prompt, model, max_tokens)
         elif model in gpt_base_modesl:
-            first_response = run_api_call(first_prompt, model, max_tokens, base=True)
+            first_response = run_api_call(first_prompt, model, max_tokens)
         elif model in llama_model_family:
             first_response = call_llama(first_prompt, model)
+        elif model in claude_model_family:
+            first_response = call_claude(first_prompt, model)
+    
         
         # Extracting numbers from the first response
         if model not in gpt_base_modesl:
@@ -130,13 +135,17 @@ def process_one_file(file , write_path , max_tokens, model  ):
             second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentence)
         elif model in llama_model_family:
             second_prompt = intention_prompt_second_llama(scenario, pr_string, adapt_sentence)
+        elif model in claude_model_family:
+            second_prompt = intention_prompt_second(scenario, pr_string, adapt_sentence)
         
         if model in gpt_models:
             second_response = run_api_call(second_prompt, model, max_tokens)
         elif model in gpt_base_modesl:
-            second_response = run_api_call(second_prompt, model, max_tokens, base=True)
+            second_response = run_api_call(second_prompt, model, max_tokens)
         elif model in llama_model_family:
             second_response = call_llama(second_prompt, model)
+        elif model in claude_model_family:
+            second_response = call_claude(second_prompt, model)
         
         if model not in gpt_base_modesl:
             numeric_second_response = extract_numbers_in_range(second_response)
@@ -149,7 +158,6 @@ def process_one_file(file , write_path , max_tokens, model  ):
     print(f'Starting to save file {file}')
     json_arr_to_file(full_json, write_path, indent=4)
     print('File saved. \n')
-
 
 def run_apative_prompting(model, run_name, max_tokens=100):
     """
@@ -165,7 +173,7 @@ def run_apative_prompting(model, run_name, max_tokens=100):
     file_dir = os.path.join(script_dir, "data", "processed", f'model--{model}', f'd_name--{run_name}')
     os.makedirs(file_dir, exist_ok=True)
     for f in  ['helpful', 'harmless']:
-        os.makedirs( os.path.join(file_dir, f) , exist_ok=True)
+        os.makedirs( os.path.join(file_dir, f), exist_ok=True)
                 
     # Files to process
     topics_files = glob.glob(f'{script_dir}/data/dataset_with_adapt/d_name--{run_name}/*/*.json')
@@ -179,21 +187,20 @@ def run_apative_prompting(model, run_name, max_tokens=100):
         print(file)
        
         file_name = file.split('/')[-1]
-        hh  = file.split('/')[-2]
-        write_path = os.path.join(file_dir, hh, file_name )
+        hh = file.split('/')[-2]
+        write_path = os.path.join(file_dir, hh, file_name)
         print(write_path)
-        #  check if file exists
+        # check if file exists
         if os.path.exists(write_path):
             print(f'File {write_path} already exists, skipping')
             continue
-        process_one_file(file, write_path, max_tokens , model )
+        process_one_file(file, write_path, max_tokens, model)
 
     print('Run complete')
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some inputs.')
-    parser.add_argument('--model', type=str, required=True, help='model to test ')
+    parser.add_argument('--model', type=str, required=True, help='model to test')
     parser.add_argument('--run_name', type=str, required=True, help='name of the dataset to process')
     args = parser.parse_args()
     
@@ -207,6 +214,3 @@ if __name__ == "__main__":
         max_tokens = 300
     run_apative_prompting(model, run_name, max_tokens)
     print(f'Run for {model} complete')
-
-
-        
