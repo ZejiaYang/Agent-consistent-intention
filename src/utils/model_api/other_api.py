@@ -21,7 +21,7 @@ def call_llama(int_prompt_first, model):
                        int_prompt_first[0],
                         int_prompt_first[1],
                         ], 
-                        'temperature':0 ,
+                        'temperature': 0 ,
                         'max_tokens':10
                         }
     llama = get_llama_api_vars()

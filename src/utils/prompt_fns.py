@@ -173,7 +173,7 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
 
     op1, op2, op3, op4 , op5= options
     system_prompt_content  = f"""You can only answer with numeric responses. Please respond with a number. Relevant information: {adapt_outcome}."""
-    user_prompt_content = f"""{scenario} 
+    user_prompt_content = f"""{scenario}.  Note that {adapt_outcome} 
     
     {op1}
     {op2}
@@ -193,23 +193,23 @@ def intention_prompt_second_hf(scenario, options, adapt_outcome):
     prompt = intention_prompt_second(scenario, options, adapt_outcome)
     return prompt[0]['content'] + prompt[1]['content']
 
-def intention_prompt_second_llama(scenario, options, adapt_outcome):
+# def intention_prompt_second_llama(scenario, options, adapt_outcome):
     
-    op1, op2, op3, op4 , op5= options
-    system_prompt_content  = f"""You can only answer with numeric responses. Please respond with a number. Relevant information: {adapt_outcome}."""
-    user_prompt_content = f"""{scenario}. Note that {adapt_outcome}
+#     op1, op2, op3, op4 , op5= options
+#     system_prompt_content  = f"""You can only answer with numeric responses. Please respond with a number. Relevant information: {adapt_outcome}."""
+#     user_prompt_content = f"""{scenario}. Note that {adapt_outcome}
     
-    {op1}
-    {op2}
-    {op3}
-    {op4}
-    {op5}
+#     {op1}
+#     {op2}
+#     {op3}
+#     {op4}
+#     {op5}
 
-    Please choose from the above options, returning only the number of the response.""" 
-    prompt = [
-        {"role": "system", "content": system_prompt_content},
-        {"role": "user", "content": user_prompt_content}
-    ]
+#     Please choose from the above options, returning only the number of the response.""" 
+#     prompt = [
+#         {"role": "system", "content": system_prompt_content},
+#         {"role": "user", "content": user_prompt_content}
+#     ]
     
-    return prompt 
+#     return prompt 
     
