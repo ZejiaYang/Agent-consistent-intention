@@ -19,9 +19,13 @@ sys.path.append(utils_dir)
 
 from utils import load_data, json_arr_to_file, run_api_call
 from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels
-from utils import call_llama , intention_prompt_second_fewshotlearning
+from utils import call_llama , intention_prompt_second_fewshotlearning, call_claude
 
 
+claude_model_family = [
+    "claude-v1",
+    "claude-instant-v1"
+]
 
 gpt_models = [
     'gpt-4-turbo-preview',
@@ -45,10 +49,6 @@ mixtral_family = [
     'mixtral-8x7b-instruct' ]
 
 other_models = [
-    "mixtral-8x7b-instruct",
-    "mistral-7b-instruct",
-    "mistral-7b-instruct-v0.1",  # Adjusted based on the note for v0.1
-    "mistral-7b-v0.1",  # Adjusted based on the note for v0.1
     "NousResearch/Nous-Hermes-Llama2-13b",
     "falcon-7b-instruct",
     "falcon-40b-instruct",
@@ -62,6 +62,50 @@ other_models = [
     "vicuna-13b-16k"
 ]
 
+############################################### Model specific Functions ###############################################
+
+def execute_model_call(model, prompt, max_tokens):
+    """Execute the call to the model based on type."""
+    if model in gpt_models:
+        return run_api_call(prompt, model, max_tokens)
+    elif model in gpt_base_models:
+        return run_api_call(prompt, model, max_tokens, base=True)
+    elif model in llama_model_family + mixtral_family:
+        return call_llama(prompt, model)
+    elif model in claude_model_family:
+        return call_claude(prompt, model)
+    else:
+        raise Exception("Other model type called - check how to call API" ) 
+
+def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot=False ):
+    """Select the appropriate prompt based on the model."""
+    if fewshot==False:
+        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
+            return intention_prompt_second(scenario, pr_string, adapt_sentence)
+     
+    elif fewshot==True:
+        print('Selecting few shot learn prompt')
+        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
+            return intention_prompt_second_fewshotlearning(scenario, pr_string, adapt_sentence)
+
+
+def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, fewshot=False ):
+    """Generate and process the response for the prompt."""
+    if first_call:
+        prompt = intention_prompt_first(scenario, pr_string)
+      
+    else:
+        adapt_sentence = mapping[numeric_first_response]['adapt_outcome']
+        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot)
+    
+    response = execute_model_call(model, prompt, max_tokens)
+    numeric_response = extract_numeric_response_if_applicable(model, response)
+    
+    return numeric_response if numeric_response is not None else response
+ 
+
+
+############################################### Admin Functions ###############################################
 
 def extract_numbers_in_range(text, lower=1, upper=5, base=False):
     # This pattern will match whole numbers in the text
@@ -78,7 +122,29 @@ def extract_numbers_in_range(text, lower=1, upper=5, base=False):
         return None 
     return numbers[0] 
 
+def parse_adapt_outcome(adapt_response):
+    """Parse and adjust the adapt response."""
+    return ast.literal_eval(adapt_response.replace("'s", "es"))
 
+def validate_adapt_outcomes(adapt_outcome, options):
+    """Validate the adapt outcomes."""
+    if len(adapt_outcome) != len(options) or len(adapt_outcome) != 5:
+        print('Mismatch in number of adapt outcomes or options')
+        return False
+    return True
+
+def save_processed_data(data, write_path ):
+    """Save the processed data to a file."""
+    print(f'Starting to save file to {write_path}')
+    json_arr_to_file(data, write_path, indent=4)
+    print('File saved.')
+
+def extract_numeric_response_if_applicable(model, response):
+    """Extract numeric response from the model's response if applicable."""
+    if model not in gpt_base_models:
+        return extract_numbers_in_range(response)
+    else:
+        return extract_numbers_in_range(response, base=True)
 
  
 def process_one_item(item, model, max_tokens, fewshot =False):
@@ -107,59 +173,7 @@ def process_one_item(item, model, max_tokens, fewshot =False):
 
     # except Exception as e:
     #     print(f'Error processing item: {e}')
-        
-
-def parse_adapt_outcome(adapt_response):
-    """Parse and adjust the adapt response."""
-    return ast.literal_eval(adapt_response.replace("'s", "es"))
-
-def validate_adapt_outcomes(adapt_outcome, options):
-    """Validate the adapt outcomes."""
-    if len(adapt_outcome) != len(options) or len(adapt_outcome) != 5:
-        print('Mismatch in number of adapt outcomes or options')
-        return False
-    return True
-
-def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, fewshot=False ):
-    """Generate and process the response for the prompt."""
-    if first_call:
-        prompt = intention_prompt_first(scenario, pr_string)
-    else:
-        adapt_sentence = mapping[numeric_first_response]['adapt_outcome']
-        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot)
     
-    response = execute_model_call(model, prompt, max_tokens)
-    numeric_response = extract_numeric_response_if_applicable(model, response)
-    
-    return numeric_response if numeric_response is not None else response
-
-def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot=False ):
-    """Select the appropriate prompt based on the model."""
-    if fewshot==False:
-        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family:
-            return intention_prompt_second(scenario, pr_string, adapt_sentence)
-        # elif model in llama_model_family + mixtral_family:
-        #     return intention_prompt_second_llama(scenario, pr_string, adapt_sentence)
-    elif fewshot==True:
-        print('Selecting few shot learn prompt')
-        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family:
-            return intention_prompt_second_fewshotlearning(scenario, pr_string, adapt_sentence)
-        
-def execute_model_call(model, prompt, max_tokens):
-    """Execute the call to the model based on type."""
-    if model in gpt_models:
-        return run_api_call(prompt, model, max_tokens)
-    elif model in gpt_base_models:
-        return run_api_call(prompt, model, max_tokens, base=True)
-    elif model in llama_model_family + mixtral_family:
-        return call_llama(prompt, model)
-
-def extract_numeric_response_if_applicable(model, response):
-    """Extract numeric response from the model's response if applicable."""
-    if model not in gpt_base_models:
-        return extract_numbers_in_range(response)
-    else:
-        return extract_numbers_in_range(response, base=True)
 
 def process_one_file(file, write_path, max_tokens, model, few_shot):
     """Function to process one file in the dataset directory."""
@@ -170,15 +184,13 @@ def process_one_file(file, write_path, max_tokens, model, few_shot):
 
     save_processed_data(full_json, write_path)
 
-def save_processed_data(data, write_path ):
-    """Save the processed data to a file."""
-    print(f'Starting to save file to {write_path}')
-    json_arr_to_file(data, write_path, indent=4)
-    print('File saved.')
+
+
+############################################### Process Functions ###############################################
 
 
 
-def run_adaptive_prompting(model, run_name,  fewshot=False, max_tokens=100):
+def run_adaptive_prompting(model, run_name, fewshot=False, max_tokens=100):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process.
     Relies on dataset_generation.py having been run first to generate the dataset.

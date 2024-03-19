@@ -8,15 +8,16 @@ import os
 data_set_name = 'gpt-4-dataset-V2'
 fewshot= True  #True or False 
 
-models = [
+models = ["claude-v1",
+    "claude-instant-v1" ]
     # 'gpt-4-turbo-preview',
     # 'gpt-4' ]
-    'gpt-3.5-turbo',
-    'davinci-002' ,
-    "llama-7b-chat", 
-    "llama-7b-32k" ,
-    "llama-13b-chat",
-    "llama-70b-chat", 'mistral-7b' , 'mistral-7b-instruct', 'mixtral-8x7b-instruct']
+    # 'gpt-3.5-turbo',
+    # 'davinci-002' ,
+    # "llama-7b-chat", 
+    # "llama-7b-32k" ,
+    # "llama-13b-chat",
+    # "llama-70b-chat", 'mistral-7b' , 'mistral-7b-instruct', 'mixtral-8x7b-instruct']
 # models = [
 #     ]
 
