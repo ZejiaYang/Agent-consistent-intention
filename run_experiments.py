@@ -7,7 +7,7 @@ import os
 
 data_set_name = 'gpt-4-dataset-V2'
 fewshot= True  #True or False 
-
+max_workers = 1 
 models = ["claude-v1",
     "claude-instant-v1" ]
     # 'gpt-4-turbo-preview',
@@ -41,7 +41,7 @@ def run_script(script_name, **kwargs):
 
 def main():
     # Use ThreadPoolExecutor to run scripts concurrently
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = [executor.submit(run_script, 'adaptive_prompting.py', model=model, run_name=data_set_name, fewshot= fewshot )
                    for model in models]
 
