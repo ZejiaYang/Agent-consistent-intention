@@ -22,6 +22,8 @@ from utils import  intention_prompt_first, intention_prompt_second , preprocess_
 from utils import call_llama , intention_prompt_second_fewshotlearning
 
 
+####################################### Model lists  #######################################
+
 
 gpt_models = [
     'gpt-4-turbo-preview',
@@ -63,6 +65,8 @@ other_models = [
 ]
 
 
+####################################### Functions  #######################################
+
 def extract_numbers_in_range(text, lower=1, upper=5, base=False):
     # This pattern will match whole numbers in the text
     pattern = r'\b[1-5]\b'
@@ -80,33 +84,33 @@ def extract_numbers_in_range(text, lower=1, upper=5, base=False):
 
 
 
- 
+
 def process_one_item(item, model, max_tokens, fewshot =False):
     """Process a single item from the loaded data."""
-    # try:
-    op, lab, scenario = item['options'], item['labels'], item['scenario']
-    adapt_outcome = parse_adapt_outcome(item['adapt_response'])
+    try:
+        op, lab, scenario = item['options'], item['labels'], item['scenario']
+        adapt_outcome = parse_adapt_outcome(item['adapt_response'])
 
-    if not validate_adapt_outcomes(adapt_outcome, op):
-        return  # Skip processing this item
-    
-    mapping, pr_string = preprocess_options_and_labels(op, lab, adapt_outcome)
-    item['mapping_given_to_model'] = mapping
+        if not validate_adapt_outcomes(adapt_outcome, op):
+            return  # Skip processing this item
+        
+        mapping, pr_string = preprocess_options_and_labels(op, lab, adapt_outcome)
+        item['mapping_given_to_model'] = mapping
 
-    # Handle the first response
-    first_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True)
-    item['first response'] = first_response
-    print('First response:', first_response )
-    if first_response is None:
-        item['second response'] = 'Invalid first response'
-        return  # Skip to the next item
-    # Handle the second response
-    second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=first_response, fewshot=fewshot)
-    item['second response'] = second_response
-    print('Second response ', second_response)
+        # Handle the first response
+        first_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True)
+        item['first response'] = first_response
+        print('First response:', first_response )
+        if first_response is None:
+            item['second response'] = 'Invalid first response'
+            return  # Skip to the next item
+        # Handle the second response
+        second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=first_response, fewshot=fewshot)
+        item['second response'] = second_response
+        print('Second response ', second_response)
 
-    # except Exception as e:
-    #     print(f'Error processing item: {e}')
+    except Exception as e:
+        print(f'Error processing item: {e}')
         
 
 def parse_adapt_outcome(adapt_response):
@@ -138,7 +142,7 @@ def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, few
     if fewshot==False:
         if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family:
             return intention_prompt_second(scenario, pr_string, adapt_sentence)
-        # elif model in llama_model_family + mixtral_family:
+        # elif model in llama_model_family + mixtral_family: - no longer needed as prompts are same for llama api 
         #     return intention_prompt_second_llama(scenario, pr_string, adapt_sentence)
     elif fewshot==True:
         print('Selecting few shot learn prompt')

@@ -65,7 +65,7 @@ def intention_prompt_second_fewshotlearning(scenario,  options, adapt_outcome  )
     
     return prompt 
 
-# TODO steps of reasonginng
+
 chain_examples = """ 
 "Example 1: Scenario: I have an upcoming exam and I am feeling very nervous about it, what should I do? 
 Options:
