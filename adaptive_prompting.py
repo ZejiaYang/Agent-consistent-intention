@@ -75,9 +75,10 @@ def execute_model_call(model, prompt, max_tokens):
     elif model in claude_model_family:
         return call_claude(prompt, model)
     else:
+        print(model)
         raise Exception("Other model type called - check how to call API" ) 
 
-def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot=False ):
+def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot=False , num_examples = None ):
     """Select the appropriate prompt based on the model."""
     if fewshot==False:
         if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
@@ -86,17 +87,17 @@ def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, few
     elif fewshot==True:
         print('Selecting few shot learn prompt')
         if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
-            return intention_prompt_second_fewshotlearning(scenario, pr_string, adapt_sentence)
+            return intention_prompt_second_fewshotlearning(scenario, pr_string, adapt_sentence, num_examples)
 
 
-def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, fewshot=False ):
+def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, fewshot=False, num_ex=None ):
     """Generate and process the response for the prompt."""
     if first_call:
         prompt = intention_prompt_first(scenario, pr_string)
       
     else:
         adapt_sentence = mapping[numeric_first_response]['adapt_outcome']
-        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot)
+        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot, num_examples = num_ex)
     
     response = execute_model_call(model, prompt, max_tokens)
     numeric_response = extract_numeric_response_if_applicable(model, response)
@@ -107,20 +108,44 @@ def generate_and_process_response(model, scenario, pr_string, max_tokens, mappin
 
 ############################################### Admin Functions ###############################################
 
+# def extract_numbers_in_range(text, lower=1, upper=5, base=False):
+#     # This pattern will match whole numbers in the text
+#     pattern = r'\b[1-5]\b'
+    
+#     # Find all matches in the text
+#     matches = re.findall(pattern, text)
+    
+#     # Convert matched strings to integers
+#     numbers = [int(match) for match in matches if lower <= int(match) <= upper]
+#     if not base and len(numbers) != 1:
+#         # raise ValueError('More than one answer received.')
+#         print('More than one answer found')
+#         return None 
+#     return numbers[0] 
+
+
 def extract_numbers_in_range(text, lower=1, upper=5, base=False):
-    # This pattern will match whole numbers in the text
-    pattern = r'\b[1-5]\b'
+    # This pattern will match whole numbers in the specified range within the text
+    pattern = rf'\b[{lower}-{upper}]\b'
     
     # Find all matches in the text
     matches = re.findall(pattern, text)
     
-    # Convert matched strings to integers
-    numbers = [int(match) for match in matches if lower <= int(match) <= upper]
-    if not base and len(numbers) != 1:
-        # raise ValueError('More than one answer received.')
-        print('More than one answer found')
-        return None 
-    return numbers[0] 
+    # Convert matched strings to integers and filter unique values using set
+    numbers = set(int(match) for match in matches if lower <= int(match) <= upper)
+    
+    # Process based on the number of unique numbers found
+    if len(numbers) > 1 or len(numbers) == 0:
+        # More than one unique number or none found, invalid input
+        print('More than one unique answer or no answer found.')
+        return None
+    elif len(numbers) == 1:
+        # Exactly one unique number found, return it
+        return numbers.pop()
+    else:
+        # Should not reach here, but just in case
+        print('Unexpected error.')
+        return None
 
 def parse_adapt_outcome(adapt_response):
     """Parse and adjust the adapt response."""
@@ -147,7 +172,7 @@ def extract_numeric_response_if_applicable(model, response):
         return extract_numbers_in_range(response, base=True)
 
  
-def process_one_item(item, model, max_tokens, fewshot =False):
+def process_one_item(item, model, max_tokens, fewshot =False, num_ex = None):
     """Process a single item from the loaded data."""
     # try:
     op, lab, scenario = item['options'], item['labels'], item['scenario']
@@ -163,11 +188,25 @@ def process_one_item(item, model, max_tokens, fewshot =False):
     first_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True)
     item['first response'] = first_response
     print('First response:', first_response )
-    if first_response is None:
+    # Check if first_response is not None and is numeric
+    if first_response is not None:
+        try:
+            # Attempt to convert first_response to a numeric type (float or int)
+            numeric_first_response = float(first_response) 
+            # If numeric, you can proceed with your logic for valid first_response
+            # For example:
+            item['first_response'] = numeric_first_response
+        except ValueError:
+            # If conversion to numeric type fails, set second_response to indicate invalid first_response
+            item['second response'] = 'Invalid first response'
+            return 
+    else:
+        # If first_response is None, directly set second_response as invalid
         item['second response'] = 'Invalid first response'
         return  # Skip to the next item
+
     # Handle the second response
-    second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=first_response, fewshot=fewshot)
+    second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=numeric_first_response, fewshot=fewshot, num_ex = num_ex)
     item['second response'] = second_response
     print('Second response ', second_response)
 
@@ -175,12 +214,12 @@ def process_one_item(item, model, max_tokens, fewshot =False):
     #     print(f'Error processing item: {e}')
     
 
-def process_one_file(file, write_path, max_tokens, model, few_shot):
+def process_one_file(file, write_path, max_tokens, model, few_shot, num_ex):
     """Function to process one file in the dataset directory."""
     full_json = load_data(file)
 
     for item in full_json:
-        process_one_item(item, model, max_tokens, few_shot)
+        process_one_item(item, model, max_tokens, few_shot, num_ex)
 
     save_processed_data(full_json, write_path)
 
@@ -190,7 +229,7 @@ def process_one_file(file, write_path, max_tokens, model, few_shot):
 
 
 
-def run_adaptive_prompting(model, run_name, fewshot=False, max_tokens=100):
+def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_tokens=100):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process.
     Relies on dataset_generation.py having been run first to generate the dataset.
@@ -205,10 +244,11 @@ def run_adaptive_prompting(model, run_name, fewshot=False, max_tokens=100):
     # Assuming 'script_dir' is predefined as the directory of this script
     if fewshot==False:
         file_dir = os.path.join(script_dir, "data", "processed", f'model--{model}', f'd_name--{run_name}')
+
     elif  fewshot==True:
-        file_dir = os.path.join(script_dir, "data", "processed_fewshot", f'model--{model}', f'd_name--{run_name}')
-    os.makedirs(file_dir, exist_ok=True)
+        file_dir = os.path.join(script_dir, "data", f"processed_fewshot_{num_ex}", f'model--{model}', f'd_name--{run_name}')
     
+    os.makedirs(file_dir, exist_ok=True)
     for category in ['helpful', 'harmless']:
         os.makedirs(os.path.join(file_dir, category), exist_ok=True)
                 
@@ -234,7 +274,7 @@ def run_adaptive_prompting(model, run_name, fewshot=False, max_tokens=100):
             continue  # Skip existing files
 
         # Call the processing function with few-shot parameter
-        process_one_file(file, write_path, max_tokens, model, fewshot)
+        process_one_file(file, write_path, max_tokens, model, fewshot, num_ex)
 
     print('Run complete.')
 
@@ -245,14 +285,16 @@ if __name__ == "__main__":
     parser.add_argument('--model', type=str, required=True, help='model to test ')
     parser.add_argument('--run_name', type=str, required=True, help='name of the dataset to process')
     parser.add_argument('--fewshot', type=bool, required=True, help='does experiment use fewshot learning')
+    parser.add_argument('--num_ex', type=int, required=False, help='number of examples for fewshot learning')
     args = parser.parse_args()
     
     model = args.model
     run_name = args.run_name
     fewshot = args.fewshot
+    num_ex = args.num_ex
 
-    print(f'Starting model {model} and dataset {run_name}')
-    run_adaptive_prompting(model, run_name,fewshot )
+    print(f'Starting model {model} and dataset {run_name} for fewshot learning {fewshot} with {num_ex} examples. \n')
+    run_adaptive_prompting(model = model, run_name = run_name,fewshot= fewshot, num_ex= num_ex )
     print(f'Run for {model} complete')
 
 
