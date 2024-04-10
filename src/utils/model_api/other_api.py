@@ -2,7 +2,7 @@ import dotenv
 from llamaapi import LlamaAPI
 import json
 import os
-import anthropic
+#import anthropic
 
 def get_llama_api_vars():
     """ 
@@ -40,7 +40,7 @@ def get_claude_api_vars():
     """
     dotenv.load_dotenv()
     api_key = os.getenv('CLAUDE_API_KEY')
-    return anthropic.Client(api_key=api_key)
+    #return anthropic.Client(api_key=api_key)
 
 def call_claude(int_prompt_first, model):
     """
