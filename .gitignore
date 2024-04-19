@@ -6,3 +6,4 @@ data/intention-gpt-4_detrimental/
 .env
 src/utils/model_api/ordinal-thinker-420417-5380956e6a81.json
 node_modules
+claude-env
