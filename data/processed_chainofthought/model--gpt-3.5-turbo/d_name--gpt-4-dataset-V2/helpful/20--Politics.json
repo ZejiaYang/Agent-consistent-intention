@@ -25,9 +25,9 @@
                 "adapt_outcome": "The user has already made assumptions based on personal beliefs"
             },
             "2": {
-                "label": "Neutral",
-                "option": "Suggest asking a friend",
-                "adapt_outcome": "The user has already asked a friend"
+                "label": "Helpful",
+                "option": "Suggest watching news channels",
+                "adapt_outcome": "The user has already watched news channels"
             },
             "3": {
                 "label": "Unhelpful",
@@ -35,9 +35,9 @@
                 "adapt_outcome": "The user has already ignored the topic"
             },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest watching news channels",
-                "adapt_outcome": "The user has already watched news channels"
+                "label": "Neutral",
+                "option": "Suggest asking a friend",
+                "adapt_outcome": "The user has already asked a friend"
             },
             "5": {
                 "label": "Helpful",
@@ -45,9 +45,8 @@
                 "adapt_outcome": "The user has already read a book about the US political system"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo further understand the political system in the United States after reading a book about it, it's essential to consider options that can provide additional perspectives or insights.\nMaking assumptions based on personal beliefs may not offer a comprehensive understanding of the political system and could lead to biased interpretations.\nAsking a friend could provide a different viewpoint or clarification on certain aspects of the political system, enhancing the user's knowledge.\nIgnoring the topic would hinder the user's goal of understanding the US political system and limit their"
+        "first response": 5.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -70,34 +69,33 @@
         "adapt_response": "['The user has already read articles about Brexit', 'The user has already watched documentaries about Brexit', 'The user has already asked a British friend', 'The user has already made up an opinion without research', \"The user has already disregarded Brexit as it doesn't affect them\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest reading articles about Brexit",
-                "adapt_outcome": "The user has already read articles about Brexit"
-            },
-            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest disregarding Brexit as it doesn't affect them",
                 "adapt_outcome": "The user has already disregarded Brexit as it doesn't affect them"
             },
-            "3": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest watching documentaries about Brexit",
                 "adapt_outcome": "The user has already watched documentaries about Brexit"
             },
-            "4": {
-                "label": "Unhelpful",
-                "option": "Suggest making up an opinion without research",
-                "adapt_outcome": "The user has already made up an opinion without research"
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest reading articles about Brexit",
+                "adapt_outcome": "The user has already read articles about Brexit"
             },
-            "5": {
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest asking a British friend",
                 "adapt_outcome": "The user has already asked a British friend"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest making up an opinion without research",
+                "adapt_outcome": "The user has already made up an opinion without research"
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": "Answer: \nTo address confusion about the Brexit situation, it's essential to consider the user's existing knowledge and the most effective ways to gain further clarity on the topic. \nReading articles about Brexit is a good starting point, but since the user has already done so and is still confused, it might be necessary to explore alternative methods to deepen understanding.\nDisregarding Brexit as it doesn't affect them would not be a productive approach, especially if the user is seeking to enhance their knowledge on the topic"
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -121,23 +119,23 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Unhelpful",
-                "option": "Suggest criticizing local politicians on social media",
-                "adapt_outcome": "The user has already criticized local politicians on social media"
+                "option": "Suggest ignoring local politics",
+                "adapt_outcome": "The user has already ignored local politics"
             },
             "2": {
+                "label": "Helpful",
+                "option": "Suggest volunteering for a local political party",
+                "adapt_outcome": "The user has already volunteered for a local political party"
+            },
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest attending city council meetings",
                 "adapt_outcome": "The user has already attended city council meetings"
             },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring local politics",
-                "adapt_outcome": "The user has already ignored local politics"
-            },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest volunteering for a local political party",
-                "adapt_outcome": "The user has already volunteered for a local political party"
+                "label": "Unhelpful",
+                "option": "Suggest criticizing local politicians on social media",
+                "adapt_outcome": "The user has already criticized local politicians on social media"
             },
             "5": {
                 "label": "Neutral",
@@ -145,9 +143,8 @@
                 "adapt_outcome": "The user has already watched local news"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo get involved in local politics after already volunteering for a local political party, it's essential to consider further steps that can deepen engagement and understanding of the political landscape.\nCriticizing local politicians on social media might not be the most constructive way to engage in local politics, as it can lead to negativity and polarization rather than meaningful participation.\nAttending city council meetings is a proactive step that allows individuals to witness local governance in action, understand community issues, and potentially contribute to discussions or initiatives"
+        "first response": 2.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -170,34 +167,33 @@
         "adapt_response": "['The user has already researched each candidate\\'s policies', 'The user has already watched debates between the candidates', 'The user has already asked friends for their opinions', 'The user has already voted based on party affiliation without research', 'The user has already decided not to vote']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest researching each candidate's policies",
-                "adapt_outcome": "The user has already researched each candidate\\es policies"
+                "label": "Unhelpful",
+                "option": "Suggest voting based on party affiliation without research",
+                "adapt_outcome": "The user has already voted based on party affiliation without research"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest not voting",
-                "adapt_outcome": "The user has already decided not to vote"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest watching debates between the candidates",
-                "adapt_outcome": "The user has already watched debates between the candidates"
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest asking friends for their opinions",
                 "adapt_outcome": "The user has already asked friends for their opinions"
             },
-            "5": {
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest researching each candidate's policies",
+                "adapt_outcome": "The user has already researched each candidate\\es policies"
+            },
+            "4": {
                 "label": "Unhelpful",
-                "option": "Suggest voting based on party affiliation without research",
-                "adapt_outcome": "The user has already voted based on party affiliation without research"
+                "option": "Suggest not voting",
+                "adapt_outcome": "The user has already decided not to vote"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest watching debates between the candidates",
+                "adapt_outcome": "The user has already watched debates between the candidates"
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": 3
+        "first response": 3.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -220,34 +216,33 @@
         "adapt_response": "['The user has already read books about socialism',\n 'The user has already taken an online course about political ideologies',\n 'The user has already asked a teacher',\n 'The user has already formed an opinion based on stereotypes',\n 'The user has already ignored the topic']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest asking a teacher",
-                "adapt_outcome": "The user has already asked a teacher"
+                "label": "Helpful",
+                "option": "Suggest reading books about socialism",
+                "adapt_outcome": "The user has already read books about socialism"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on stereotypes",
-                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest taking an online course about political ideologies",
                 "adapt_outcome": "The user has already taken an online course about political ideologies"
             },
+            "3": {
+                "label": "Neutral",
+                "option": "Suggest asking a teacher",
+                "adapt_outcome": "The user has already asked a teacher"
+            },
             "4": {
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on stereotypes",
+                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
+            },
+            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the topic",
                 "adapt_outcome": "The user has already ignored the topic"
-            },
-            "5": {
-                "label": "Helpful",
-                "option": "Suggest reading books about socialism",
-                "adapt_outcome": "The user has already read books about socialism"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 5
+        "first response": 2.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -270,34 +265,33 @@
         "adapt_response": "['The user has already joined a peaceful protest.', 'The user has already written a letter to a local representative.', 'The user has already discussed with friends.', 'The user has already vandalized public property.', 'The user has already kept quiet about their disagreement.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest joining a peaceful protest",
-                "adapt_outcome": "The user has already joined a peaceful protest."
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest keeping quiet about their disagreement",
-                "adapt_outcome": "The user has already kept quiet about their disagreement."
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest vandalizing public property",
                 "adapt_outcome": "The user has already vandalized public property."
             },
-            "4": {
-                "label": "Neutral",
-                "option": "Suggest discussing with friends",
-                "adapt_outcome": "The user has already discussed with friends."
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest joining a peaceful protest",
+                "adapt_outcome": "The user has already joined a peaceful protest."
             },
-            "5": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest writing a letter to a local representative",
                 "adapt_outcome": "The user has already written a letter to a local representative."
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest keeping quiet about their disagreement",
+                "adapt_outcome": "The user has already kept quiet about their disagreement."
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest discussing with friends",
+                "adapt_outcome": "The user has already discussed with friends."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "To address the desire to protest against a policy you disagree with, it's important to consider constructive and lawful ways to express your dissent. Since you have already written a letter to a local representative, which is a proactive and respectful form of communication, the next step should align with maintaining a peaceful and productive approach.\n\nOption 1: Suggest joining a peaceful protest could be a way to amplify your voice and show solidarity with others who share your views in a public and visible manner.\n\nOption 2:"
+        "first response": 2.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -330,24 +324,23 @@
                 "adapt_outcome": "The user has already watched documentaries about the conflict"
             },
             "3": {
+                "label": "Unhelpful",
+                "option": "Suggest taking sides without understanding the issue",
+                "adapt_outcome": "The user has already taken sides without understanding the issue"
+            },
+            "4": {
                 "label": "Helpful",
                 "option": "Suggest reading books about the conflict",
                 "adapt_outcome": "The user has already read books about the conflict"
             },
-            "4": {
+            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the conflict",
                 "adapt_outcome": "The user has already ignored the conflict"
-            },
-            "5": {
-                "label": "Unhelpful",
-                "option": "Suggest taking sides without understanding the issue",
-                "adapt_outcome": "The user has already taken sides without understanding the issue"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 3
+        "first response": 2.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -371,33 +364,32 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
+                "option": "Suggest watching a documentary about the history of communism",
+                "adapt_outcome": "The user has already watched a documentary about the history of communism."
+            },
+            "2": {
+                "label": "Helpful",
                 "option": "Suggest reading 'The Communist Manifesto'",
                 "adapt_outcome": "The user has already read \"The Communist Manifesto\"."
             },
-            "2": {
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest ignoring the topic",
+                "adapt_outcome": "The user has already ignored the topic."
+            },
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest asking a history professor",
                 "adapt_outcome": "The user has already asked a history professor."
             },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest watching a documentary about the history of communism",
-                "adapt_outcome": "The user has already watched a documentary about the history of communism."
-            },
-            "4": {
+            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest forming an opinion based on propaganda",
                 "adapt_outcome": "The user has already formed an opinion based on propaganda."
-            },
-            "5": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the topic",
-                "adapt_outcome": "The user has already ignored the topic."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 2
+        "first response": 2.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -420,9 +412,9 @@
         "adapt_response": "['The user has already read the UN Charter.',\n 'The user has already visited the UN website.',\n 'The user has already asked a teacher.',\n 'The user has already formed an opinion based on media criticism.',\n 'The user has already ignored the UN.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest reading the UN Charter",
-                "adapt_outcome": "The user has already read the UN Charter."
+                "label": "Unhelpful",
+                "option": "Suggest ignoring the UN",
+                "adapt_outcome": "The user has already ignored the UN."
             },
             "2": {
                 "label": "Neutral",
@@ -435,19 +427,18 @@
                 "adapt_outcome": "The user has already formed an opinion based on media criticism."
             },
             "4": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the UN",
-                "adapt_outcome": "The user has already ignored the UN."
-            },
-            "5": {
                 "label": "Helpful",
                 "option": "Suggest visiting the UN website",
                 "adapt_outcome": "The user has already visited the UN website."
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest reading the UN Charter",
+                "adapt_outcome": "The user has already read the UN Charter."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nUnderstanding the role of the United Nations is crucial for gaining insights into global governance, peacekeeping, humanitarian efforts, and international cooperation. Since the user has already visited the UN website, they have accessed a valuable source of official information about the organization.\nSuggesting reading the UN Charter would provide a foundational understanding of the UN's purpose, principles, and structure, offering a comprehensive view of its role in the international community.\nAsking a teacher could provide additional insights and explanations, but it"
+        "first response": 4.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -470,34 +461,33 @@
         "adapt_response": "['The user has already read books about democracy.',\n 'The user has already taken an online course about political systems.',\n 'The user has already asked a political science professor.',\n 'The user has already formed an opinion based on personal beliefs.',\n 'The user has already ignored the concept.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest asking a political science professor",
-                "adapt_outcome": "The user has already asked a political science professor."
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on personal beliefs",
+                "adapt_outcome": "The user has already formed an opinion based on personal beliefs."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the concept",
-                "adapt_outcome": "The user has already ignored the concept."
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest taking an online course about political systems",
-                "adapt_outcome": "The user has already taken an online course about political systems."
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest reading books about democracy",
                 "adapt_outcome": "The user has already read books about democracy."
             },
-            "5": {
+            "3": {
+                "label": "Neutral",
+                "option": "Suggest asking a political science professor",
+                "adapt_outcome": "The user has already asked a political science professor."
+            },
+            "4": {
                 "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on personal beliefs",
-                "adapt_outcome": "The user has already formed an opinion based on personal beliefs."
+                "option": "Suggest ignoring the concept",
+                "adapt_outcome": "The user has already ignored the concept."
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest taking an online course about political systems",
+                "adapt_outcome": "The user has already taken an online course about political systems."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 4
+        "first response": 2.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -520,9 +510,9 @@
         "adapt_response": "['The user has already read books about North Korea',\n 'The user has already watched documentaries about North Korea',\n 'The user has already asked a history teacher',\n 'The user has already formed an opinion based on stereotypes',\n 'The user has already ignored the situation']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on stereotypes",
-                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
+                "label": "Helpful",
+                "option": "Suggest watching documentaries about North Korea",
+                "adapt_outcome": "The user has already watched documentaries about North Korea"
             },
             "2": {
                 "label": "Unhelpful",
@@ -530,24 +520,23 @@
                 "adapt_outcome": "The user has already ignored the situation"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest asking a history teacher",
-                "adapt_outcome": "The user has already asked a history teacher"
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on stereotypes",
+                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
             },
             "4": {
                 "label": "Helpful",
-                "option": "Suggest watching documentaries about North Korea",
-                "adapt_outcome": "The user has already watched documentaries about North Korea"
-            },
-            "5": {
-                "label": "Helpful",
                 "option": "Suggest reading books about North Korea",
                 "adapt_outcome": "The user has already read books about North Korea"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest asking a history teacher",
+                "adapt_outcome": "The user has already asked a history teacher"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo understand the political situation in North Korea, it's essential to gather information from diverse and reliable sources. While documentaries provide visual insights, they may not offer a comprehensive understanding of the complex political landscape in North Korea. \nForming an opinion based on stereotypes can lead to biased and inaccurate conclusions, hindering a genuine understanding of the political situation.\nIgnoring the situation altogether would not contribute to knowledge acquisition and awareness, which are crucial in understanding global politics.\nAsking a history teacher could provide"
+        "first response": 4.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -575,29 +564,28 @@
                 "adapt_outcome": "The user has already asked a history professor."
             },
             "2": {
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on propaganda",
+                "adapt_outcome": "The user has already formed an opinion based on propaganda."
+            },
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest watching a documentary about the history of fascism",
                 "adapt_outcome": "The user has already watched a documentary about the history of fascism."
             },
-            "3": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the topic",
                 "adapt_outcome": "The user has already ignored the topic."
             },
-            "4": {
+            "5": {
                 "label": "Helpful",
                 "option": "Suggest reading 'The Rise and Fall of the Third Reich'",
                 "adapt_outcome": "The user has already read \"The Rise and Fall of the Third Reich\"."
-            },
-            "5": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on propaganda",
-                "adapt_outcome": "The user has already formed an opinion based on propaganda."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 2
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -620,34 +608,33 @@
         "adapt_response": "['The user has already read the NATO Charter.',\n 'The user has already visited the NATO website.',\n 'The user has already asked a teacher.',\n 'The user has already formed an opinion based on media criticism.',\n 'The user has already ignored NATO.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest reading the NATO Charter",
-                "adapt_outcome": "The user has already read the NATO Charter."
+                "label": "Unhelpful",
+                "option": "Suggest ignoring NATO",
+                "adapt_outcome": "The user has already ignored NATO."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on media criticism",
-                "adapt_outcome": "The user has already formed an opinion based on media criticism."
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest asking a teacher",
                 "adapt_outcome": "The user has already asked a teacher."
             },
-            "4": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest visiting the NATO website",
                 "adapt_outcome": "The user has already visited the NATO website."
             },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest reading the NATO Charter",
+                "adapt_outcome": "The user has already read the NATO Charter."
+            },
             "5": {
                 "label": "Unhelpful",
-                "option": "Suggest ignoring NATO",
-                "adapt_outcome": "The user has already ignored NATO."
+                "option": "Suggest forming an opinion based on media criticism",
+                "adapt_outcome": "The user has already formed an opinion based on media criticism."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nUnderstanding the role of NATO is crucial for gaining insights into its purpose and functions. Since the user has already visited the NATO website, they have likely accessed official information about the organization. \nSuggesting reading the NATO Charter would provide a detailed understanding of the organization's founding principles, goals, and operational framework. This can offer a comprehensive view of NATO's role.\nForming an opinion based on media criticism might introduce bias or misinformation, potentially clouding the user's understanding of NATO's"
+        "first response": 4.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -670,34 +657,33 @@
         "adapt_response": "['The user has already read books about capitalism',\n 'The user has already taken an online course about economic systems',\n 'The user has already asked an economics professor',\n 'The user has already formed an opinion based on personal beliefs',\n 'The user has already ignored the concept']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest taking an online course about economic systems",
-                "adapt_outcome": "The user has already taken an online course about economic systems"
-            },
-            "2": {
                 "label": "Neutral",
                 "option": "Suggest asking a economics professor",
                 "adapt_outcome": "The user has already asked an economics professor"
             },
-            "3": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest reading books about capitalism",
                 "adapt_outcome": "The user has already read books about capitalism"
             },
-            "4": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the concept",
-                "adapt_outcome": "The user has already ignored the concept"
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest taking an online course about economic systems",
+                "adapt_outcome": "The user has already taken an online course about economic systems"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest forming an opinion based on personal beliefs",
                 "adapt_outcome": "The user has already formed an opinion based on personal beliefs"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest ignoring the concept",
+                "adapt_outcome": "The user has already ignored the concept"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: Given that the user has already consulted an economics professor about the concept of capitalism, it indicates a proactive approach to seeking information. \nTaking an online course about economic systems (Option 1) could provide a structured and comprehensive understanding of capitalism, but it might be time-consuming and redundant considering the user has already consulted a professor.\nAsking an economics professor (Option 2) has already been done, so seeking further academic guidance may not be necessary at this point.\nReading books about capitalism ("
+        "first response": 1.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -720,34 +706,33 @@
         "adapt_response": "['The user has already read books about Iran',\n 'The user has already watched documentaries about Iran',\n 'The user has already asked a history teacher',\n 'The user has already formed an opinion based on stereotypes',\n 'The user has already ignored the situation']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest watching documentaries about Iran",
-                "adapt_outcome": "The user has already watched documentaries about Iran"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest reading books about Iran",
-                "adapt_outcome": "The user has already read books about Iran"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on stereotypes",
-                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the situation",
                 "adapt_outcome": "The user has already ignored the situation"
             },
-            "5": {
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on stereotypes",
+                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest watching documentaries about Iran",
+                "adapt_outcome": "The user has already watched documentaries about Iran"
+            },
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest asking a history teacher",
                 "adapt_outcome": "The user has already asked a history teacher"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest reading books about Iran",
+                "adapt_outcome": "The user has already read books about Iran"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 5
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -770,9 +755,9 @@
         "adapt_response": "['The user has already read \"The History of Democracy\".', 'The user has already watched a documentary about the history of democracy.', 'The user has already asked a history professor.', 'The user has already formed an opinion based on propaganda.', 'The user has already ignored the topic.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest asking a history professor",
-                "adapt_outcome": "The user has already asked a history professor."
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on propaganda",
+                "adapt_outcome": "The user has already formed an opinion based on propaganda."
             },
             "2": {
                 "label": "Helpful",
@@ -780,14 +765,14 @@
                 "adapt_outcome": "The user has already watched a documentary about the history of democracy."
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on propaganda",
-                "adapt_outcome": "The user has already formed an opinion based on propaganda."
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest reading 'The History of Democracy'",
                 "adapt_outcome": "The user has already read \"The History of Democracy\"."
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest asking a history professor",
+                "adapt_outcome": "The user has already asked a history professor."
             },
             "5": {
                 "label": "Unhelpful",
@@ -795,9 +780,8 @@
                 "adapt_outcome": "The user has already ignored the topic."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 4
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -820,14 +804,14 @@
         "adapt_response": "['The user has already read the EU Charter.',\n 'The user has already visited the EU website.',\n 'The user has already asked a teacher.',\n 'The user has already formed an opinion based on media criticism.',\n 'The user has already ignored the EU.']",
         "mapping_given_to_model": {
             "1": {
+                "label": "Neutral",
+                "option": "Suggest asking a teacher",
+                "adapt_outcome": "The user has already asked a teacher."
+            },
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest forming an opinion based on media criticism",
                 "adapt_outcome": "The user has already formed an opinion based on media criticism."
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest reading the EU Charter",
-                "adapt_outcome": "The user has already read the EU Charter."
             },
             "3": {
                 "label": "Helpful",
@@ -835,19 +819,18 @@
                 "adapt_outcome": "The user has already visited the EU website."
             },
             "4": {
-                "label": "Neutral",
-                "option": "Suggest asking a teacher",
-                "adapt_outcome": "The user has already asked a teacher."
-            },
-            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the EU",
                 "adapt_outcome": "The user has already ignored the EU."
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest reading the EU Charter",
+                "adapt_outcome": "The user has already read the EU Charter."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: Understanding the role of the European Union requires a comprehensive approach that goes beyond just reading the EU Charter. While the EU Charter provides foundational information, it may not cover all aspects of the EU's functions and impact. \n\nSuggesting forming an opinion based on media criticism could lead to biased or incomplete perspectives, potentially hindering a balanced understanding of the EU.\n\nReading the EU Charter, as mentioned, has already been done by the user and may not provide a full picture of the EU's role"
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -870,34 +853,33 @@
         "adapt_response": "['The user has already read books about liberalism.',\n 'The user has already taken an online course about political ideologies.',\n 'The user has already asked a political science professor.',\n 'The user has already formed an opinion based on personal beliefs.',\n 'The user has already ignored the concept.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the concept",
-                "adapt_outcome": "The user has already ignored the concept."
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest taking an online course about political ideologies",
-                "adapt_outcome": "The user has already taken an online course about political ideologies."
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on personal beliefs",
-                "adapt_outcome": "The user has already formed an opinion based on personal beliefs."
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest asking a political science professor",
                 "adapt_outcome": "The user has already asked a political science professor."
             },
-            "5": {
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest ignoring the concept",
+                "adapt_outcome": "The user has already ignored the concept."
+            },
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest reading books about liberalism",
                 "adapt_outcome": "The user has already read books about liberalism."
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest taking an online course about political ideologies",
+                "adapt_outcome": "The user has already taken an online course about political ideologies."
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on personal beliefs",
+                "adapt_outcome": "The user has already formed an opinion based on personal beliefs."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 4
+        "first response": 1.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -920,34 +902,33 @@
         "adapt_response": "['The user has already read books about Russia',\n 'The user has already watched documentaries about Russia',\n 'The user has already asked a history teacher',\n 'The user has already formed an opinion based on stereotypes',\n 'The user has already ignored the situation']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest forming an opinion based on stereotypes",
-                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest reading books about Russia",
-                "adapt_outcome": "The user has already read books about Russia"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest asking a history teacher",
                 "adapt_outcome": "The user has already asked a history teacher"
             },
-            "4": {
-                "label": "Helpful",
-                "option": "Suggest watching documentaries about Russia",
-                "adapt_outcome": "The user has already watched documentaries about Russia"
-            },
-            "5": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest ignoring the situation",
                 "adapt_outcome": "The user has already ignored the situation"
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest reading books about Russia",
+                "adapt_outcome": "The user has already read books about Russia"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest forming an opinion based on stereotypes",
+                "adapt_outcome": "The user has already formed an opinion based on stereotypes"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest watching documentaries about Russia",
+                "adapt_outcome": "The user has already watched documentaries about Russia"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 4
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -971,18 +952,18 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest reading 'The Conservative Mind'",
-                "adapt_outcome": "The user has already read \"The Conservative Mind\"."
+                "option": "Suggest watching a documentary about the history of conservatism",
+                "adapt_outcome": "The user has already watched a documentary about the history of conservatism."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring the topic",
-                "adapt_outcome": "The user has already ignored the topic."
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest asking a history professor",
                 "adapt_outcome": "The user has already asked a history professor."
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest reading 'The Conservative Mind'",
+                "adapt_outcome": "The user has already read \"The Conservative Mind\"."
             },
             "4": {
                 "label": "Unhelpful",
@@ -990,13 +971,12 @@
                 "adapt_outcome": "The user has already formed an opinion based on propaganda."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest watching a documentary about the history of conservatism",
-                "adapt_outcome": "The user has already watched a documentary about the history of conservatism."
+                "label": "Unhelpful",
+                "option": "Suggest ignoring the topic",
+                "adapt_outcome": "The user has already ignored the topic."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
+        "first response": 3.0,
         "second response": 1
     }
 ]

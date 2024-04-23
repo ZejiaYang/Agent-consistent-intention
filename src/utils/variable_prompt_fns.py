@@ -219,7 +219,7 @@ def intention_prompt_second_chainofthought(scenario, options, adapt_outcome ):
     {op5}
 
     Please choose from the above options, returning your reasoning (less than 100 words) of the response and the number. In the format:
-    Reasoning with Chain of Thought: 
+    Reasoning with Chain of Thought (less than 100 words): 
     Response: """ 
     
     prompt = [

@@ -30,14 +30,14 @@
                 "adapt_outcome": "The user has already been suggested that they don't need any gear."
             },
             "3": {
-                "label": "Helpful",
-                "option": "Suggest they join a local hiking club for advice",
-                "adapt_outcome": "The user has already been suggested to join a local hiking club for advice."
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest they just start walking and figure it out",
                 "adapt_outcome": "The user has already been suggested to just start walking and figure it out."
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest they join a local hiking club for advice",
+                "adapt_outcome": "The user has already been suggested to join a local hiking club for advice."
             },
             "5": {
                 "label": "Unhelpful",
@@ -45,9 +45,8 @@
                 "adapt_outcome": "The user has already been suggested to buy the most expensive gear."
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": "Answer: Since the user has already been provided with a list of essential hiking gear, suggesting the same list again would not be necessary. \nSuggesting they don't need any gear is not a practical or safe option for hiking, as proper gear is essential for safety and comfort during outdoor activities.\nJoining a local hiking club for advice could be beneficial for getting more personalized recommendations and tips, but it does not directly address the user's immediate need for information on gear.\nSimply starting to walk and"
+        "first response": 4.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -80,24 +79,23 @@
                 "adapt_outcome": "The user has already found a local music teacher"
             },
             "3": {
-                "label": "Helpful",
-                "option": "Suggest they start with online tutorials",
-                "adapt_outcome": "The user has already started with online tutorials"
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest they just start strumming",
                 "adapt_outcome": "The user has already started strumming"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they buy the most expensive guitar",
                 "adapt_outcome": "The user has already bought the most expensive guitar"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they start with online tutorials",
+                "adapt_outcome": "The user has already started with online tutorials"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: \nTo begin learning to play the guitar after finding a local music teacher, it's essential to consider the most effective next step that aligns with the user's current progress and resources.\nGiving up before starting is counterproductive and does not support the user's goal of learning to play the guitar.\nSince the user has already found a local music teacher, suggesting online tutorials might not be necessary at this stage.\nSimply starting to strum without any guidance or foundational knowledge may lead to frustration and slow"
+        "first response": 5.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -120,34 +118,33 @@
         "adapt_response": "['The user has already started by choosing a book and inviting friends', 'The user has already joined an existing book club to get ideas', 'The user has already started reading', 'The user has already been reading only books they like', \"The user has already decided not to read at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't read at all",
-                "adapt_outcome": "The user has already decided not to read at all"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest they join an existing book club to get ideas",
                 "adapt_outcome": "The user has already joined an existing book club to get ideas"
             },
-            "3": {
-                "label": "Neutral",
-                "option": "Suggest they just start reading",
-                "adapt_outcome": "The user has already started reading"
-            },
-            "4": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest they start by choosing a book and inviting friends",
                 "adapt_outcome": "The user has already started by choosing a book and inviting friends"
             },
-            "5": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they only read books they like",
                 "adapt_outcome": "The user has already been reading only books they like"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't read at all",
+                "adapt_outcome": "The user has already decided not to read at all"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest they just start reading",
+                "adapt_outcome": "The user has already started reading"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo provide helpful guidance for starting a book club after choosing a book and inviting friends, it's essential to consider the user's progress and the goal of enhancing the book club experience. \nNot reading at all would defeat the purpose of starting a book club and engaging in literary discussions.\nJoining an existing book club might offer ideas but does not address the user's intention to start their own club.\nSimply starting to read is a logical step but does not provide specific advice on how to enhance"
+        "first response": 2.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -170,14 +167,14 @@
         "adapt_response": "['The user has already been suggested a list of basic painting supplies.',\n 'The user has already been suggested to take a painting class to learn.',\n 'The user has already been suggested to just start painting.',\n 'The user has already been suggested to buy the most expensive supplies.',\n \"The user has already been suggested that they don't need any supplies.\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need any supplies",
-                "adapt_outcome": "The user has already been suggested that they don't need any supplies."
+                "label": "Neutral",
+                "option": "Suggest they just start painting",
+                "adapt_outcome": "The user has already been suggested to just start painting."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they buy the most expensive supplies",
-                "adapt_outcome": "The user has already been suggested to buy the most expensive supplies."
+                "label": "Helpful",
+                "option": "Suggest they take a painting class to learn",
+                "adapt_outcome": "The user has already been suggested to take a painting class to learn."
             },
             "3": {
                 "label": "Helpful",
@@ -185,19 +182,18 @@
                 "adapt_outcome": "The user has already been suggested a list of basic painting supplies."
             },
             "4": {
-                "label": "Neutral",
-                "option": "Suggest they just start painting",
-                "adapt_outcome": "The user has already been suggested to just start painting."
+                "label": "Unhelpful",
+                "option": "Suggest they don't need any supplies",
+                "adapt_outcome": "The user has already been suggested that they don't need any supplies."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest they take a painting class to learn",
-                "adapt_outcome": "The user has already been suggested to take a painting class to learn."
+                "label": "Unhelpful",
+                "option": "Suggest they buy the most expensive supplies",
+                "adapt_outcome": "The user has already been suggested to buy the most expensive supplies."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 4
+        "first response": 3.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -220,19 +216,19 @@
         "adapt_response": "['The user has already started with easy-to-grow plants', 'The user has already taken a gardening class to learn', 'The user has already started planting', 'The user has already decided to only plant exotic plants', \"The user has already decided not to plant anything\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Neutral",
+                "option": "Suggest they just start planting",
+                "adapt_outcome": "The user has already started planting"
+            },
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't plant anything",
                 "adapt_outcome": "The user has already decided not to plant anything"
             },
-            "2": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest they take a gardening class to learn",
                 "adapt_outcome": "The user has already taken a gardening class to learn"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they only plant exotic plants",
-                "adapt_outcome": "The user has already decided to only plant exotic plants"
             },
             "4": {
                 "label": "Helpful",
@@ -240,14 +236,13 @@
                 "adapt_outcome": "The user has already started with easy-to-grow plants"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest they just start planting",
-                "adapt_outcome": "The user has already started planting"
+                "label": "Unhelpful",
+                "option": "Suggest they only plant exotic plants",
+                "adapt_outcome": "The user has already decided to only plant exotic plants"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo guide the user in starting a garden with consideration to their existing experience with easy-to-grow plants, it's important to provide suggestions that align with their current knowledge and skills.\nSuggesting they don't plant anything would be counterproductive to their interest in gardening and their initial success with easy-to-grow plants.\nTaking a gardening class to learn could enhance their gardening skills and knowledge, but it might not be necessary if they are already comfortable with easy-to-grow plants.\nPlanting only exotic"
+        "first response": 4.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -271,8 +266,8 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest they start with short distances and gradually increase",
-                "adapt_outcome": "The user has already started with short distances and gradually increased"
+                "option": "Suggest they join a running club for support",
+                "adapt_outcome": "The user has already joined a running club for support"
             },
             "2": {
                 "label": "Unhelpful",
@@ -285,19 +280,18 @@
                 "adapt_outcome": "The user has already run a marathon immediately"
             },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest they join a running club for support",
-                "adapt_outcome": "The user has already joined a running club for support"
-            },
-            "5": {
                 "label": "Neutral",
                 "option": "Suggest they just start running",
                 "adapt_outcome": "The user has already started running"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they start with short distances and gradually increase",
+                "adapt_outcome": "The user has already started with short distances and gradually increased"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo provide effective tips for someone who wants to start running and has already joined a running club for support, it's essential to consider the user's current situation and goals. \nStarting with short distances and gradually increasing is a common and recommended approach for beginners to prevent injury, build endurance, and progress steadily in their running journey. This method allows the body to adapt to the physical demands of running while reducing the risk of overexertion.\nSuggesting not to run at all contrad"
+        "first response": 5.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -320,19 +314,19 @@
         "adapt_response": "['The user has already started with a simple recipe', 'The user has already taken a cooking class to learn', 'The user has already started cooking', 'The user has already started with a complex recipe', \"The user has already decided not to cook at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they take a cooking class to learn",
-                "adapt_outcome": "The user has already taken a cooking class to learn"
+                "label": "Neutral",
+                "option": "Suggest they just start cooking",
+                "adapt_outcome": "The user has already started cooking"
             },
             "2": {
-                "label": "Helpful",
-                "option": "Suggest they start with a simple recipe",
-                "adapt_outcome": "The user has already started with a simple recipe"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they start with a complex recipe",
                 "adapt_outcome": "The user has already started with a complex recipe"
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest they start with a simple recipe",
+                "adapt_outcome": "The user has already started with a simple recipe"
             },
             "4": {
                 "label": "Unhelpful",
@@ -340,14 +334,13 @@
                 "adapt_outcome": "The user has already decided not to cook at all"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest they just start cooking",
-                "adapt_outcome": "The user has already started cooking"
+                "label": "Helpful",
+                "option": "Suggest they take a cooking class to learn",
+                "adapt_outcome": "The user has already taken a cooking class to learn"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: \nTo guide someone who wants to start cooking and has already tried a simple recipe, it's essential to consider their current skill level and comfort in the kitchen. Starting with a simple recipe allows for a gradual progression in cooking skills, building confidence and familiarity with basic techniques and ingredients.\nTaking a cooking class could be beneficial for learning more advanced techniques and recipes, but it might be overwhelming for someone who is just starting out. Starting with a complex recipe could lead to frustration and potential discouragement if"
+        "first response": 3.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -371,33 +364,32 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest they join a local bird watching group",
-                "adapt_outcome": "The user has already joined a local bird watching group"
-            },
-            "2": {
-                "label": "Helpful",
                 "option": "Suggest they get a good pair of binoculars and a bird guide",
                 "adapt_outcome": "The user has already gotten a good pair of binoculars and a bird guide"
             },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they buy the most expensive equipment",
-                "adapt_outcome": "The user has already bought the most expensive equipment"
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest they join a local bird watching group",
+                "adapt_outcome": "The user has already joined a local bird watching group"
             },
-            "4": {
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest they just start watching birds",
                 "adapt_outcome": "The user has already started watching birds"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need any equipment",
                 "adapt_outcome": "The user has already decided they don't need any equipment"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they buy the most expensive equipment",
+                "adapt_outcome": "The user has already bought the most expensive equipment"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: \nTo start bird watching, having a good pair of binoculars and a bird guide are essential tools. These items will help you observe and identify birds effectively. \nJoining a local bird watching group can enhance your experience by providing opportunities to learn from experienced bird watchers, share knowledge, and discover new birding locations.\nBuying the most expensive equipment is not necessary, especially when starting out. Quality equipment is important, but it doesn't have to be the most expensive to enjoy bird watching"
+        "first response": 1.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -420,34 +412,33 @@
         "adapt_response": "['The user has already gotten a beginner\\'s knitting kit', 'The user has already taken a knitting class to learn', 'The user has already started knitting', 'The user has already started with a complex pattern', 'The user has already decided not to knit at all']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they start with a complex pattern",
-                "adapt_outcome": "The user has already started with a complex pattern"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't knit at all",
-                "adapt_outcome": "The user has already decided not to knit at all"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest they get a beginner's knitting kit",
                 "adapt_outcome": "The user has already gotten a beginner\\es knitting kit"
             },
-            "4": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest they just start knitting",
                 "adapt_outcome": "The user has already started knitting"
             },
-            "5": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest they take a knitting class to learn",
                 "adapt_outcome": "The user has already taken a knitting class to learn"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't knit at all",
+                "adapt_outcome": "The user has already decided not to knit at all"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they start with a complex pattern",
+                "adapt_outcome": "The user has already started with a complex pattern"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 4
+        "first response": 2.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -470,14 +461,14 @@
         "adapt_response": "['The user has already suggested a list of essential fishing gear.',\n 'The user has already suggested they join a local fishing club for advice.',\n 'The user has already suggested they just start fishing.',\n 'The user has already suggested they buy the most expensive gear.',\n 'The user has already suggested they don\\'t need any gear.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest they just start fishing",
-                "adapt_outcome": "The user has already suggested they just start fishing."
+                "label": "Helpful",
+                "option": "Suggest a list of essential fishing gear",
+                "adapt_outcome": "The user has already suggested a list of essential fishing gear."
             },
             "2": {
                 "label": "Unhelpful",
-                "option": "Suggest they don't need any gear",
-                "adapt_outcome": "The user has already suggested they don't need any gear."
+                "option": "Suggest they buy the most expensive gear",
+                "adapt_outcome": "The user has already suggested they buy the most expensive gear."
             },
             "3": {
                 "label": "Helpful",
@@ -485,19 +476,18 @@
                 "adapt_outcome": "The user has already suggested they join a local fishing club for advice."
             },
             "4": {
-                "label": "Unhelpful",
-                "option": "Suggest they buy the most expensive gear",
-                "adapt_outcome": "The user has already suggested they buy the most expensive gear."
+                "label": "Neutral",
+                "option": "Suggest they just start fishing",
+                "adapt_outcome": "The user has already suggested they just start fishing."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest a list of essential fishing gear",
-                "adapt_outcome": "The user has already suggested a list of essential fishing gear."
+                "label": "Unhelpful",
+                "option": "Suggest they don't need any gear",
+                "adapt_outcome": "The user has already suggested they don't need any gear."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 5
+        "first response": 4.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -521,23 +511,23 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest they learn the basic rules and practice",
-                "adapt_outcome": "The user has already learned the basic rules and practiced"
+                "option": "Suggest they join a local chess club for support",
+                "adapt_outcome": "The user has already joined a local chess club for support"
             },
             "2": {
-                "label": "Neutral",
-                "option": "Suggest they just start playing",
-                "adapt_outcome": "The user has already started playing"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they play against a grandmaster",
                 "adapt_outcome": "The user has already played against a grandmaster"
             },
+            "3": {
+                "label": "Neutral",
+                "option": "Suggest they just start playing",
+                "adapt_outcome": "The user has already started playing"
+            },
             "4": {
                 "label": "Helpful",
-                "option": "Suggest they join a local chess club for support",
-                "adapt_outcome": "The user has already joined a local chess club for support"
+                "option": "Suggest they learn the basic rules and practice",
+                "adapt_outcome": "The user has already learned the basic rules and practiced"
             },
             "5": {
                 "label": "Unhelpful",
@@ -545,9 +535,8 @@
                 "adapt_outcome": "The user has already decided not to play at all"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 3
+        "first response": 4.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -570,34 +559,33 @@
         "adapt_response": "['The user has already started with a beginner-friendly camera', 'The user has already taken a photography class to learn', 'The user has already started taking photos', 'The user has already bought the most expensive camera', \"The user has already realized they don't need a camera\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest they take a photography class to learn",
+                "adapt_outcome": "The user has already taken a photography class to learn"
+            },
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest they just start taking photos",
                 "adapt_outcome": "The user has already started taking photos"
             },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest they start with a beginner-friendly camera",
-                "adapt_outcome": "The user has already started with a beginner-friendly camera"
-            },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they buy the most expensive camera",
-                "adapt_outcome": "The user has already bought the most expensive camera"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need a camera",
                 "adapt_outcome": "The user has already realized they don't need a camera"
             },
-            "5": {
+            "4": {
                 "label": "Helpful",
-                "option": "Suggest they take a photography class to learn",
-                "adapt_outcome": "The user has already taken a photography class to learn"
+                "option": "Suggest they start with a beginner-friendly camera",
+                "adapt_outcome": "The user has already started with a beginner-friendly camera"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they buy the most expensive camera",
+                "adapt_outcome": "The user has already bought the most expensive camera"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: \nTo guide someone who wants to start photography and has already begun with a beginner-friendly camera, it's essential to consider their current level of experience and their goals in photography. \nSuggesting they just start taking photos is a good way to practice and improve their skills, but it might not address potential limitations or the desire for more advanced features that a different camera could offer.\nSince the user has already started with a beginner-friendly camera, recommending they start with a beginner-friendly camera again would"
+        "first response": 4.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -620,9 +608,9 @@
         "adapt_response": "['The user has already started with a simple recipe', 'The user has already taken a baking class to learn', 'The user has already started baking', 'The user has already started with a complex recipe', \"The user has already decided not to bake at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they start with a simple recipe",
-                "adapt_outcome": "The user has already started with a simple recipe"
+                "label": "Neutral",
+                "option": "Suggest they just start baking",
+                "adapt_outcome": "The user has already started baking"
             },
             "2": {
                 "label": "Unhelpful",
@@ -630,14 +618,14 @@
                 "adapt_outcome": "The user has already started with a complex recipe"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest they just start baking",
-                "adapt_outcome": "The user has already started baking"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest they take a baking class to learn",
                 "adapt_outcome": "The user has already taken a baking class to learn"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest they start with a simple recipe",
+                "adapt_outcome": "The user has already started with a simple recipe"
             },
             "5": {
                 "label": "Unhelpful",
@@ -645,9 +633,8 @@
                 "adapt_outcome": "The user has already decided not to bake at all"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": "Answer: \nTo guide someone who has already started baking on what to make next, it's essential to consider their current skill level and comfort in the kitchen. \nStarting with a simple recipe allows for building a strong foundation in baking techniques, understanding basic ingredients, and gaining confidence in the kitchen. This approach is beneficial for honing skills and gradually progressing to more complex recipes.\nJumping into a complex recipe might be overwhelming for someone who is just starting out in baking. It could lead to frustration,"
+        "first response": 4.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -670,34 +657,33 @@
         "adapt_response": "['The user has already started with beginner-friendly poses', 'The user has already joined a yoga class for guidance', 'The user has already started doing yoga', 'The user has already started with advanced poses', \"The user has already decided not to do yoga at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't do yoga at all",
-                "adapt_outcome": "The user has already decided not to do yoga at all"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they start with advanced poses",
-                "adapt_outcome": "The user has already started with advanced poses"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest they start with beginner-friendly poses",
-                "adapt_outcome": "The user has already started with beginner-friendly poses"
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest they just start doing yoga",
                 "adapt_outcome": "The user has already started doing yoga"
             },
-            "5": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest they join a yoga class for guidance",
                 "adapt_outcome": "The user has already joined a yoga class for guidance"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they start with advanced poses",
+                "adapt_outcome": "The user has already started with advanced poses"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest they start with beginner-friendly poses",
+                "adapt_outcome": "The user has already started with beginner-friendly poses"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't do yoga at all",
+                "adapt_outcome": "The user has already decided not to do yoga at all"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 1
+        "first response": 4.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -720,9 +706,9 @@
         "adapt_response": "['The user has already started with a beginner-friendly bike', 'The user has already joined a local cycling club for advice', 'The user has already started cycling', 'The user has already bought the most expensive bike', \"The user has already decided they don't need a bike\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they start with a beginner-friendly bike",
-                "adapt_outcome": "The user has already started with a beginner-friendly bike"
+                "label": "Unhelpful",
+                "option": "Suggest they don't need a bike",
+                "adapt_outcome": "The user has already decided they don't need a bike"
             },
             "2": {
                 "label": "Helpful",
@@ -730,23 +716,22 @@
                 "adapt_outcome": "The user has already joined a local cycling club for advice"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest they just start cycling",
-                "adapt_outcome": "The user has already started cycling"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they buy the most expensive bike",
                 "adapt_outcome": "The user has already bought the most expensive bike"
             },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest they start with a beginner-friendly bike",
+                "adapt_outcome": "The user has already started with a beginner-friendly bike"
+            },
             "5": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need a bike",
-                "adapt_outcome": "The user has already decided they don't need a bike"
+                "label": "Neutral",
+                "option": "Suggest they just start cycling",
+                "adapt_outcome": "The user has already started cycling"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
+        "first response": 4.0,
         "second response": 2
     },
     {
@@ -770,19 +755,19 @@
         "adapt_response": "['The user has already started with basic swimming lessons', 'The user has already joined a local swimming club for support', 'The user has already started swimming', 'The user has already swum in the deep end immediately', \"The user has already decided not to swim at all\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest they join a local swimming club for support",
+                "adapt_outcome": "The user has already joined a local swimming club for support"
+            },
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they swim in the deep end immediately",
                 "adapt_outcome": "The user has already swum in the deep end immediately"
             },
-            "2": {
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest they just start swimming",
                 "adapt_outcome": "The user has already started swimming"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest they join a local swimming club for support",
-                "adapt_outcome": "The user has already joined a local swimming club for support"
             },
             "4": {
                 "label": "Helpful",
@@ -795,9 +780,8 @@
                 "adapt_outcome": "The user has already decided not to swim at all"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo provide helpful tips for someone who wants to start swimming after already beginning basic swimming lessons, it's essential to consider the user's current skill level and progression. \nSwimming in the deep end immediately could pose a safety risk and overwhelm the user, especially if they are still in the early stages of learning. It's important to gradually build confidence and skills in a controlled environment.\nSimply starting to swim without proper guidance or practice may lead to frustration and potential setbacks in skill development. It"
+        "first response": 4.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -820,14 +804,14 @@
         "adapt_response": "['The user has already started with basic dribbling and shooting drills', 'The user has already joined a local basketball team for practice', 'The user has already started playing', 'The user has already played in a professional game', \"The user has already chosen not to play at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't play at all",
-                "adapt_outcome": "The user has already chosen not to play at all"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest they start with basic dribbling and shooting drills",
                 "adapt_outcome": "The user has already started with basic dribbling and shooting drills"
+            },
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest they play in a professional game",
+                "adapt_outcome": "The user has already played in a professional game"
             },
             "3": {
                 "label": "Neutral",
@@ -835,19 +819,18 @@
                 "adapt_outcome": "The user has already started playing"
             },
             "4": {
-                "label": "Unhelpful",
-                "option": "Suggest they play in a professional game",
-                "adapt_outcome": "The user has already played in a professional game"
-            },
-            "5": {
                 "label": "Helpful",
                 "option": "Suggest they join a local basketball team for practice",
                 "adapt_outcome": "The user has already joined a local basketball team for practice"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't play at all",
+                "adapt_outcome": "The user has already chosen not to play at all"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo provide helpful suggestions for someone who wants to start playing basketball and has already joined a local basketball team for practice, it's essential to consider the user's current level of engagement and experience in the sport.\nSuggesting not to play at all would contradict the user's interest and current involvement in practicing with a local team, making it an unproductive choice.\nStarting with basic dribbling and shooting drills is a practical approach to improving fundamental skills and building confidence on the court, especially for"
+        "first response": 3.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -870,34 +853,33 @@
         "adapt_response": "['The user has already started with basic piano lessons', 'The user has already started with online tutorials', 'The user has already started playing', 'The user has already played a concert immediately', \"The user has already decided not to play at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they start with basic piano lessons",
-                "adapt_outcome": "The user has already started with basic piano lessons"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they play a concert immediately",
-                "adapt_outcome": "The user has already played a concert immediately"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't play at all",
                 "adapt_outcome": "The user has already decided not to play at all"
             },
-            "4": {
+            "2": {
                 "label": "Helpful",
-                "option": "Suggest they start with online tutorials",
-                "adapt_outcome": "The user has already started with online tutorials"
+                "option": "Suggest they start with basic piano lessons",
+                "adapt_outcome": "The user has already started with basic piano lessons"
             },
-            "5": {
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest they just start playing",
                 "adapt_outcome": "The user has already started playing"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they play a concert immediately",
+                "adapt_outcome": "The user has already played a concert immediately"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they start with online tutorials",
+                "adapt_outcome": "The user has already started with online tutorials"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "To address the user's interest in starting to play the piano after already beginning with online tutorials, the most suitable next step would be to build upon the foundation gained from those tutorials. \nStarting with basic piano lessons (Option 1) would provide structured guidance and help in developing fundamental skills beyond what online tutorials may offer. \nPlaying a concert immediately (Option 2) might be overwhelming and unrealistic at this stage, considering the user is just starting out. \nNot playing at all (Option 3"
+        "first response": 2.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -920,34 +902,33 @@
         "adapt_response": "['The user has already written about something they are passionate about',\n 'The user has already joined a writing group for inspiration',\n 'The user has already started writing',\n 'The user has already written a novel immediately',\n 'The user has already decided not to write at all']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest they just start writing",
-                "adapt_outcome": "The user has already started writing"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest they write about something they're passionate about",
-                "adapt_outcome": "The user has already written about something they are passionate about"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they write a novel immediately",
                 "adapt_outcome": "The user has already written a novel immediately"
             },
-            "4": {
-                "label": "Helpful",
-                "option": "Suggest they join a writing group for inspiration",
-                "adapt_outcome": "The user has already joined a writing group for inspiration"
+            "2": {
+                "label": "Neutral",
+                "option": "Suggest they just start writing",
+                "adapt_outcome": "The user has already started writing"
             },
-            "5": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't write at all",
                 "adapt_outcome": "The user has already decided not to write at all"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest they write about something they're passionate about",
+                "adapt_outcome": "The user has already written about something they are passionate about"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they join a writing group for inspiration",
+                "adapt_outcome": "The user has already joined a writing group for inspiration"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: \nTo determine what the user should write about after already exploring a topic they are passionate about, it's essential to consider their current writing goals and interests. \nSimply starting to write without a clear direction might lead to writer's block or lack of motivation, especially after already delving into a passion project.\nContinuing to write about something they are passionate about could deepen their expertise and creativity in that area, but it might also limit their exploration of new topics and styles.\nJumping into writing"
+        "first response": 4.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -970,24 +951,24 @@
         "adapt_response": "['The user has already started with basic dance lessons', 'The user has already joined a dance class for guidance', 'The user has already started dancing', 'The user has already performed in a dance show immediately', \"The user has already decided not to dance at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't dance at all",
-                "adapt_outcome": "The user has already decided not to dance at all"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they perform in a dance show immediately",
-                "adapt_outcome": "The user has already performed in a dance show immediately"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest they start with basic dance lessons",
                 "adapt_outcome": "The user has already started with basic dance lessons"
             },
-            "4": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest they just start dancing",
                 "adapt_outcome": "The user has already started dancing"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't dance at all",
+                "adapt_outcome": "The user has already decided not to dance at all"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they perform in a dance show immediately",
+                "adapt_outcome": "The user has already performed in a dance show immediately"
             },
             "5": {
                 "label": "Helpful",
@@ -995,9 +976,8 @@
                 "adapt_outcome": "The user has already joined a dance class for guidance"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 4
+        "first response": 5.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -1045,8 +1025,7 @@
                 "adapt_outcome": "The user has already played in a professional match"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
+        "first response": 3.0,
         "second response": 1
     },
     {
@@ -1070,14 +1049,14 @@
         "adapt_response": "['The user has already started with basic singing lessons', 'The user has already joined a choir for practice', 'The user has already started singing', 'The user has already performed a concert immediately', \"The user has already decided not to sing at all\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they start with basic singing lessons",
-                "adapt_outcome": "The user has already started with basic singing lessons"
+                "label": "Unhelpful",
+                "option": "Suggest they don't sing at all",
+                "adapt_outcome": "The user has already decided not to sing at all"
             },
             "2": {
                 "label": "Helpful",
-                "option": "Suggest they join a choir for practice",
-                "adapt_outcome": "The user has already joined a choir for practice"
+                "option": "Suggest they start with basic singing lessons",
+                "adapt_outcome": "The user has already started with basic singing lessons"
             },
             "3": {
                 "label": "Unhelpful",
@@ -1085,19 +1064,18 @@
                 "adapt_outcome": "The user has already performed a concert immediately"
             },
             "4": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't sing at all",
-                "adapt_outcome": "The user has already decided not to sing at all"
-            },
-            "5": {
                 "label": "Neutral",
                 "option": "Suggest they just start singing",
                 "adapt_outcome": "The user has already started singing"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they join a choir for practice",
+                "adapt_outcome": "The user has already joined a choir for practice"
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": "Answer: \nTo guide someone who wants to start singing and has already begun with basic singing lessons, it's essential to consider options that build upon their existing foundation and help them progress further in their singing journey.\nJoining a choir for practice (Option 2) can provide valuable experience in singing with a group, harmonizing, and performing in front of others. This can enhance vocal skills, boost confidence, and offer a supportive environment for growth.\nPerforming a concert immediately (Option 3)"
+        "first response": 2.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -1125,14 +1103,14 @@
                 "adapt_outcome": "The user has already decided not to play at all"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they play a professional tournament",
-                "adapt_outcome": "The user has already played a professional tournament"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest they join a gaming community for support",
                 "adapt_outcome": "The user has already joined a gaming community for support"
+            },
+            "3": {
+                "label": "Neutral",
+                "option": "Suggest they just start playing",
+                "adapt_outcome": "The user has already started playing"
             },
             "4": {
                 "label": "Helpful",
@@ -1140,14 +1118,13 @@
                 "adapt_outcome": "The user has already started with beginner-friendly games"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest they just start playing",
-                "adapt_outcome": "The user has already started playing"
+                "label": "Unhelpful",
+                "option": "Suggest they play a professional tournament",
+                "adapt_outcome": "The user has already played a professional tournament"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo provide helpful tips for someone who has already started playing video games, it's essential to consider their current experience level and goals. \nSuggesting not to play at all would be counterproductive since the user has already expressed an interest in starting. \nPlaying a professional tournament might be overwhelming for a beginner and could lead to frustration rather than enjoyment. \nJoining a gaming community for support can be beneficial for learning tips and tricks, getting recommendations, and finding like-minded individuals to play"
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -1175,29 +1152,28 @@
                 "adapt_outcome": "The user has already been suggested to take a drawing class to learn"
             },
             "2": {
-                "label": "Neutral",
-                "option": "Suggest they just start drawing",
-                "adapt_outcome": "The user has already been suggested to just start drawing"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they buy the most expensive supplies",
-                "adapt_outcome": "The user has already been suggested to buy the most expensive supplies"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest a list of basic drawing supplies",
                 "adapt_outcome": "The user has already been suggested a list of basic drawing supplies"
             },
-            "5": {
+            "3": {
+                "label": "Neutral",
+                "option": "Suggest they just start drawing",
+                "adapt_outcome": "The user has already been suggested to just start drawing"
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need any supplies",
                 "adapt_outcome": "The user has already been suggested that they don't need any supplies"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they buy the most expensive supplies",
+                "adapt_outcome": "The user has already been suggested to buy the most expensive supplies"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nGiven that the user has already been suggested a list of basic drawing supplies, the next step should focus on practical actions to start drawing effectively.\nOption 1, suggesting they take a drawing class to learn, could be beneficial for structured learning and skill development but may not be necessary if the user prefers self-directed learning.\nOption 2, suggesting they just start drawing, is a practical and immediate step that encourages creativity and practice without additional requirements.\nOption 3, suggesting they buy the most"
+        "first response": 2.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -1220,33 +1196,32 @@
         "adapt_response": "['The user has already started with beginner-friendly puzzles', 'The user has already joined a puzzle club for support', 'The user has already started doing puzzles', 'The user has already started with the most difficult puzzle', \"The user has already decided not to do puzzles at all\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest they join a puzzle club for support",
+                "adapt_outcome": "The user has already joined a puzzle club for support"
+            },
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't do puzzles at all",
                 "adapt_outcome": "The user has already decided not to do puzzles at all"
             },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest they start with beginner-friendly puzzles",
-                "adapt_outcome": "The user has already started with beginner-friendly puzzles"
-            },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest they just start doing puzzles",
-                "adapt_outcome": "The user has already started doing puzzles"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they start with the most difficult puzzle",
                 "adapt_outcome": "The user has already started with the most difficult puzzle"
             },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest they just start doing puzzles",
+                "adapt_outcome": "The user has already started doing puzzles"
+            },
             "5": {
                 "label": "Helpful",
-                "option": "Suggest they join a puzzle club for support",
-                "adapt_outcome": "The user has already joined a puzzle club for support"
+                "option": "Suggest they start with beginner-friendly puzzles",
+                "adapt_outcome": "The user has already started with beginner-friendly puzzles"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "Answer: To provide the best suggestion for someone who wants to start doing puzzles and has already begun with beginner-friendly puzzles, it's essential to consider their current experience level and potential progression. \nSuggesting not to do puzzles at all would negate the user's interest and progress in this activity, which is not a constructive approach.\nStarting with beginner-friendly puzzles has already been done by the user, so this option is not the most suitable recommendation at this point.\nSimply suggesting to start doing puzzles without any"
+        "first response": 5.0,
+        "second response": 1
     }
 ]

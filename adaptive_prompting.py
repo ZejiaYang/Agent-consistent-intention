@@ -79,7 +79,8 @@ tog_model_family = [
     "meta-llama/Llama-2-70b-hf",
     "meta-llama/Llama-2-13b-hf",
     "meta-llama/Llama-2-7b-hf",
-    "mistralai/Mixtral-8x7B-v0.1"
+    "mistralai/Mixtral-8x7B-v0.1",
+    "mistralai/Mistral-7B-Instruct-v0.1"
 ]
 
 cot_model = [
@@ -267,7 +268,7 @@ def process_one_file(file, write_path, max_tokens, model, few_shot, num_ex, cot)
 
 
 
-def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_tokens=100, cot = False):
+def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_tokens=150, cot = False):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process.
     Relies on dataset_generation.py having been run first to generate the dataset.
@@ -316,7 +317,9 @@ def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_
         if os.path.exists(write_path):
             print('File already exists')
             continue  # Skip existing files
-
+        
+        if file_name == "20--Art and Design.json":
+            continue
         # Call the processing function with few-shot parameter
         process_one_file(file, write_path, max_tokens, model, fewshot, num_ex, cot)
 
@@ -337,8 +340,8 @@ if __name__ == "__main__":
     run_name = args.run_name
     fewshot = args.fewshot
     num_ex = args.num_ex
-    fewshot = False
-    num_ex = 0
+    fewshot = True
+    num_ex = 6
     cot = False
     print(f'Starting model {model} and dataset {run_name} for fewshot learning {fewshot} with {num_ex} examples. \n')
     run_adaptive_prompting(model = model, run_name = run_name,fewshot= fewshot, num_ex= num_ex, cot= cot)

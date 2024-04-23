@@ -24,7 +24,7 @@ def call_llama(int_prompt_first, model):
                         int_prompt_first[0],
                         int_prompt_first[1],
                         ], 
-                        "max_length" : 10,
+                        "max_tokens" : 300,
                         "temperature": 0.0,
                         "top_p": 0.0,
                         }
@@ -33,6 +33,7 @@ def call_llama(int_prompt_first, model):
     response = llama.run(api_request_json)
     # print(json.dumps(response.json(), indent=2))
     output = response.json()['choices'][0]['message']['content']
+    # print(output)
     return output 
 
 
@@ -95,8 +96,9 @@ def get_together_api_vars():
 
 
 
-def call_togetherai(int_prompt_first, model, max_tokens = 10) :
+def call_togetherai(int_prompt_first, model, max_tokens = 100) :
     get_together_api_vars()
+    # print(int_prompt_first)
     response = together.Complete.create(
                                     model = model,
                                     prompt= int_prompt_first[0]['content'] + '\n\n' +  
@@ -105,6 +107,8 @@ def call_togetherai(int_prompt_first, model, max_tokens = 10) :
                                     max_tokens = max_tokens,
                                     temperature = 0,
                                     top_p = 0.1,
-                                    top_k = 1
+                                    top_k = 1,
+                                    logprobs = 1
                                     )
+    print(response)
     return response['choices'][0]['text']

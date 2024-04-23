@@ -44,7 +44,7 @@ def get_response_text(response, base=False):
         return response.choices[0].text
 
 
-def run_api_call(prompt, model, max_tokens = 100, base=False):
+def run_api_call(prompt, model, max_tokens = 150, base=False):
     
     client = load_api_vars()
     response = convert_statement(client, prompt, max_tokens, model=model, base=base)
