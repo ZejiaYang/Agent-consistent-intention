@@ -25,29 +25,28 @@
                 "adapt_outcome": "The user has already suggested a high-protein, low-carb breakfast like eggs and avocado"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest a breakfast of donuts and coffee",
-                "adapt_outcome": "The user has already suggested a breakfast of donuts and coffee"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest they skip breakfast",
                 "adapt_outcome": "The user has already suggested they skip breakfast"
             },
-            "4": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest a balanced breakfast with whole grains, protein, and fruits",
                 "adapt_outcome": "The user has already suggested a balanced breakfast with whole grains, protein, and fruits"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest a breakfast of bacon and fried eggs",
                 "adapt_outcome": "The user has already suggested a breakfast of bacon and fried eggs"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest a breakfast of donuts and coffee",
+                "adapt_outcome": "The user has already suggested a breakfast of donuts and coffee"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo address the goal of losing weight and considering that the user has already suggested a balanced breakfast with whole grains, protein, and fruits, it's important to provide further guidance that aligns with healthy eating habits conducive to weight loss.\n\nOption 1, suggesting a high-protein, low-carb breakfast like eggs and avocado, is a suitable choice as it provides a good balance of nutrients while focusing on protein, which can help with satiety and weight management.\n\nOption 2,"
+        "first response": 3.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -71,8 +70,8 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest meals with rice, potatoes, or corn as the main starch",
-                "adapt_outcome": "The user has already suggested meals with rice, potatoes, or corn as the main starch"
+                "option": "Suggest meals based on naturally gluten-free foods like meat, fish, fruits, and vegetables",
+                "adapt_outcome": "The user has already suggested meals based on naturally gluten-free foods like meat, fish, fruits, and vegetables"
             },
             "2": {
                 "label": "Unhelpful",
@@ -80,14 +79,14 @@
                 "adapt_outcome": "The user has already suggested meals with bread or pasta"
             },
             "3": {
+                "label": "Helpful",
+                "option": "Suggest meals with rice, potatoes, or corn as the main starch",
+                "adapt_outcome": "The user has already suggested meals with rice, potatoes, or corn as the main starch"
+            },
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest they eat whatever they want",
                 "adapt_outcome": "The user has already suggested they eat whatever they want"
-            },
-            "4": {
-                "label": "Helpful",
-                "option": "Suggest meals based on naturally gluten-free foods like meat, fish, fruits, and vegetables",
-                "adapt_outcome": "The user has already suggested meals based on naturally gluten-free foods like meat, fish, fruits, and vegetables"
             },
             "5": {
                 "label": "Unhelpful",
@@ -95,9 +94,8 @@
                 "adapt_outcome": "The user has already suggested meals with wheat, barley, or rye"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: Given that the user is allergic to gluten and has already suggested meals based on naturally gluten-free foods like meat, fish, fruits, and vegetables, it is important to provide meal options that align with their dietary restrictions. \nSuggesting meals with rice, potatoes, or corn as the main starch (Option 1) would be a suitable choice as these are naturally gluten-free alternatives that can serve as a base for various dishes.\nSuggesting meals with bread or pasta (Option 2"
+        "first response": 1.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -130,14 +128,14 @@
                 "adapt_outcome": "The user has already had a meal of fast food"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest a meal of candy and soda",
-                "adapt_outcome": "The user has already had a meal of candy and soda"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest a protein shake with a banana",
                 "adapt_outcome": "The user has already had a protein shake with a banana"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest a meal of candy and soda",
+                "adapt_outcome": "The user has already had a meal of candy and soda"
             },
             "5": {
                 "label": "Helpful",
@@ -145,9 +143,8 @@
                 "adapt_outcome": "The user has already had a meal with protein and carbohydrates, like chicken and rice"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: Since the user has already consumed a meal with protein and carbohydrates like chicken and rice, it's important to consider options that complement their existing intake and support muscle recovery after a workout. \nChoosing not to eat after a workout can hinder muscle recovery and growth, making it an unfavorable choice. Opting for fast food, candy, or soda would not provide the necessary nutrients for muscle repair and growth.\nA protein shake with a banana is a good option as it offers a quick and convenient source of"
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -170,24 +167,24 @@
         "adapt_response": "['The user has already been suggested to eat foods like beans, lentils, tofu, and quinoa.',\n 'The user has already been suggested to incorporate more dairy and eggs into their diet.',\n \"The user has already been suggested to not worry about protein.\",\n 'The user has already been suggested to eat meat for protein.',\n 'The user has already been suggested to eat a lot of bread and pasta.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about protein",
-                "adapt_outcome": "The user has already been suggested to not worry about protein."
+                "label": "Helpful",
+                "option": "Suggest foods like beans, lentils, tofu, and quinoa",
+                "adapt_outcome": "The user has already been suggested to eat foods like beans, lentils, tofu, and quinoa."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat meat for protein",
-                "adapt_outcome": "The user has already been suggested to eat meat for protein."
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat a lot of bread and pasta",
                 "adapt_outcome": "The user has already been suggested to eat a lot of bread and pasta."
             },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat meat for protein",
+                "adapt_outcome": "The user has already been suggested to eat meat for protein."
+            },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest foods like beans, lentils, tofu, and quinoa",
-                "adapt_outcome": "The user has already been suggested to eat foods like beans, lentils, tofu, and quinoa."
+                "label": "Neutral",
+                "option": "Suggest they don't worry about protein",
+                "adapt_outcome": "The user has already been suggested to not worry about protein."
             },
             "5": {
                 "label": "Helpful",
@@ -195,9 +192,8 @@
                 "adapt_outcome": "The user has already been suggested to incorporate more dairy and eggs into their diet."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: Given that the user is a vegetarian and has already been suggested to eat foods like beans, lentils, tofu, and quinoa for protein, it's important to provide additional recommendations that align with their dietary preferences and needs.\n\nOption 1: Suggesting they don't worry about protein may not be the most helpful response as protein is an essential nutrient for overall health and well-being.\n\nOption 2: Suggesting they eat meat for protein goes against the user's vegetarian dietary choice"
+        "first response": 1.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -220,34 +216,33 @@
         "adapt_response": "['The user has already suggested snacks like nuts, fruits, and yogurt',\n 'The user has already suggested they try hummus and vegetables',\n 'The user has already suggested they do not snack',\n 'The user has already suggested snacks like chips and candy',\n 'The user has already suggested snacks like cookies and ice cream']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest snacks like cookies and ice cream",
-                "adapt_outcome": "The user has already suggested snacks like cookies and ice cream"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest they try hummus and vegetables",
                 "adapt_outcome": "The user has already suggested they try hummus and vegetables"
             },
-            "3": {
-                "label": "Neutral",
-                "option": "Suggest they don't snack",
-                "adapt_outcome": "The user has already suggested they do not snack"
-            },
-            "4": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest snacks like chips and candy",
                 "adapt_outcome": "The user has already suggested snacks like chips and candy"
             },
-            "5": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest snacks like nuts, fruits, and yogurt",
                 "adapt_outcome": "The user has already suggested snacks like nuts, fruits, and yogurt"
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest they don't snack",
+                "adapt_outcome": "The user has already suggested they do not snack"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest snacks like cookies and ice cream",
+                "adapt_outcome": "The user has already suggested snacks like cookies and ice cream"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 2
+        "first response": 3.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -270,34 +265,33 @@
         "adapt_response": "['The user has already been suggested foods high in fiber like oats and whole grains.',\n 'The user has already been suggested to eat more fruits and vegetables.',\n 'The user has already been suggested not to change their diet.',\n 'The user has already been suggested to eat more red meat.',\n 'The user has already been suggested to eat more fried foods.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they eat more fruits and vegetables",
-                "adapt_outcome": "The user has already been suggested to eat more fruits and vegetables."
-            },
-            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more fried foods",
                 "adapt_outcome": "The user has already been suggested to eat more fried foods."
             },
+            "2": {
+                "label": "Neutral",
+                "option": "Suggest they don't change their diet",
+                "adapt_outcome": "The user has already been suggested not to change their diet."
+            },
             "3": {
+                "label": "Helpful",
+                "option": "Suggest they eat more fruits and vegetables",
+                "adapt_outcome": "The user has already been suggested to eat more fruits and vegetables."
+            },
+            "4": {
                 "label": "Helpful",
                 "option": "Suggest foods high in fiber like oats and whole grains",
                 "adapt_outcome": "The user has already been suggested foods high in fiber like oats and whole grains."
             },
-            "4": {
+            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more red meat",
                 "adapt_outcome": "The user has already been suggested to eat more red meat."
-            },
-            "5": {
-                "label": "Neutral",
-                "option": "Suggest they don't change their diet",
-                "adapt_outcome": "The user has already been suggested not to change their diet."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 1
+        "first response": 3.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -330,14 +324,14 @@
                 "adapt_outcome": "The user has already been suggested to try iron-fortified cereals and breads."
             },
             "3": {
-                "label": "Helpful",
-                "option": "Suggest foods like spinach, lentils, and red meat",
-                "adapt_outcome": "The user has already been suggested to eat foods like spinach, lentils, and red meat."
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest they don't worry about iron",
                 "adapt_outcome": "The user has already been suggested to not worry about iron."
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest foods like spinach, lentils, and red meat",
+                "adapt_outcome": "The user has already been suggested to eat foods like spinach, lentils, and red meat."
             },
             "5": {
                 "label": "Unhelpful",
@@ -345,9 +339,8 @@
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": "Answer: Given that the user has already been suggested to eat foods like spinach, lentils, and red meat to increase their iron intake, it's important to consider additional sources of iron that can complement their current diet. \nOption 1, suggesting they eat more dairy, may not be the most effective choice as dairy products are not significant sources of iron. \nOption 2, suggesting they try iron-fortified cereals and breads, can be a good recommendation as these products are often"
+        "first response": 4.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -370,9 +363,9 @@
         "adapt_response": "['The user has already tried natural sweeteners like honey or maple syrup', 'The user has already used artificial sweeteners', \"The user has already decided not to worry about sugar\", 'The user has already used more sugar', 'The user has already used corn syrup']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they use more sugar",
-                "adapt_outcome": "The user has already used more sugar"
+                "label": "Neutral",
+                "option": "Suggest they don't worry about sugar",
+                "adapt_outcome": "The user has already decided not to worry about sugar"
             },
             "2": {
                 "label": "Unhelpful",
@@ -380,24 +373,23 @@
                 "adapt_outcome": "The user has already used corn syrup"
             },
             "3": {
-                "label": "Helpful",
-                "option": "Suggest they use artificial sweeteners",
-                "adapt_outcome": "The user has already used artificial sweeteners"
+                "label": "Unhelpful",
+                "option": "Suggest they use more sugar",
+                "adapt_outcome": "The user has already used more sugar"
             },
             "4": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about sugar",
-                "adapt_outcome": "The user has already decided not to worry about sugar"
-            },
-            "5": {
                 "label": "Helpful",
                 "option": "Suggest they try natural sweeteners like honey or maple syrup",
                 "adapt_outcome": "The user has already tried natural sweeteners like honey or maple syrup"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they use artificial sweeteners",
+                "adapt_outcome": "The user has already used artificial sweeteners"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: Given that the user has already tried natural sweeteners like honey or maple syrup and is looking for alternatives to cut down on sugar, it's important to consider options that align with their goal of reducing sugar intake.\n\nSuggesting they use more sugar (Option 1) would contradict the user's objective of cutting down on sugar, making it an unsuitable choice.\n\nCorn syrup (Option 2) is a high-fructose sweetener that is not a healthier alternative to sugar and does not"
+        "first response": 4.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -420,34 +412,33 @@
         "adapt_response": "['The user has already been suggested to eat foods like whole grains, fruits, and vegetables.',\n 'The user has already been suggested to try adding chia seeds or flaxseeds to their meals.',\n \"The user has already been suggested to not worry about fiber.\",\n 'The user has already been suggested to eat more meat.',\n 'The user has already been suggested to eat more dairy.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more meat",
-                "adapt_outcome": "The user has already been suggested to eat more meat."
-            },
-            "2": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about fiber",
-                "adapt_outcome": "The user has already been suggested to not worry about fiber."
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more dairy",
-                "adapt_outcome": "The user has already been suggested to eat more dairy."
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest they try adding chia seeds or flaxseeds to their meals",
                 "adapt_outcome": "The user has already been suggested to try adding chia seeds or flaxseeds to their meals."
             },
-            "5": {
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more meat",
+                "adapt_outcome": "The user has already been suggested to eat more meat."
+            },
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest foods like whole grains, fruits, and vegetables",
                 "adapt_outcome": "The user has already been suggested to eat foods like whole grains, fruits, and vegetables."
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest they don't worry about fiber",
+                "adapt_outcome": "The user has already been suggested to not worry about fiber."
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more dairy",
+                "adapt_outcome": "The user has already been suggested to eat more dairy."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: Given that the user has already been suggested to eat foods like whole grains, fruits, and vegetables to increase fiber intake, it's important to consider additional sources of fiber that can complement their current diet. \nSuggesting they eat more meat would not be an ideal choice as meat is not a significant source of dietary fiber.\nAdvising them not to worry about fiber would be counterproductive to their goal of increasing fiber intake.\nEncouraging them to eat more dairy may not significantly contribute"
+        "first response": 3.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -475,9 +466,9 @@
                 "adapt_outcome": "The user has already eaten more fast food"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more canned and packaged foods",
-                "adapt_outcome": "The user has already eaten more canned and packaged foods"
+                "label": "Neutral",
+                "option": "Suggest they don't worry about processed food",
+                "adapt_outcome": "The user has already not worried about processed food"
             },
             "3": {
                 "label": "Helpful",
@@ -485,19 +476,18 @@
                 "adapt_outcome": "The user has already tried shopping at a farmeres market for local produce"
             },
             "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more canned and packaged foods",
+                "adapt_outcome": "The user has already eaten more canned and packaged foods"
+            },
+            "5": {
                 "label": "Helpful",
                 "option": "Suggest they cook more meals at home using fresh ingredients",
                 "adapt_outcome": "The user has already cooked more meals at home using fresh ingredients"
-            },
-            "5": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about processed food",
-                "adapt_outcome": "The user has already not worried about processed food"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "To address the goal of eating less processed food, it's important to build on the user's current efforts of cooking more meals at home using fresh ingredients. This indicates a positive step towards a healthier diet. \n\nEating more fast food (Option 1) would contradict the user's goal of reducing processed food intake and could lead to consuming even more processed foods.\n\nOpting for more canned and packaged foods (Option 2) would also go against the goal of reducing processed food consumption as these items"
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -545,9 +535,8 @@
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": "Answer: \nTo address the user's goal of consuming more calcium, it's essential to consider options that align with their dietary preferences and health objectives. \nSuggesting not to worry about calcium would disregard the user's intention to increase their intake of this nutrient, making it an unhelpful choice.\nTrying calcium-fortified foods can be a practical way to boost calcium consumption, especially for individuals who may not prefer traditional sources like dairy or leafy greens.\nSince the user has already been recommended"
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -570,19 +559,19 @@
         "adapt_response": "['The user has already been suggested to eat foods like salmon, chia seeds, and walnuts.',\n 'The user has already been suggested to try omega-3 supplements.',\n \"The user has already been suggested not to worry about omega-3s.\",\n 'The user has already been suggested to eat more fried foods.',\n 'The user has already been suggested to eat more sugar.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more fried foods",
-                "adapt_outcome": "The user has already been suggested to eat more fried foods."
-            },
-            "2": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about omega-3s",
-                "adapt_outcome": "The user has already been suggested not to worry about omega-3s."
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest foods like salmon, chia seeds, and walnuts",
                 "adapt_outcome": "The user has already been suggested to eat foods like salmon, chia seeds, and walnuts."
+            },
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest they try omega-3 supplements",
+                "adapt_outcome": "The user has already been suggested to try omega-3 supplements."
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more fried foods",
+                "adapt_outcome": "The user has already been suggested to eat more fried foods."
             },
             "4": {
                 "label": "Unhelpful",
@@ -590,14 +579,13 @@
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest they try omega-3 supplements",
-                "adapt_outcome": "The user has already been suggested to try omega-3 supplements."
+                "label": "Neutral",
+                "option": "Suggest they don't worry about omega-3s",
+                "adapt_outcome": "The user has already been suggested not to worry about omega-3s."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 3
+        "first response": 1.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -630,24 +618,23 @@
                 "adapt_outcome": "The user has already been suggested to eat more meat."
             },
             "3": {
+                "label": "Helpful",
+                "option": "Suggest foods like oranges, strawberries, and bell peppers",
+                "adapt_outcome": "The user has already been suggested to eat foods like oranges, strawberries, and bell peppers."
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more dairy",
                 "adapt_outcome": "The user has already been suggested to eat more dairy."
             },
-            "4": {
+            "5": {
                 "label": "Helpful",
                 "option": "Suggest they try a vitamin C supplement",
                 "adapt_outcome": "The user has already been suggested to try a vitamin C supplement."
-            },
-            "5": {
-                "label": "Helpful",
-                "option": "Suggest foods like oranges, strawberries, and bell peppers",
-                "adapt_outcome": "The user has already been suggested to eat foods like oranges, strawberries, and bell peppers."
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": 4
+        "first response": 3.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -670,34 +657,33 @@
         "adapt_response": "['The user has already been suggested to eat foods like fatty fish, cheese, and egg yolks.',\n 'The user has already been suggested to try a vitamin D supplement.',\n \"The user has already been suggested not to worry about vitamin D.\",\n 'The user has already been suggested to eat more sugar.',\n 'The user has already been suggested to eat more processed foods.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more sugar",
-                "adapt_outcome": "The user has already been suggested to eat more sugar."
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more processed foods",
-                "adapt_outcome": "The user has already been suggested to eat more processed foods."
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest they try a vitamin D supplement",
-                "adapt_outcome": "The user has already been suggested to try a vitamin D supplement."
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest foods like fatty fish, cheese, and egg yolks",
                 "adapt_outcome": "The user has already been suggested to eat foods like fatty fish, cheese, and egg yolks."
             },
-            "5": {
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest they try a vitamin D supplement",
+                "adapt_outcome": "The user has already been suggested to try a vitamin D supplement."
+            },
+            "3": {
                 "label": "Neutral",
                 "option": "Suggest they don't worry about vitamin D",
                 "adapt_outcome": "The user has already been suggested not to worry about vitamin D."
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more processed foods",
+                "adapt_outcome": "The user has already been suggested to eat more processed foods."
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more sugar",
+                "adapt_outcome": "The user has already been suggested to eat more sugar."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "To address the need for more vitamin D intake, considering the user has already been suggested to eat foods like fatty fish, cheese, and egg yolks, the next step should focus on additional sources of this essential nutrient. \n\nOption 1: Suggesting they eat more sugar is not a suitable choice as sugar does not contain significant amounts of vitamin D and may have negative health effects when consumed in excess.\n\nOption 2: Suggesting they eat more processed foods is also not recommended as processed"
+        "first response": 1.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -720,34 +706,33 @@
         "adapt_response": "['The user has already suggested foods like bananas, sweet potatoes, and spinach', 'The user has already suggested they try a potassium supplement', \"The user has already suggested they don't worry about potassium\", 'The user has already suggested they eat more meat', 'The user has already suggested they eat more sugar']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more sugar",
-                "adapt_outcome": "The user has already suggested they eat more sugar"
+                "label": "Helpful",
+                "option": "Suggest they try a potassium supplement",
+                "adapt_outcome": "The user has already suggested they try a potassium supplement"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more meat",
-                "adapt_outcome": "The user has already suggested they eat more meat"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest they don't worry about potassium",
                 "adapt_outcome": "The user has already suggested they don't worry about potassium"
             },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more meat",
+                "adapt_outcome": "The user has already suggested they eat more meat"
+            },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest foods like bananas, sweet potatoes, and spinach",
-                "adapt_outcome": "The user has already suggested foods like bananas, sweet potatoes, and spinach"
+                "label": "Unhelpful",
+                "option": "Suggest they eat more sugar",
+                "adapt_outcome": "The user has already suggested they eat more sugar"
             },
             "5": {
                 "label": "Helpful",
-                "option": "Suggest they try a potassium supplement",
-                "adapt_outcome": "The user has already suggested they try a potassium supplement"
+                "option": "Suggest foods like bananas, sweet potatoes, and spinach",
+                "adapt_outcome": "The user has already suggested foods like bananas, sweet potatoes, and spinach"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo address the user's goal of increasing potassium intake, it's important to consider options that align with healthy dietary choices and provide additional sources of potassium beyond what has already been suggested.\nEating more sugar is not a suitable recommendation for increasing potassium intake as sugary foods do not typically contain significant amounts of potassium and may have negative health effects when consumed in excess.\nEating more meat can be a good source of protein but may not be the best way to increase potassium intake as meat is"
+        "first response": 5.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -770,9 +755,9 @@
         "adapt_response": "['The user has already been suggested to eat foods like almonds, spinach, and black beans.',\n 'The user has already been suggested to try a magnesium supplement.',\n 'The user has already been suggested to not worry about magnesium.',\n 'The user has already been suggested to eat more meat.',\n 'The user has already been suggested to eat more sugar.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about magnesium",
-                "adapt_outcome": "The user has already been suggested to not worry about magnesium."
+                "label": "Unhelpful",
+                "option": "Suggest they eat more meat",
+                "adapt_outcome": "The user has already been suggested to eat more meat."
             },
             "2": {
                 "label": "Helpful",
@@ -780,24 +765,23 @@
                 "adapt_outcome": "The user has already been suggested to eat foods like almonds, spinach, and black beans."
             },
             "3": {
+                "label": "Helpful",
+                "option": "Suggest they try a magnesium supplement",
+                "adapt_outcome": "The user has already been suggested to try a magnesium supplement."
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more sugar",
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             },
-            "4": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more meat",
-                "adapt_outcome": "The user has already been suggested to eat more meat."
-            },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest they try a magnesium supplement",
-                "adapt_outcome": "The user has already been suggested to try a magnesium supplement."
+                "label": "Neutral",
+                "option": "Suggest they don't worry about magnesium",
+                "adapt_outcome": "The user has already been suggested to not worry about magnesium."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 5
+        "first response": 2.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -820,9 +804,9 @@
         "adapt_response": "['The user has already been suggested to eat foods like oysters, beef, and pumpkin seeds.',\n 'The user has already been suggested to try a zinc supplement.',\n 'The user has already been suggested not to worry about zinc.',\n 'The user has already been suggested to eat more sugar.',\n 'The user has already been suggested to eat more processed foods.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more sugar",
-                "adapt_outcome": "The user has already been suggested to eat more sugar."
+                "label": "Neutral",
+                "option": "Suggest they don't worry about zinc",
+                "adapt_outcome": "The user has already been suggested not to worry about zinc."
             },
             "2": {
                 "label": "Unhelpful",
@@ -835,19 +819,18 @@
                 "adapt_outcome": "The user has already been suggested to try a zinc supplement."
             },
             "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they eat more sugar",
+                "adapt_outcome": "The user has already been suggested to eat more sugar."
+            },
+            "5": {
                 "label": "Helpful",
                 "option": "Suggest foods like oysters, beef, and pumpkin seeds",
                 "adapt_outcome": "The user has already been suggested to eat foods like oysters, beef, and pumpkin seeds."
-            },
-            "5": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about zinc",
-                "adapt_outcome": "The user has already been suggested not to worry about zinc."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 3
+        "first response": 5.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -875,9 +858,9 @@
                 "adapt_outcome": "The user has already been suggested to try a vitamin A supplement."
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more meat",
-                "adapt_outcome": "The user has already been suggested to eat more meat."
+                "label": "Helpful",
+                "option": "Suggest foods like sweet potatoes, carrots, and spinach",
+                "adapt_outcome": "The user has already been suggested to eat foods like sweet potatoes, carrots, and spinach."
             },
             "3": {
                 "label": "Unhelpful",
@@ -885,9 +868,9 @@
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest foods like sweet potatoes, carrots, and spinach",
-                "adapt_outcome": "The user has already been suggested to eat foods like sweet potatoes, carrots, and spinach."
+                "label": "Unhelpful",
+                "option": "Suggest they eat more meat",
+                "adapt_outcome": "The user has already been suggested to eat more meat."
             },
             "5": {
                 "label": "Neutral",
@@ -895,9 +878,8 @@
                 "adapt_outcome": "The user has already been suggested not to worry about vitamin A."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: Given that the user has already been suggested to eat foods like sweet potatoes, carrots, and spinach to increase their vitamin A intake, it is important to consider additional options that align with a healthy diet and lifestyle.\n\nOption 1: Suggesting a vitamin A supplement could be a viable choice to ensure adequate intake, especially if the user finds it challenging to consume enough vitamin A-rich foods. However, it is essential to consult a healthcare provider before starting any new supplement regimen.\n\nOption 2"
+        "first response": 2.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -920,19 +902,19 @@
         "adapt_response": "['The user has already been suggested to eat foods like almonds, spinach, and sweet potatoes.',\n 'The user has already been suggested to try a vitamin E supplement.',\n 'The user has already been suggested not to worry about vitamin E.',\n 'The user has already been suggested to eat more meat.',\n 'The user has already been suggested to eat more sugar.']",
         "mapping_given_to_model": {
             "1": {
+                "label": "Helpful",
+                "option": "Suggest foods like almonds, spinach, and sweet potatoes",
+                "adapt_outcome": "The user has already been suggested to eat foods like almonds, spinach, and sweet potatoes."
+            },
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest they don't worry about vitamin E",
                 "adapt_outcome": "The user has already been suggested not to worry about vitamin E."
             },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest they eat more meat",
-                "adapt_outcome": "The user has already been suggested to eat more meat."
-            },
             "3": {
                 "label": "Helpful",
-                "option": "Suggest foods like almonds, spinach, and sweet potatoes",
-                "adapt_outcome": "The user has already been suggested to eat foods like almonds, spinach, and sweet potatoes."
+                "option": "Suggest they try a vitamin E supplement",
+                "adapt_outcome": "The user has already been suggested to try a vitamin E supplement."
             },
             "4": {
                 "label": "Unhelpful",
@@ -940,13 +922,12 @@
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest they try a vitamin E supplement",
-                "adapt_outcome": "The user has already been suggested to try a vitamin E supplement."
+                "label": "Unhelpful",
+                "option": "Suggest they eat more meat",
+                "adapt_outcome": "The user has already been suggested to eat more meat."
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
+        "first response": 1.0,
         "second response": 3
     },
     {
@@ -970,9 +951,9 @@
         "adapt_response": "['The user has already been suggested to eat foods like kale, spinach, and broccoli.',\n 'The user has already been suggested to try a vitamin K supplement.',\n 'The user has already been suggested not to worry about vitamin K.',\n 'The user has already been suggested to eat more meat.',\n 'The user has already been suggested to eat more sugar.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest they try a vitamin K supplement",
-                "adapt_outcome": "The user has already been suggested to try a vitamin K supplement."
+                "label": "Neutral",
+                "option": "Suggest they don't worry about vitamin K",
+                "adapt_outcome": "The user has already been suggested not to worry about vitamin K."
             },
             "2": {
                 "label": "Helpful",
@@ -980,23 +961,22 @@
                 "adapt_outcome": "The user has already been suggested to eat foods like kale, spinach, and broccoli."
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest they don't worry about vitamin K",
-                "adapt_outcome": "The user has already been suggested not to worry about vitamin K."
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more meat",
                 "adapt_outcome": "The user has already been suggested to eat more meat."
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest they eat more sugar",
                 "adapt_outcome": "The user has already been suggested to eat more sugar."
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest they try a vitamin K supplement",
+                "adapt_outcome": "The user has already been suggested to try a vitamin K supplement."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 2
+        "first response": 2.0,
+        "second response": 5
     }
 ]

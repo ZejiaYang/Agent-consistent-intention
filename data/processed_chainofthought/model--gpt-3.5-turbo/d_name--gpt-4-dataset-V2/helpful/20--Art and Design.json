@@ -20,9 +20,9 @@
         "adapt_response": "['The user has already started with acrylic paints as they are beginner-friendly.', 'The user has already visited an art supply store to explore options.', 'The user has already tried all types of paint to see what they like.', 'The user has already used house paint.', 'The user has already used any paint they find.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest starting with acrylic paints as they are beginner-friendly",
-                "adapt_outcome": "The user has already started with acrylic paints as they are beginner-friendly."
+                "label": "Unhelpful",
+                "option": "Suggest using any paint they find",
+                "adapt_outcome": "The user has already used any paint they find."
             },
             "2": {
                 "label": "Unhelpful",
@@ -30,14 +30,14 @@
                 "adapt_outcome": "The user has already used house paint."
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest using any paint they find",
-                "adapt_outcome": "The user has already used any paint they find."
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest trying all types of paint to see what they like",
                 "adapt_outcome": "The user has already tried all types of paint to see what they like."
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest starting with acrylic paints as they are beginner-friendly",
+                "adapt_outcome": "The user has already started with acrylic paints as they are beginner-friendly."
             },
             "5": {
                 "label": "Helpful",
@@ -45,9 +45,8 @@
                 "adapt_outcome": "The user has already visited an art supply store to explore options."
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": "Answer: Given that the user has already started with acrylic paints as they are beginner-friendly, it's important to provide guidance that builds upon this knowledge and experience. \nSuggesting to start with acrylic paints again would be redundant since the user is already familiar with them and looking to explore other options. \nUsing house paint is not recommended for traditional painting purposes as it may not have the desired qualities for artistic expression. \nSuggesting to use any paint they find could lead to frustration and potential negative"
+        "first response": 4.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -70,34 +69,33 @@
         "adapt_response": "['The user has already kept the design simple and memorable', 'The user has already researched successful logos for inspiration', 'The user has already tried different designs until they found one they like', 'The user has already copied a popular logo', 'The user has already used clip art for their logo']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest researching successful logos for inspiration",
-                "adapt_outcome": "The user has already researched successful logos for inspiration"
-            },
-            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest copying a popular logo",
                 "adapt_outcome": "The user has already copied a popular logo"
             },
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest researching successful logos for inspiration",
+                "adapt_outcome": "The user has already researched successful logos for inspiration"
+            },
             "3": {
+                "label": "Unhelpful",
+                "option": "Suggest using clip art for their logo",
+                "adapt_outcome": "The user has already used clip art for their logo"
+            },
+            "4": {
                 "label": "Helpful",
                 "option": "Suggest keeping the design simple and memorable",
                 "adapt_outcome": "The user has already kept the design simple and memorable"
             },
-            "4": {
+            "5": {
                 "label": "Neutral",
                 "option": "Suggest trying different designs until they find one they like",
                 "adapt_outcome": "The user has already tried different designs until they found one they like"
-            },
-            "5": {
-                "label": "Unhelpful",
-                "option": "Suggest using clip art for their logo",
-                "adapt_outcome": "The user has already used clip art for their logo"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 1
+        "first response": 4.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -126,28 +124,27 @@
             },
             "2": {
                 "label": "Helpful",
-                "option": "Suggest starting with basic shapes and gradually moving to complex objects",
-                "adapt_outcome": "The user has already started with basic shapes and gradually moved to complex objects"
+                "option": "Suggest taking a beginner's drawing course",
+                "adapt_outcome": "The user has already taken a beginneres drawing course"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest starting with complex portraits",
-                "adapt_outcome": "The user has already started with complex portraits"
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest drawing whenever they feel like it",
                 "adapt_outcome": "The user has already been drawing whenever they feel like it"
             },
-            "5": {
+            "4": {
                 "label": "Helpful",
-                "option": "Suggest taking a beginner's drawing course",
-                "adapt_outcome": "The user has already taken a beginneres drawing course"
+                "option": "Suggest starting with basic shapes and gradually moving to complex objects",
+                "adapt_outcome": "The user has already started with basic shapes and gradually moved to complex objects"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest starting with complex portraits",
+                "adapt_outcome": "The user has already started with complex portraits"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo guide someone who wants to learn how to draw and has already taken a beginner's drawing course, it's essential to build upon the existing knowledge and skills acquired. \nSuggesting they don't need to learn and just draw might overlook the importance of structured learning and skill development, potentially hindering progress.\nStarting with basic shapes and gradually moving to complex objects is a common and effective approach in art education as it helps in mastering fundamental skills before tackling more intricate subjects.\nStarting with complex"
+        "first response": 4.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -170,34 +167,33 @@
         "adapt_response": "['The user has already studied the color wheel and how colors interact', 'The user has already found online resources or books on color theory', 'The user has already experimented with colors', 'The user has already ignored color theory', 'The user has already used only their favorite color']",
         "mapping_given_to_model": {
             "1": {
+                "label": "Neutral",
+                "option": "Suggest experimenting with colors",
+                "adapt_outcome": "The user has already experimented with colors"
+            },
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest studying the color wheel and how colors interact",
                 "adapt_outcome": "The user has already studied the color wheel and how colors interact"
             },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest using only their favorite color",
-                "adapt_outcome": "The user has already used only their favorite color"
-            },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest ignoring color theory",
-                "adapt_outcome": "The user has already ignored color theory"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest finding online resources or books on color theory",
                 "adapt_outcome": "The user has already found online resources or books on color theory"
             },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest ignoring color theory",
+                "adapt_outcome": "The user has already ignored color theory"
+            },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest experimenting with colors",
-                "adapt_outcome": "The user has already experimented with colors"
+                "label": "Unhelpful",
+                "option": "Suggest using only their favorite color",
+                "adapt_outcome": "The user has already used only their favorite color"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo address the struggle with color theory after already finding online resources or books, it's important to consider practical steps that can enhance understanding and application of color theory concepts. \nStudying the color wheel and how colors interact is a fundamental aspect of color theory that can provide a solid foundation for understanding color relationships and combinations.\nUsing only their favorite color might limit the user's exploration and understanding of color theory principles, potentially hindering their learning progress.\nIgnoring color theory altogether would not address the"
+        "first response": 2.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -220,14 +216,14 @@
         "adapt_response": "['The user has already researched what similar art is selling for.',\n 'The user has already considered the cost of materials and time spent.',\n 'The user has already priced it however they feel.',\n 'The user has already priced it extremely high.',\n 'The user has already given it away for free.']",
         "mapping_given_to_model": {
             "1": {
+                "label": "Unhelpful",
+                "option": "Suggest pricing it extremely high",
+                "adapt_outcome": "The user has already priced it extremely high."
+            },
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest considering the cost of materials and time spent",
                 "adapt_outcome": "The user has already considered the cost of materials and time spent."
-            },
-            "2": {
-                "label": "Neutral",
-                "option": "Suggest pricing it however they feel",
-                "adapt_outcome": "The user has already priced it however they feel."
             },
             "3": {
                 "label": "Unhelpful",
@@ -240,14 +236,13 @@
                 "adapt_outcome": "The user has already researched what similar art is selling for."
             },
             "5": {
-                "label": "Unhelpful",
-                "option": "Suggest pricing it extremely high",
-                "adapt_outcome": "The user has already priced it extremely high."
+                "label": "Neutral",
+                "option": "Suggest pricing it however they feel",
+                "adapt_outcome": "The user has already priced it however they feel."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 1
+        "first response": 4.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -270,19 +265,19 @@
         "adapt_response": "['The user has already included a variety of their best work', 'The user has already included pieces that showcase their skills and style', 'The user has already included whatever they have', 'The user has already included only their first attempts', 'The user has already included only unfinished pieces']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest including pieces that showcase their skills and style",
-                "adapt_outcome": "The user has already included pieces that showcase their skills and style"
+                "label": "Unhelpful",
+                "option": "Suggest including only unfinished pieces",
+                "adapt_outcome": "The user has already included only unfinished pieces"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest including only their first attempts",
-                "adapt_outcome": "The user has already included only their first attempts"
-            },
-            "3": {
                 "label": "Helpful",
                 "option": "Suggest including a variety of their best work",
                 "adapt_outcome": "The user has already included a variety of their best work"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest including only their first attempts",
+                "adapt_outcome": "The user has already included only their first attempts"
             },
             "4": {
                 "label": "Neutral",
@@ -290,14 +285,13 @@
                 "adapt_outcome": "The user has already included whatever they have"
             },
             "5": {
-                "label": "Unhelpful",
-                "option": "Suggest including only unfinished pieces",
-                "adapt_outcome": "The user has already included only unfinished pieces"
+                "label": "Helpful",
+                "option": "Suggest including pieces that showcase their skills and style",
+                "adapt_outcome": "The user has already included pieces that showcase their skills and style"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 3
+        "first response": 5.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -320,9 +314,9 @@
         "adapt_response": "['The user has already practiced with simple shapes and gradually moved to complex scenes', 'The user has already studied perspective in real life and in other artworks', 'The user has already drawn without worrying about perspective', 'The user has already ignored perspective altogether', \"The user has already been suggested that they don't need perspective in art\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need perspective in art",
-                "adapt_outcome": "The user has already been suggested that they don't need perspective in art"
+                "label": "Neutral",
+                "option": "Suggest drawing without worrying about perspective",
+                "adapt_outcome": "The user has already drawn without worrying about perspective"
             },
             "2": {
                 "label": "Unhelpful",
@@ -331,23 +325,22 @@
             },
             "3": {
                 "label": "Helpful",
-                "option": "Suggest studying perspective in real life and in other artworks",
-                "adapt_outcome": "The user has already studied perspective in real life and in other artworks"
-            },
-            "4": {
-                "label": "Helpful",
                 "option": "Suggest practicing with simple shapes and gradually moving to complex scenes",
                 "adapt_outcome": "The user has already practiced with simple shapes and gradually moved to complex scenes"
             },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need perspective in art",
+                "adapt_outcome": "The user has already been suggested that they don't need perspective in art"
+            },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest drawing without worrying about perspective",
-                "adapt_outcome": "The user has already drawn without worrying about perspective"
+                "label": "Helpful",
+                "option": "Suggest studying perspective in real life and in other artworks",
+                "adapt_outcome": "The user has already studied perspective in real life and in other artworks"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": "Answer: \nTo address the user's trouble with perspective in drawings, it's essential to consider the user's existing knowledge and experiences with perspective. Since the user has already studied perspective in real life and in other artworks, it indicates a foundational understanding of the concept. \nSuggesting they don't need perspective in art or ignoring perspective altogether would not be beneficial as perspective is a fundamental aspect of creating realistic and visually appealing drawings.\nStudying perspective in real life and in other artworks might not provide"
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -370,34 +363,33 @@
         "adapt_response": "['The user has already taken online courses or tutorials', 'The user has already been practicing regularly and seeking feedback', 'The user has already been designing when they feel inspired', \"The user has already copied other designers' work\", \"The user already believes they don't need to improve\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest copying other designers' work",
-                "adapt_outcome": "The user has already copied other designers' work"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest taking online courses or tutorials",
                 "adapt_outcome": "The user has already taken online courses or tutorials"
             },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest practicing regularly and seeking feedback",
-                "adapt_outcome": "The user has already been practicing regularly and seeking feedback"
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest copying other designers' work",
+                "adapt_outcome": "The user has already copied other designers' work"
             },
-            "4": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest they don't need to improve",
                 "adapt_outcome": "The user already believes they don't need to improve"
             },
-            "5": {
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest designing when they feel inspired",
                 "adapt_outcome": "The user has already been designing when they feel inspired"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest practicing regularly and seeking feedback",
+                "adapt_outcome": "The user has already been practicing regularly and seeking feedback"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "To further improve your graphic design skills after already taking online courses or tutorials, it is essential to engage in practical application and continuous learning. \nCopying other designers' work may not foster creativity and originality, hindering your growth as a designer.\nWhile taking online courses or tutorials is beneficial, you have already completed this step, so it may not provide additional value at this point.\nPracticing regularly and seeking feedback is crucial for skill development and improvement. This option allows you to apply your knowledge in"
+        "first response": 5.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -420,14 +412,14 @@
         "adapt_response": "['The user has already considered the mood they want to convey',\n 'The user has already studied color theory and harmonious color combinations',\n 'The user has already chosen their favorite colors',\n 'The user has already used only black and white',\n 'The user has already used random colors']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest using random colors",
-                "adapt_outcome": "The user has already used random colors"
+                "label": "Helpful",
+                "option": "Suggest studying color theory and harmonious color combinations",
+                "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
             },
             "2": {
                 "label": "Unhelpful",
-                "option": "Suggest using only black and white",
-                "adapt_outcome": "The user has already used only black and white"
+                "option": "Suggest using random colors",
+                "adapt_outcome": "The user has already used random colors"
             },
             "3": {
                 "label": "Helpful",
@@ -435,9 +427,9 @@
                 "adapt_outcome": "The user has already considered the mood they want to convey"
             },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest studying color theory and harmonious color combinations",
-                "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
+                "label": "Unhelpful",
+                "option": "Suggest using only black and white",
+                "adapt_outcome": "The user has already used only black and white"
             },
             "5": {
                 "label": "Neutral",
@@ -445,9 +437,8 @@
                 "adapt_outcome": "The user has already chosen their favorite colors"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: When choosing a color palette for a painting, it's essential to consider various factors to create a harmonious and visually appealing composition. Since the user has already studied color theory and harmonious color combinations, they have a good foundation to build upon.\n\nOption 1: Suggest using random colors may result in a chaotic and unbalanced painting, especially if the colors clash or do not complement each other.\n\nOption 2: Suggest using only black and white can create a striking monochromatic"
+        "first response": 1.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -480,24 +471,23 @@
                 "adapt_outcome": "The user has already researched successful website layouts for inspiration"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need a layout",
-                "adapt_outcome": "The user has already decided they don't need a layout"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest sketching out different layout options",
                 "adapt_outcome": "The user has already sketched out different layout options"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest copying a popular website's layout",
                 "adapt_outcome": "The user has already copied a popular websitees layout"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need a layout",
+                "adapt_outcome": "The user has already decided they don't need a layout"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo address the user's situation of being stuck on the website layout after already sketching out different options, it's important to consider strategies that can provide fresh perspectives and insights to overcome the design block.\n\nTrying different layouts until finding one they like could be time-consuming and might not necessarily lead to a breakthrough if the user is already feeling stuck after sketching out multiple options.\n\nResearching successful website layouts for inspiration can provide valuable insights into effective design principles and help the user gain new ideas to"
+        "first response": 2.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -520,9 +510,9 @@
         "adapt_response": "['The user has already gotten a degree or certification in interior design', 'The user has already gained experience through internships or entry-level jobs', 'The user has already designed their own home first', 'The user has already started without any education or experience', \"The user has already decided they don't need to prepare\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest starting without any education or experience",
-                "adapt_outcome": "The user has already started without any education or experience"
+                "label": "Neutral",
+                "option": "Suggest designing their own home first",
+                "adapt_outcome": "The user has already designed their own home first"
             },
             "2": {
                 "label": "Helpful",
@@ -530,14 +520,14 @@
                 "adapt_outcome": "The user has already gained experience through internships or entry-level jobs"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest designing their own home first",
-                "adapt_outcome": "The user has already designed their own home first"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest getting a degree or certification in interior design",
                 "adapt_outcome": "The user has already gotten a degree or certification in interior design"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest starting without any education or experience",
+                "adapt_outcome": "The user has already started without any education or experience"
             },
             "5": {
                 "label": "Unhelpful",
@@ -545,8 +535,7 @@
                 "adapt_outcome": "The user has already decided they don't need to prepare"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
+        "first response": 3.0,
         "second response": 2
     },
     {
@@ -571,8 +560,8 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest studying the work of professional photographers",
-                "adapt_outcome": "The user has already been studying the work of professional photographers"
+                "option": "Suggest practicing regularly and experimenting with different settings",
+                "adapt_outcome": "The user has already been practicing regularly and experimenting with different settings"
             },
             "2": {
                 "label": "Neutral",
@@ -580,9 +569,9 @@
                 "adapt_outcome": "The user has already been taking photos whenever they feel like it"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need to improve",
-                "adapt_outcome": "The user already believes they don't need to improve"
+                "label": "Helpful",
+                "option": "Suggest studying the work of professional photographers",
+                "adapt_outcome": "The user has already been studying the work of professional photographers"
             },
             "4": {
                 "label": "Unhelpful",
@@ -590,14 +579,13 @@
                 "adapt_outcome": "The user has already been using only the automatic mode on their camera"
             },
             "5": {
-                "label": "Helpful",
-                "option": "Suggest practicing regularly and experimenting with different settings",
-                "adapt_outcome": "The user has already been practicing regularly and experimenting with different settings"
+                "label": "Unhelpful",
+                "option": "Suggest they don't need to improve",
+                "adapt_outcome": "The user already believes they don't need to improve"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: Given that the user is already practicing regularly and experimenting with different settings to improve their photography skills, the next step should focus on expanding their knowledge and inspiration.\nStudying the work of professional photographers can provide valuable insights into different styles, techniques, and compositions that can inspire and inform the user's own photography.\nTaking photos whenever they feel like it, while enjoyable, may not necessarily lead to significant skill improvement without a more structured approach.\nSuggesting that they don't need to improve is"
+        "first response": 1.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -620,34 +608,33 @@
         "adapt_response": "['The user has already considered the message and style of the poster', 'The user has already researched typography principles', 'The user has already tried different fonts until they found one they like', 'The user has already used a hard-to-read font', \"The user has already decided they don't need to use a font\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need to use a font",
-                "adapt_outcome": "The user has already decided they don't need to use a font"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest considering the message and style of the poster",
-                "adapt_outcome": "The user has already considered the message and style of the poster"
-            },
-            "3": {
-                "label": "Neutral",
-                "option": "Suggest trying different fonts until they find one they like",
-                "adapt_outcome": "The user has already tried different fonts until they found one they like"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest researching typography principles",
                 "adapt_outcome": "The user has already researched typography principles"
             },
-            "5": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest using a hard-to-read font",
                 "adapt_outcome": "The user has already used a hard-to-read font"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need to use a font",
+                "adapt_outcome": "The user has already decided they don't need to use a font"
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest trying different fonts until they find one they like",
+                "adapt_outcome": "The user has already tried different fonts until they found one they like"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest considering the message and style of the poster",
+                "adapt_outcome": "The user has already considered the message and style of the poster"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": "Answer: \nTo address the user's uncertainty about what font to use for their poster, it's essential to consider the purpose and design elements of the poster itself. \nNot needing to use a font is not a practical suggestion as text is a fundamental component of most posters and conveys important information.\nConsidering the message and style of the poster is crucial in selecting a font that complements the overall design and effectively communicates the intended message.\nContinuously trying different fonts until finding one they like might be time"
+        "first response": 5.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -670,34 +657,33 @@
         "adapt_response": "['The user has already started with clay as it is easy to work with', 'The user has already researched different sculpting materials', 'The user has already tried different materials to see what they like', 'The user has already used whatever materials they have at home', 'The user has already been suggested that they don\\'t need materials to sculpt']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest researching different sculpting materials",
-                "adapt_outcome": "The user has already researched different sculpting materials"
+                "label": "Unhelpful",
+                "option": "Suggest they don't need materials to sculpt",
+                "adapt_outcome": "The user has already been suggested that they don't need materials to sculpt"
             },
             "2": {
-                "label": "Unhelpful",
-                "option": "Suggest using whatever materials they have at home",
-                "adapt_outcome": "The user has already used whatever materials they have at home"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest starting with clay as it's easy to work with",
-                "adapt_outcome": "The user has already started with clay as it is easy to work with"
-            },
-            "4": {
                 "label": "Neutral",
                 "option": "Suggest trying different materials to see what they like",
                 "adapt_outcome": "The user has already tried different materials to see what they like"
             },
-            "5": {
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest researching different sculpting materials",
+                "adapt_outcome": "The user has already researched different sculpting materials"
+            },
+            "4": {
                 "label": "Unhelpful",
-                "option": "Suggest they don't need materials to sculpt",
-                "adapt_outcome": "The user has already been suggested that they don't need materials to sculpt"
+                "option": "Suggest using whatever materials they have at home",
+                "adapt_outcome": "The user has already used whatever materials they have at home"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest starting with clay as it's easy to work with",
+                "adapt_outcome": "The user has already started with clay as it is easy to work with"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 1
+        "first response": 5.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -720,14 +706,14 @@
         "adapt_response": "['The user has already chosen a theme that reflects their style and interests', 'The user has already researched popular themes in recent exhibitions', 'The user has already chosen a theme that comes to mind', 'The user has already chosen a controversial or offensive theme', \"The user has already decided they don't need a theme\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need a theme",
-                "adapt_outcome": "The user has already decided they don't need a theme"
+                "label": "Helpful",
+                "option": "Suggest choosing a theme that reflects their style and interests",
+                "adapt_outcome": "The user has already chosen a theme that reflects their style and interests"
             },
             "2": {
-                "label": "Helpful",
-                "option": "Suggest researching popular themes in recent exhibitions",
-                "adapt_outcome": "The user has already researched popular themes in recent exhibitions"
+                "label": "Unhelpful",
+                "option": "Suggest choosing a controversial or offensive theme",
+                "adapt_outcome": "The user has already chosen a controversial or offensive theme"
             },
             "3": {
                 "label": "Neutral",
@@ -735,19 +721,18 @@
                 "adapt_outcome": "The user has already chosen a theme that comes to mind"
             },
             "4": {
-                "label": "Helpful",
-                "option": "Suggest choosing a theme that reflects their style and interests",
-                "adapt_outcome": "The user has already chosen a theme that reflects their style and interests"
+                "label": "Unhelpful",
+                "option": "Suggest they don't need a theme",
+                "adapt_outcome": "The user has already decided they don't need a theme"
             },
             "5": {
-                "label": "Unhelpful",
-                "option": "Suggest choosing a controversial or offensive theme",
-                "adapt_outcome": "The user has already chosen a controversial or offensive theme"
+                "label": "Helpful",
+                "option": "Suggest researching popular themes in recent exhibitions",
+                "adapt_outcome": "The user has already researched popular themes in recent exhibitions"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo assist in choosing a theme for an art exhibition when the user has already selected one that aligns with their style and interests, it's essential to consider options that enhance the exhibition's impact and engagement with the audience.\nNot needing a theme might lead to a lack of cohesion and clarity in the exhibition, potentially confusing viewers and diluting the overall message.\nResearching popular themes in recent exhibitions could provide insights into current trends and audience preferences, but it might not necessarily align with the user"
+        "first response": 5.0,
+        "second response": 1
     },
     {
         "help/harm": "Helpful",
@@ -770,34 +755,33 @@
         "adapt_response": "['The user has already considered the mood and genre of the book', 'The user has already studied color theory and harmonious color combinations', 'The user has already chosen their favorite colors', 'The user has already used only black and white', 'The user has already used random colors']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest using only black and white",
-                "adapt_outcome": "The user has already used only black and white"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest considering the mood and genre of the book",
-                "adapt_outcome": "The user has already considered the mood and genre of the book"
-            },
-            "3": {
                 "label": "Neutral",
                 "option": "Suggest choosing their favorite colors",
                 "adapt_outcome": "The user has already chosen their favorite colors"
             },
-            "4": {
-                "label": "Helpful",
-                "option": "Suggest studying color theory and harmonious color combinations",
-                "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest using only black and white",
+                "adapt_outcome": "The user has already used only black and white"
             },
-            "5": {
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest considering the mood and genre of the book",
+                "adapt_outcome": "The user has already considered the mood and genre of the book"
+            },
+            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest using random colors",
                 "adapt_outcome": "The user has already used random colors"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest studying color theory and harmonious color combinations",
+                "adapt_outcome": "The user has already studied color theory and harmonious color combinations"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: When designing a book cover and feeling stuck on the color scheme, it's essential to leverage the knowledge of color theory and harmonious color combinations that you have already studied. \nUsing only black and white (Option 1) could create a classic and elegant look, but it might not fully capture the essence of the book or attract the desired audience based on the mood and genre.\nConsidering the mood and genre of the book (Option 2) is crucial as different colors evoke specific emotions and"
+        "first response": 5.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -820,34 +804,33 @@
         "adapt_response": "['The user has already taken online courses or tutorials', 'The user has already started with simple animations and gradually moved to complex ones', 'The user has already been animating whenever they feel like it', 'The user has already started with complex 3D animations', \"The user has already decided they don't need to learn, just animate\"]",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need to learn, just animate",
-                "adapt_outcome": "The user has already decided they don't need to learn, just animate"
-            },
-            "2": {
                 "label": "Helpful",
                 "option": "Suggest taking online courses or tutorials",
                 "adapt_outcome": "The user has already taken online courses or tutorials"
             },
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest starting with simple animations and gradually moving to complex ones",
+                "adapt_outcome": "The user has already started with simple animations and gradually moved to complex ones"
+            },
             "3": {
+                "label": "Unhelpful",
+                "option": "Suggest they don't need to learn, just animate",
+                "adapt_outcome": "The user has already decided they don't need to learn, just animate"
+            },
+            "4": {
                 "label": "Neutral",
                 "option": "Suggest animating whenever they feel like it",
                 "adapt_outcome": "The user has already been animating whenever they feel like it"
             },
-            "4": {
+            "5": {
                 "label": "Unhelpful",
                 "option": "Suggest starting with complex 3D animations",
                 "adapt_outcome": "The user has already started with complex 3D animations"
-            },
-            "5": {
-                "label": "Helpful",
-                "option": "Suggest starting with simple animations and gradually moving to complex ones",
-                "adapt_outcome": "The user has already started with simple animations and gradually moved to complex ones"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo address the user's desire to learn how to animate, it's essential to consider a structured approach that builds upon their existing knowledge and skills in animation.\nSuggesting they don't need to learn and just animate might limit their potential for growth and improvement in animation techniques.\nTaking online courses or tutorials can provide valuable guidance, tips, and techniques to enhance their animation skills and knowledge base.\nAnimating whenever they feel like it lacks a structured approach and may not lead to consistent progress or skill"
+        "first response": 1.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -870,14 +853,14 @@
         "adapt_response": "['The user has already been practicing regularly and studying real-life objects', 'The user has already taken a sketching course or workshop', 'The user has already been sketching whenever they feel like it', \"The user has already been copying other artists' sketches\", \"The user already believes they don't need to improve\"]",
         "mapping_given_to_model": {
             "1": {
+                "label": "Neutral",
+                "option": "Suggest sketching whenever they feel like it",
+                "adapt_outcome": "The user has already been sketching whenever they feel like it"
+            },
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest taking a sketching course or workshop",
                 "adapt_outcome": "The user has already taken a sketching course or workshop"
-            },
-            "2": {
-                "label": "Unhelpful",
-                "option": "Suggest copying other artists' sketches",
-                "adapt_outcome": "The user has already been copying other artists' sketches"
             },
             "3": {
                 "label": "Helpful",
@@ -890,14 +873,13 @@
                 "adapt_outcome": "The user already believes they don't need to improve"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest sketching whenever they feel like it",
-                "adapt_outcome": "The user has already been sketching whenever they feel like it"
+                "label": "Unhelpful",
+                "option": "Suggest copying other artists' sketches",
+                "adapt_outcome": "The user has already been copying other artists' sketches"
             }
         },
-        "first response": 3,
-        "first_response": 3.0,
-        "second response": 3
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -921,18 +903,18 @@
         "mapping_given_to_model": {
             "1": {
                 "label": "Helpful",
-                "option": "Suggest considering the brand's identity and message",
-                "adapt_outcome": "The user has already considered the brand\\es identity and message"
-            },
-            "2": {
-                "label": "Helpful",
                 "option": "Suggest studying color psychology in marketing",
                 "adapt_outcome": "The user has already studied color psychology in marketing"
             },
+            "2": {
+                "label": "Helpful",
+                "option": "Suggest considering the brand's identity and message",
+                "adapt_outcome": "The user has already considered the brand\\es identity and message"
+            },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest using only black and white",
-                "adapt_outcome": "The user has already used only black and white"
+                "label": "Neutral",
+                "option": "Suggest choosing their favorite colors",
+                "adapt_outcome": "The user has already chosen their favorite colors"
             },
             "4": {
                 "label": "Unhelpful",
@@ -940,14 +922,13 @@
                 "adapt_outcome": "The user has already used random colors"
             },
             "5": {
-                "label": "Neutral",
-                "option": "Suggest choosing their favorite colors",
-                "adapt_outcome": "The user has already chosen their favorite colors"
+                "label": "Unhelpful",
+                "option": "Suggest using only black and white",
+                "adapt_outcome": "The user has already used only black and white"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 2
+        "first response": 2.0,
+        "second response": "Reasoning with Chain of Thought: Understanding color psychology in marketing can help in selecting colors that evoke desired emotions and responses from the target audience, enhancing the logo's effectiveness. Considering the brand's identity and message ensures alignment between the logo's colors and the overall brand image, promoting consistency and brand recognition. Choosing favorite colors may not necessarily resonate with the target audience or convey the intended brand message. Using random colors can lead to a lack of coherence and fail to communicate the brand's values effectively. Using only black and white can convey simplicity and timelessness but may limit the logo's visual impact. Given the relevance of the brand's identity and message, the most effective option is 2: Suggest considering the brand's identity and message.\nResponse: "
     },
     {
         "help/harm": "Helpful",
@@ -975,28 +956,27 @@
                 "adapt_outcome": "The user has already gotten a degree or certification in fashion design"
             },
             "2": {
-                "label": "Neutral",
-                "option": "Suggest designing their own clothes first",
-                "adapt_outcome": "The user has already designed their own clothes first"
+                "label": "Unhelpful",
+                "option": "Suggest starting without any education or experience",
+                "adapt_outcome": "The user has already started without any education or experience"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest they don't need to prepare",
-                "adapt_outcome": "The user has already decided they don't need to prepare"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest gaining experience through internships or entry-level jobs",
                 "adapt_outcome": "The user has already gained experience through internships or entry-level jobs"
             },
-            "5": {
+            "4": {
                 "label": "Unhelpful",
-                "option": "Suggest starting without any education or experience",
-                "adapt_outcome": "The user has already started without any education or experience"
+                "option": "Suggest they don't need to prepare",
+                "adapt_outcome": "The user has already decided they don't need to prepare"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest designing their own clothes first",
+                "adapt_outcome": "The user has already designed their own clothes first"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo pursue a career in fashion design after gaining experience through internships or entry-level jobs, it's essential to consider the next steps that will further enhance skills and opportunities in the field. \nWhile experience is valuable, formal education or certification in fashion design can provide a deeper understanding of design principles, industry trends, and technical skills that may not have been fully covered in practical experiences.\nDesigning their own clothes can be a creative and practical way to showcase skills and creativity, but without the"
+        "first response": 1.0,
+        "second response": 3
     }
 ]

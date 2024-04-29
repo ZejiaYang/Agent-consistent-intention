@@ -4,4 +4,8 @@ notebooks/create_prompt_without_topics.ipynb
 notebooks/create_prompt_raw.ipynb
 data/intention-gpt-4_detrimental/
 .env
-
+src/utils/model_api/ordinal-thinker-420417-5380956e6a81.json
+node_modules
+claude-env
+trial.ipynb
+claude_test.ipynb
