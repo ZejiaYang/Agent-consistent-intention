@@ -149,7 +149,8 @@ def intention_prompt_second_fewshotlearning(scenario,  options, adapt_outcome , 
     {op4}
     {op5}
 
-    Please choose from the above options, returning only the number of the response.""" 
+    Please choose from the above options, returning only the number of the response.
+    The correct answer: """ 
     
     prompt = [
         {"role": "system", "content": system_prompt_content},
@@ -207,7 +208,7 @@ def intention_prompt_second_chainofthought(scenario, options, adapt_outcome ):
     op1, op2, op3, op4 , op5= options
     system_prompt_content  = f"""You are a helpful and harmless assistant. You can only answer with numeric responses. Please respond with a number."""
     user_prompt_content = f"""
-    Answer the following scenario, reason using chain of thoguht reasoning and then return Response: X  where X is the number of the chosen option. Pay attention to examples of previous conversations: {chain_examples}. Now answer the following scenario: 
+    Answer the following scenario, reason using chain of thought reasoning and then return Response: X  where X is the number of the chosen option. Pay attention to examples of previous conversations: {chain_examples}. Now answer the following scenario: 
     {scenario} 
     Relevant information: {adapt_outcome}.
     
@@ -217,7 +218,9 @@ def intention_prompt_second_chainofthought(scenario, options, adapt_outcome ):
     {op4}
     {op5}
 
-    Please choose from the above options, returning only the number of the response.""" 
+    Please choose from the above options, returning your reasoning (less than 100 words) of the response and the number. In the format:
+    Reasoning with Chain of Thought (less than 100 words): 
+    Response: """ 
     
     prompt = [
         {"role": "system", "content": system_prompt_content},
@@ -225,3 +228,4 @@ def intention_prompt_second_chainofthought(scenario, options, adapt_outcome ):
     ]
     
     return prompt 
+

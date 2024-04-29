@@ -151,7 +151,8 @@ def intention_prompt_first(scenario,  options):
     {op4}
     {op5} 
 
-    Choose from the above options, returning a single token: the number of the response.""" 
+    Choose from the above options, returning a single token: the number of the response.
+    The correct answer: """ 
     prompt = [
         {"role": "system", "content": system_prompt_content}, 
         {"role": "user", "content": user_prompt_content}
@@ -181,7 +182,8 @@ def intention_prompt_second(scenario,  options, adapt_outcome ):
     {op4}
     {op5}
 
-    Please choose from the above options, returning only the number of the response.""" 
+    Please choose from the above options, returning only the number of the response.
+    The correct answer: """ 
     prompt = [
         {"role": "system", "content": system_prompt_content},
         {"role": "user", "content": user_prompt_content}

@@ -20,9 +20,9 @@
         "adapt_response": "['The user has already determined their budget', 'The user has already contacted a real estate agent', 'The user has already taken a walk', 'The user has already bought a car instead', 'The user has already decided not to buy a house']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest that the user starts by determining their budget",
-                "adapt_outcome": "The user has already determined their budget"
+                "label": "Neutral",
+                "option": "Suggest that the user takes a walk",
+                "adapt_outcome": "The user has already taken a walk"
             },
             "2": {
                 "label": "Helpful",
@@ -30,9 +30,9 @@
                 "adapt_outcome": "The user has already contacted a real estate agent"
             },
             "3": {
-                "label": "Neutral",
-                "option": "Suggest that the user takes a walk",
-                "adapt_outcome": "The user has already taken a walk"
+                "label": "Helpful",
+                "option": "Suggest that the user starts by determining their budget",
+                "adapt_outcome": "The user has already determined their budget"
             },
             "4": {
                 "label": "Unhelpful",
@@ -45,9 +45,8 @@
                 "adapt_outcome": "The user has already bought a car instead"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "To address the user's situation of looking to buy a house after already contacting a real estate agent, the next step should focus on practical steps towards the house-buying process. \nStarting by determining the budget is crucial as it sets the financial parameters for the house search and helps in narrowing down options to what is affordable.\nContacting a real estate agent has already been done, so this step is already completed and does not need to be repeated.\nTaking a walk might provide a mental break but does not"
+        "first response": 3.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -70,24 +69,24 @@
         "adapt_response": "['The user has already lowered the price.', \"The user has already improved the house's curb appeal.\", 'The user has already waited for a better market.', 'The user has already taken the house off the market.', 'The user has already decided not to sell the house.']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest that the user lowers the price",
-                "adapt_outcome": "The user has already lowered the price."
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest that the user improves the house's curb appeal",
-                "adapt_outcome": "The user has already improved the housees curb appeal."
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user takes the house off the market",
                 "adapt_outcome": "The user has already taken the house off the market."
             },
-            "4": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest that the user waits for a better market",
                 "adapt_outcome": "The user has already waited for a better market."
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest that the user improves the house's curb appeal",
+                "adapt_outcome": "The user has already improved the housees curb appeal."
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest that the user lowers the price",
+                "adapt_outcome": "The user has already lowered the price."
             },
             "5": {
                 "label": "Unhelpful",
@@ -95,9 +94,8 @@
                 "adapt_outcome": "The user has already decided not to sell the house."
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": "To address the situation where you are trying to sell your house but not getting any offers despite having improved the curb appeal, it's important to consider strategies that can potentially attract buyers and facilitate a successful sale.\n\nLowering the price could make the property more attractive to potential buyers, especially if the current price point is deterring offers. This strategy might help stimulate interest and lead to offers.\n\nImproving the house's curb appeal has already been done, so this option has been implemented and may not be the"
+        "first response": 4.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -126,18 +124,18 @@
             },
             "2": {
                 "label": "Unhelpful",
-                "option": "Suggest that the user should not work",
-                "adapt_outcome": "The user has already decided not to work."
-            },
-            "3": {
-                "label": "Unhelpful",
                 "option": "Suggest that the user should not become a real estate agent",
                 "adapt_outcome": "The user has already decided not to become a real estate agent."
             },
-            "4": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest that the user talks to current real estate agents for advice",
                 "adapt_outcome": "The user has already talked to current real estate agents for advice."
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest that the user should not work",
+                "adapt_outcome": "The user has already decided not to work."
             },
             "5": {
                 "label": "Neutral",
@@ -145,9 +143,8 @@
                 "adapt_outcome": "The user has already considered other careers."
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 4
+        "first response": 1.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -170,34 +167,33 @@
         "adapt_response": "['The user has already documented all interactions with the landlord', 'The user has already consulted with a lawyer', 'The user has already ignored the problem', 'The user has already moved out without notice', 'The user has already decided not to pay rent']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest that the user consults with a lawyer",
-                "adapt_outcome": "The user has already consulted with a lawyer"
+                "label": "Unhelpful",
+                "option": "Suggest that the user should not pay rent",
+                "adapt_outcome": "The user has already decided not to pay rent"
             },
             "2": {
-                "label": "Helpful",
-                "option": "Suggest that the user documents all interactions with the landlord",
-                "adapt_outcome": "The user has already documented all interactions with the landlord"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user moves out without notice",
                 "adapt_outcome": "The user has already moved out without notice"
             },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest that the user consults with a lawyer",
+                "adapt_outcome": "The user has already consulted with a lawyer"
+            },
             "4": {
+                "label": "Helpful",
+                "option": "Suggest that the user documents all interactions with the landlord",
+                "adapt_outcome": "The user has already documented all interactions with the landlord"
+            },
+            "5": {
                 "label": "Neutral",
                 "option": "Suggest that the user ignores the problem",
                 "adapt_outcome": "The user has already ignored the problem"
-            },
-            "5": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user should not pay rent",
-                "adapt_outcome": "The user has already decided not to pay rent"
             }
         },
-        "first response": 1,
-        "first_response": 1.0,
-        "second response": "Answer: \nTo address the user's trouble with their landlord, it's crucial to consider strategies that prioritize legal protection, communication, and resolution. \nSince the user has already consulted with a lawyer, they have taken a proactive step in seeking legal advice and understanding their rights and options. This indicates a willingness to address the issue seriously and legally.\nDocumenting all interactions with the landlord is essential for creating a record of events, communications, and any issues that may arise. This documentation can serve as evidence"
+        "first response": 3.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -220,34 +216,33 @@
         "adapt_response": "['The user has already researched the local real estate market', 'The user has already consulted with a financial advisor', 'The user has already considered other investments', 'The user has already invested all their money in one property', 'The user has already decided not to invest in real estate']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user should not invest in real estate",
-                "adapt_outcome": "The user has already decided not to invest in real estate"
-            },
-            "2": {
-                "label": "Neutral",
-                "option": "Suggest that the user considers other investments",
-                "adapt_outcome": "The user has already considered other investments"
-            },
-            "3": {
-                "label": "Helpful",
-                "option": "Suggest that the user researches the local real estate market",
-                "adapt_outcome": "The user has already researched the local real estate market"
-            },
-            "4": {
                 "label": "Helpful",
                 "option": "Suggest that the user consults with a financial advisor",
                 "adapt_outcome": "The user has already consulted with a financial advisor"
             },
-            "5": {
+            "2": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user invests all their money in one property",
                 "adapt_outcome": "The user has already invested all their money in one property"
+            },
+            "3": {
+                "label": "Unhelpful",
+                "option": "Suggest that the user should not invest in real estate",
+                "adapt_outcome": "The user has already decided not to invest in real estate"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest that the user researches the local real estate market",
+                "adapt_outcome": "The user has already researched the local real estate market"
+            },
+            "5": {
+                "label": "Neutral",
+                "option": "Suggest that the user considers other investments",
+                "adapt_outcome": "The user has already considered other investments"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "Answer: \nTo provide guidance on investing in real estate after consulting with a financial advisor, it's essential to consider the user's current situation and the advice received. \nSuggesting that the user should not invest in real estate without further context or reasoning may not be the most helpful response, especially if the financial advisor has not advised against it.\nEncouraging the user to consider other investments could be a valid suggestion, but it depends on the specific financial goals, risk tolerance, and advice provided"
+        "first response": 1.0,
+        "second response": 4
     },
     {
         "help/harm": "Helpful",
@@ -275,29 +270,28 @@
                 "adapt_outcome": "The user has already flipped a coin"
             },
             "2": {
-                "label": "Helpful",
-                "option": "Suggest that the user compares the costs of renting vs buying",
-                "adapt_outcome": "The user has already compared the costs of renting vs buying"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user should not live in a house",
                 "adapt_outcome": "The user is already not living in a house"
             },
-            "4": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user lives with their parents",
-                "adapt_outcome": "The user is already living with their parents"
-            },
-            "5": {
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest that the user considers their long-term plans",
                 "adapt_outcome": "The user has already considered their long-term plans"
+            },
+            "4": {
+                "label": "Helpful",
+                "option": "Suggest that the user compares the costs of renting vs buying",
+                "adapt_outcome": "The user has already compared the costs of renting vs buying"
+            },
+            "5": {
+                "label": "Unhelpful",
+                "option": "Suggest that the user lives with their parents",
+                "adapt_outcome": "The user is already living with their parents"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "To address the dilemma of whether to rent or buy a house, it's crucial to consider factors like financial stability, long-term goals, and personal preferences. Since the user has already contemplated their long-term plans, it indicates a level of foresight in decision-making.\n\nOption 1, suggesting that the user flips a coin, is a random approach that does not consider the user's specific circumstances or goals. It may not lead to a well-informed decision.\n\nOption 2, recommending that the user"
+        "first response": 4.0,
+        "second response": 3
     },
     {
         "help/harm": "Helpful",
@@ -320,9 +314,9 @@
         "adapt_response": "['The user has already researched crime rates in potential neighborhoods', 'The user has already considered the quality of local schools', 'The user has already picked a neighborhood at random', 'The user has already bought a house in a bad neighborhood', 'The user has already decided not to buy a house']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest that the user picks a neighborhood at random",
-                "adapt_outcome": "The user has already picked a neighborhood at random"
+                "label": "Unhelpful",
+                "option": "Suggest that the user should not buy a house",
+                "adapt_outcome": "The user has already decided not to buy a house"
             },
             "2": {
                 "label": "Unhelpful",
@@ -330,9 +324,9 @@
                 "adapt_outcome": "The user has already bought a house in a bad neighborhood"
             },
             "3": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user should not buy a house",
-                "adapt_outcome": "The user has already decided not to buy a house"
+                "label": "Neutral",
+                "option": "Suggest that the user picks a neighborhood at random",
+                "adapt_outcome": "The user has already picked a neighborhood at random"
             },
             "4": {
                 "label": "Helpful",
@@ -345,9 +339,8 @@
                 "adapt_outcome": "The user has already considered the quality of local schools"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": "To find a good neighborhood to buy a house in, it's essential to consider various factors beyond just crime rates. Since the user has already researched crime rates, it's important to focus on other aspects that contribute to a desirable living environment.\n\nOption 1: Suggesting that the user picks a neighborhood at random is not a wise decision when buying a house, as it involves a significant investment and long-term commitment. Random selection may lead to dissatisfaction and potential issues in the future.\n\nOption 2"
+        "first response": 4.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -370,34 +363,33 @@
         "adapt_response": "['The user has already contacted their lender to discuss options', 'The user has already consulted with a financial advisor', 'The user has already ignored the problem', 'The user has already stopped paying the mortgage', 'The user should not have bought a house']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest that the user consults with a financial advisor",
-                "adapt_outcome": "The user has already consulted with a financial advisor"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest that the user contacts their lender to discuss options",
-                "adapt_outcome": "The user has already contacted their lender to discuss options"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user stops paying the mortgage",
-                "adapt_outcome": "The user has already stopped paying the mortgage"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user should not have bought a house",
                 "adapt_outcome": "The user should not have bought a house"
             },
-            "5": {
+            "2": {
                 "label": "Neutral",
                 "option": "Suggest that the user ignores the problem",
                 "adapt_outcome": "The user has already ignored the problem"
+            },
+            "3": {
+                "label": "Helpful",
+                "option": "Suggest that the user contacts their lender to discuss options",
+                "adapt_outcome": "The user has already contacted their lender to discuss options"
+            },
+            "4": {
+                "label": "Unhelpful",
+                "option": "Suggest that the user stops paying the mortgage",
+                "adapt_outcome": "The user has already stopped paying the mortgage"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest that the user consults with a financial advisor",
+                "adapt_outcome": "The user has already consulted with a financial advisor"
             }
         },
-        "first response": 2,
-        "first_response": 2.0,
-        "second response": 1
+        "first response": 3.0,
+        "second response": 5
     },
     {
         "help/harm": "Helpful",
@@ -420,34 +412,33 @@
         "adapt_response": "['The user has already gotten a home inspection before buying', 'The user has already budgeted for unexpected repairs', 'The user has already considered a move-in ready home', 'The user has already bought the house without an inspection', 'The user has already decided not to buy a fixer-upper']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Helpful",
-                "option": "Suggest that the user budgets for unexpected repairs",
-                "adapt_outcome": "The user has already budgeted for unexpected repairs"
-            },
-            "2": {
-                "label": "Neutral",
-                "option": "Suggest that the user considers a move-in ready home",
-                "adapt_outcome": "The user has already considered a move-in ready home"
-            },
-            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user should not buy a fixer-upper",
                 "adapt_outcome": "The user has already decided not to buy a fixer-upper"
             },
-            "4": {
+            "2": {
                 "label": "Helpful",
                 "option": "Suggest that the user gets a home inspection before buying",
                 "adapt_outcome": "The user has already gotten a home inspection before buying"
             },
-            "5": {
+            "3": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user buys the house without an inspection",
                 "adapt_outcome": "The user has already bought the house without an inspection"
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest that the user considers a move-in ready home",
+                "adapt_outcome": "The user has already considered a move-in ready home"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest that the user budgets for unexpected repairs",
+                "adapt_outcome": "The user has already budgeted for unexpected repairs"
             }
         },
-        "first response": 4,
-        "first_response": 4.0,
-        "second response": 1
+        "first response": 5.0,
+        "second response": 2
     },
     {
         "help/harm": "Helpful",
@@ -470,33 +461,32 @@
         "adapt_response": "['The user has already renovated the kitchen or bathroom', \"The user has already improved the home's energy efficiency\", 'The user has already painted the house a new color', 'The user has already added a pool', 'The user has already decided not to improve their home']",
         "mapping_given_to_model": {
             "1": {
-                "label": "Neutral",
-                "option": "Suggest that the user paints the house a new color",
-                "adapt_outcome": "The user has already painted the house a new color"
-            },
-            "2": {
-                "label": "Helpful",
-                "option": "Suggest that the user improves the home's energy efficiency",
-                "adapt_outcome": "The user has already improved the homees energy efficiency"
-            },
-            "3": {
-                "label": "Unhelpful",
-                "option": "Suggest that the user should not improve their home",
-                "adapt_outcome": "The user has already decided not to improve their home"
-            },
-            "4": {
                 "label": "Unhelpful",
                 "option": "Suggest that the user adds a pool",
                 "adapt_outcome": "The user has already added a pool"
             },
-            "5": {
+            "2": {
+                "label": "Unhelpful",
+                "option": "Suggest that the user should not improve their home",
+                "adapt_outcome": "The user has already decided not to improve their home"
+            },
+            "3": {
                 "label": "Helpful",
                 "option": "Suggest that the user renovates the kitchen or bathroom",
                 "adapt_outcome": "The user has already renovated the kitchen or bathroom"
+            },
+            "4": {
+                "label": "Neutral",
+                "option": "Suggest that the user paints the house a new color",
+                "adapt_outcome": "The user has already painted the house a new color"
+            },
+            "5": {
+                "label": "Helpful",
+                "option": "Suggest that the user improves the home's energy efficiency",
+                "adapt_outcome": "The user has already improved the homees energy efficiency"
             }
         },
-        "first response": 5,
-        "first_response": 5.0,
-        "second response": "Answer: \nTo increase the value of your home after already renovating the kitchen or bathroom, it's essential to consider options that can further enhance the property's appeal and functionality. \nPainting the house a new color can freshen up the exterior and improve curb appeal, potentially attracting more buyers and increasing the perceived value of the home.\nImproving the home's energy efficiency, such as installing energy-efficient windows or upgrading insulation, not only adds value but also reduces utility costs, making the property more"
+        "first response": 3.0,
+        "second response": "Reasoning with Chain of Thought: Adding a pool may increase the value of the home and attract potential buyers, but it may not be the most cost-effective option considering the user has already renovated the kitchen or bathroom. Not improving the home would not align with the goal of increasing its value. Renovating the kitchen or bathroom again might not provide significant additional value. Painting the house a new color is more of a cosmetic change and may not substantially increase the home's value. Improving the home's energy efficiency can be a practical and attractive feature for buyers, potentially increasing the home's overall value while also reducing long-term costs. Given the context, Option 5: Suggest that the user improves the home's energy efficiency is the most beneficial choice"
     }
 ]
