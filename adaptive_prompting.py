@@ -9,6 +9,7 @@ import re
 import argparse
 import os
 import glob
+import time 
 
 # Adding the 'src' and 'src/utils' directories to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,8 +19,11 @@ sys.path.append(src_dir)
 sys.path.append(utils_dir)
 
 from utils import load_data, json_arr_to_file, run_api_call
-from utils import  intention_prompt_first, intention_prompt_second , preprocess_options_and_labels
-from utils import call_llama , intention_prompt_second_fewshotlearning, call_claude
+from utils.model_api.other_api  import   call_llama , call_claude
+from utils import  preprocess_options_and_labels
+
+from utils.prompt_fns import intention_prompt_first, intention_prompt_second
+from utils.variable_prompt_fns import intention_prompt_second_fewshotlearning , intention_prompt_second_chainofthought
 
 
 claude_model_family = [
@@ -78,26 +82,32 @@ def execute_model_call(model, prompt, max_tokens):
         print(model)
         raise Exception("Other model type called - check how to call API" ) 
 
-def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot=False , num_examples = None ):
+def select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, type_experiment, num_examples=None):
     """Select the appropriate prompt based on the model."""
-    if fewshot==False:
-        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
+    # check if type_experiment is 'plain' few'shot or 'chainofhtought'
+    if type_experiment == 'plain':
+        if model in gpt_models + gpt_base_models + llama_model_family + mixtral_family + claude_model_family:
             return intention_prompt_second(scenario, pr_string, adapt_sentence)
      
-    elif fewshot==True:
+    elif type_experiment=='fewshot':
         print('Selecting few shot learn prompt')
         if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
             return intention_prompt_second_fewshotlearning(scenario, pr_string, adapt_sentence, num_examples)
+    elif type_experiment == 'chainofthought':
+        if model in gpt_models + gpt_base_models+ llama_model_family + mixtral_family + claude_model_family:
+            return intention_prompt_second_chainofthought(scenario, pr_string, adapt_sentence)
 
-
-def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, fewshot=False, num_ex=None ):
+    else:
+        raise Exception('Invalid type of experiment')
+    
+def generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=True, numeric_first_response=None, type_experiment='plain', num_ex=None ):
     """Generate and process the response for the prompt."""
     if first_call:
         prompt = intention_prompt_first(scenario, pr_string)
       
     else:
         adapt_sentence = mapping[numeric_first_response]['adapt_outcome']
-        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, fewshot, num_examples = num_ex)
+        prompt = select_prompt_based_on_model(model, scenario, pr_string, adapt_sentence, type_experiment, num_examples = num_ex)
     
     response = execute_model_call(model, prompt, max_tokens)
     numeric_response = extract_numeric_response_if_applicable(model, response)
@@ -172,7 +182,7 @@ def extract_numeric_response_if_applicable(model, response):
         return extract_numbers_in_range(response, base=True)
 
  
-def process_one_item(item, model, max_tokens, fewshot =False, num_ex = None):
+def process_one_item(item, model, max_tokens, type_experiment, num_ex = None):
     """Process a single item from the loaded data."""
     # try:
     op, lab, scenario = item['options'], item['labels'], item['scenario']
@@ -206,7 +216,7 @@ def process_one_item(item, model, max_tokens, fewshot =False, num_ex = None):
         return  # Skip to the next item
 
     # Handle the second response
-    second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=numeric_first_response, fewshot=fewshot, num_ex = num_ex)
+    second_response = generate_and_process_response(model, scenario, pr_string, max_tokens, mapping, first_call=False, numeric_first_response=numeric_first_response, type_experiment=type_experiment, num_ex = num_ex)
     item['second response'] = second_response
     print('Second response ', second_response)
 
@@ -214,13 +224,15 @@ def process_one_item(item, model, max_tokens, fewshot =False, num_ex = None):
     #     print(f'Error processing item: {e}')
     
 
-def process_one_file(file, write_path, max_tokens, model, few_shot, num_ex):
+def process_one_file(file, write_path, max_tokens, model, type_experiment, num_ex):
     """Function to process one file in the dataset directory."""
     full_json = load_data(file)
 
     for item in full_json:
-        process_one_item(item, model, max_tokens, few_shot, num_ex)
-
+        process_one_item(item, model, max_tokens, type_experiment=type_experiment, num_ex = num_ex)
+        if model in claude_model_family:
+            print('time')
+            time.sleep(10)
     save_processed_data(full_json, write_path)
 
 
@@ -229,7 +241,7 @@ def process_one_file(file, write_path, max_tokens, model, few_shot, num_ex):
 
 
 
-def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_tokens=100):
+def run_adaptive_prompting(model, run_name, type_experiment, num_ex = False,  max_tokens=100):
     """
     Loop to run each file in the dataset directory through the adaptive prompting process.
     Relies on dataset_generation.py having been run first to generate the dataset.
@@ -242,12 +254,18 @@ def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_
     - fewshot: bool, indicates whether to use few-shot learning for the second prompt.
     """
     # Assuming 'script_dir' is predefined as the directory of this script
-    if fewshot==False:
+    if type_experiment=='plain':
+        print('Plain experiemnt ')
         file_dir = os.path.join(script_dir, "data", "processed", f'model--{model}', f'd_name--{run_name}')
 
-    elif  fewshot==True:
+    elif type_experiment=='fewshot':
+        print('few shot')
         file_dir = os.path.join(script_dir, "data", f"processed_fewshot_{num_ex}", f'model--{model}', f'd_name--{run_name}')
-    
+    elif type_experiment=='chainofthought': 
+        print('Chain of thought')
+        file_dir = os.path.join(script_dir, "data", f"processed_chainofthought", f'model--{model}', f'd_name--{run_name}')
+    else:
+        raise Exception('Invalid type of experiment')    
     os.makedirs(file_dir, exist_ok=True)
     for category in ['helpful', 'harmless']:
         os.makedirs(os.path.join(file_dir, category), exist_ok=True)
@@ -274,7 +292,7 @@ def run_adaptive_prompting(model, run_name, fewshot=False, num_ex = False,  max_
             continue  # Skip existing files
 
         # Call the processing function with few-shot parameter
-        process_one_file(file, write_path, max_tokens, model, fewshot, num_ex)
+        process_one_file(file, write_path, max_tokens, model, type_experiment , num_ex)
 
     print('Run complete.')
 
@@ -284,17 +302,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some inputs.')
     parser.add_argument('--model', type=str, required=True, help='model to test ')
     parser.add_argument('--run_name', type=str, required=True, help='name of the dataset to process')
-    parser.add_argument('--fewshot', type=bool, required=True, help='does experiment use fewshot learning')
+    parser.add_argument('--type_experiment', type=str,  help='what type of experiment')
     parser.add_argument('--num_ex', type=int, required=False, help='number of examples for fewshot learning')
     args = parser.parse_args()
     
     model = args.model
     run_name = args.run_name
-    fewshot = args.fewshot
+    type_experiment = args.type_experiment 
     num_ex = args.num_ex
 
-    print(f'Starting model {model} and dataset {run_name} for fewshot learning {fewshot} with {num_ex} examples. \n')
-    run_adaptive_prompting(model = model, run_name = run_name,fewshot= fewshot, num_ex= num_ex )
+    print(f'Starting model {model} and dataset {run_name} for experiment type {type_experiment} with {num_ex} examples. \n')
+    run_adaptive_prompting(model = model, run_name = run_name, type_experiment= type_experiment, num_ex= num_ex )
     print(f'Run for {model} complete')
 
 
