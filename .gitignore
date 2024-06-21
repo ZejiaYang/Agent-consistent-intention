@@ -9,3 +9,5 @@ node_modules
 claude-env
 trial.ipynb
 claude_test.ipynb
+.DS_Store
+.gitignore
